@@ -1,0 +1,221 @@
+.single-noo_class {
+
+    a {
+		.transition(all 0.3s ease 0s);
+		&:focus,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+    .hentry {
+        .content-header {
+
+            .content-title {
+                font-size: @font-size-h3;
+                color: @secondary-color;
+                text-transform: uppercase;
+                
+                font-weight: @font-weight-base;
+                margin: 0 0 15px;
+            }
+            .content-meta {
+				margin-bottom: 22px;
+
+				span:not(.wrap-anchor) {
+					margin-right: 25px;
+
+					@media screen and (max-width: 480px) {
+						display: block;
+					}
+
+					&.level-info {
+						i {
+							font-size: @font-size-large;
+						}
+					}
+				}
+
+                i {
+                    color: @brand-primary;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .content-featured {
+        	img {
+        		width: 100%;
+        		margin-bottom: 20px;
+        	}
+        }
+
+        .content-wrap {
+
+        	iframe {
+        		width: 100%;
+        	}
+
+        	blockquote {
+				font-family: @special-font;
+				font-size: @font-size-h3;
+				font-style: italic;
+				color: @secondary-color;
+				line-height: 36px;
+				border: none;
+				position: relative;
+				padding: 12px 34px;
+				margin: 22px 0 26px 66px;
+/* 				-webkit-font-smoothing: antialiased;
+				font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale; */
+
+				@media screen and (max-width: 767px) {
+					margin: 30px;
+					font-size: 20px;
+				}
+
+				@media screen and (max-width: 480px) {
+					margin: 0;
+					font-size: 18px;
+				}
+
+				&:before {
+					font-family: "Ionicons";
+					content: "\f347";
+					color: @brand-primary;
+					position: absolute;
+					top: 0;
+					left: 0;
+					font-style: normal;
+				}
+        	}
+
+        	h1,h2,h3,h4,h5,h6 {
+        		
+        		color: @black-1;
+        		line-height: 28px;
+        		-webkit-font-smoothing: antialiased;
+				font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+        	}
+
+        	p {
+        		margin: 0 0 4px;
+        	}
+        }
+
+        .content-share {
+        	border-bottom: 1px solid @gray-5;
+        	padding: 20px 0 28px;
+        	text-align: right;
+        }
+    }
+
+
+	.timetable_week {
+		padding-top: 20px;
+
+		table{
+			width: 100%;
+			border: none;
+
+			@media screen and (max-width: 991px) {
+				display: none;
+			}
+
+			th, td {
+				vertical-align: top;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				text-align: left;
+				border: none;
+			}
+			tr.day_wrap{
+
+				&.day-even {
+					background: #f5f5f5;
+				}
+			}
+		}
+
+		.day{
+			.border-radius(12px);
+			color: @brand-primary;
+			padding: 4px 8px;
+			text-transform: capitalize;
+		}
+
+
+		h4 {
+			margin-top: 40px;
+			margin-bottom: 40px;
+			position: relative;
+			color: @brand-primary;
+			text-transform: uppercase;
+			font-size: 20px;
+			
+			line-height: 30px;
+			font-weight: @font-weight-base;
+
+			&:before {
+				background: @brand-primary;
+				bottom: -15px;
+				content: '';
+				left: 0;
+				height: 2px;
+				position: absolute;
+				width: 30px;
+			}
+
+			.first-word {
+				color: @secondary-color;
+			}
+		}
+
+		.res-sche-content {
+			
+			@media screen and (min-width: 992px) {
+				display: none;
+			}
+
+			.item-weekday {
+
+				background-color: #f5f5f5;
+				padding: 5px 10px;
+				color: @brand-primary;
+				margin: 5px 0;
+
+				&.today {
+					background: #fcf8e3;
+				}
+			}
+			.item-day {
+				
+				position: relative;
+				padding: 10px 0 10px 10px;
+				font-size: 15px;
+
+				.time {
+					color: #333;
+				}
+
+				i {
+					margin-left: 10px;
+					font-weight: 300;
+				}
+				
+				.address {
+					margin-left: 10px;
+
+					@media screen and (max-width: 479px) {
+						display: none;
+					}
+				}
+
+			}
+			
+		}
+		
+	}
+}

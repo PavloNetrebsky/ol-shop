@@ -1,0 +1,170 @@
+
+/*
+* 4.0 Content
+* -----------------------------------------------------------------------------
+*/
+
+/*
+* 4.1 - Heading
+* -----------------------------------------------------------------------------
+*/
+.noo-page-heading{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #f4f4f4;
+  padding: 155px 0;
+
+	@media screen and (max-width: 767px) {
+		
+		padding: 60px 0 !important;
+	}
+
+
+  .wrap-page-title {
+    position: relative;
+
+    &:after {
+      background: @brand-primary;
+      content: '';
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      position: absolute;
+      width: 40px;
+    }
+  }
+
+  .page-title{
+    padding: 0;
+    margin: 0 0 5px;
+    color: @brand-primary;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: @font-weight-base;
+    letter-spacing: 0.5px;
+
+    .first-word {
+      color: @secondary-color;
+    }
+
+    @media screen and (max-width: 767px) {
+		
+		font-size: 36px;
+	}
+
+    @media screen and (max-width: 479px) {
+		
+		font-size: 30px;
+	}
+  }
+
+  .page-description {
+    font-family: @special-font;
+    font-size: 20px;
+    font-style: italic;
+    color: @text-color;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+	@media screen and (max-width: 479px) {
+		
+		font-size: 18px;
+	}
+
+  }
+
+  .noo-page-breadcrumb {
+    margin-top: 20px;
+
+    a {
+		.transition(all 0.3s ease 0s);
+        font-size: 15px;
+
+		&:focus,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	i {
+	  padding: 0 12px;
+	  font-size: 15px;
+      display: inline;
+      width: auto;
+      height: auto;
+      line-height: 1.75;
+      margin-left: 0;
+      vertical-align: baseline;
+	}
+
+	ul {
+	  padding: 0;
+	  margin: 0;
+	  list-style: none;
+
+	  li {
+	    display: inline-block;
+	    padding-right: 20px;
+	    margin-right: 16px;
+	    position: relative;
+
+	    &:after {
+          content: '';
+          font-size: 15px;
+          content: "\f3d1";
+          font-family: "Ionicons";
+          position: absolute;
+          top: 3px;
+          right: 0;
+
+	    }
+
+	    &:last-child {
+	      padding-right: 0;
+	      margin-right: 0;
+	      
+	      &:after {
+	        display: none;
+	      }
+	    }
+	  }
+	}
+
+  }
+}
+
+
+/**
+ * 4.2 - Box layout
+ * -----------------------------------------------------------------------------
+ */
+.boxed-layout {
+  background-color: @body-bg;
+  background-image: url("@{body-bg-image}");
+  background-position: @body-bg-align;
+  background-repeat: @body-bg-repeat;
+  background-attachment: @body-bg-attachment;
+  .background-cover( @body-bg-cover );
+  .site {
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    background-color: @white;
+    .box-shadow( @site-box-shadow );
+    width: @site-width;
+    max-width: unit( @site-max-width, px );
+    overflow: hidden;
+    .fixed_top{
+      .navbar-wrapper{
+        width: @site-width;
+        max-width: unit( @site-max-width, px );
+      }
+    }
+  }
+
+
+}

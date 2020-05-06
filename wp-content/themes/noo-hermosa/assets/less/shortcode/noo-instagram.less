@@ -1,0 +1,147 @@
+.noo-instagram-wrap{
+	position: relative;
+	display: block;
+	margin-bottom: 40px;
+	.btn_gallery {
+		a {
+			font-size: 20px;
+			font-weight: 600;
+			position: absolute;
+			z-index: 9;
+			background: @white;
+			bottom: 5%;
+			left: 50%;
+			transform: translateX(-50%);
+			padding: 3px 12px;
+			.box-shadow(0 1px 7px 0px rgba(0, 0, 0, 0.2));
+			.transition(all 0.35s ease);
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+	.noo-instagram {
+		padding:0;
+		.instagram-info {
+			width: 100%;
+			height: auto;
+			position: relative;
+			display: inline-block;
+			padding: 0;
+			.instagram-image-link {
+				position: relative;
+				display:block;
+				width: 100%;
+				height: auto;
+				overflow: hidden;
+				.instagram-image-around {
+					position: relative;
+					display: inline-block;
+					width: 100%;
+					height: auto;
+				}
+			}
+			.instagram-link{
+				position: absolute;
+				left: 50%;
+				top: 55%;
+				opacity: 0;
+				transform: translate(-50%,0);
+				z-index: 2;
+			    color:@black;
+				font-size: 18px;
+				text-transform: capitalize;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+		.instagram-info {
+			float: left;
+			.instagram-image-around {
+				position: relative;
+				overflow: hidden;
+				.transition(all 0.4s ease 0s);
+				&:before {
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					opacity: 0;
+					background-color: rgba(255, 255, 255, 0.8);
+					.transition(all 0.3s linear);
+					z-index: 1;
+					.scale(0.8);
+				}
+				&:after {
+					content: '\f16d';
+					font-family: FontAwesome;
+					font-size: 20px;
+					color: @white;
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					.translate(-50%, -50%);
+					z-index: 2;
+					font-size: 50px;
+					.opacity(0);
+					.transition(all 0.35s ease);
+				}
+				img {
+					.transition(all 0.4s ease 0s);
+				}
+				.instagram-link{
+					.transition(all 0.4s ease 0s);
+				}
+				&:hover {
+					&:before {
+						.scale(1);
+						.opacity(1);
+					}
+					&:after {
+						font-size: 35px;
+						.opacity(1);
+					}
+					img {
+						.scale(1.1);
+					}
+					.instagram-link{
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+	.owl-nav {
+		opacity: 0;
+		.transition(0.35s ease);
+		.owl-prev,.owl-next {
+			position: absolute;
+			top: 50%;
+			transfor:translate(0, -50%);
+			padding: 20px;
+			color: lighten(@black, 50%);
+			z-index: 1;
+			background-color: darken(@white, 10%);
+			cursor: pointer;
+			.transition(all 0.35s ease);
+			&:hover {
+				//background-color: @primary_color;
+				color: @white;
+			}
+		}
+		.owl-prev {
+			left: 0px;
+		}
+		.owl-next {
+			right: 0px;
+		}
+	}
+	&:hover {
+		.owl-nav {
+			opacity: 1;
+		}
+	}
+}

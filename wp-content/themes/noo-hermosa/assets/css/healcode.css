@@ -1,0 +1,351 @@
+/*
+ * HealCode
+ */
+.semantic-content .modal-inner {
+  top: 90px;
+}
+.semantic-content .modal-close:after {
+  top: 65px;
+}
+.ui-widget-content {
+  max-width: 320px;
+}
+.ui-widget-content tr td {
+  padding: 0;
+}
+.ui-widget-content tr td:hover {
+  background-color: transparent;
+}
+.site div.healcode a {
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.site div.healcode a:focus,
+.site div.healcode a:hover {
+  text-decoration: none;
+}
+.site div.healcode .healcode-title-text,
+.site div.healcode .hc_header_time {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #e182a8;
+}
+.site div.healcode h1 .healcode-title-text {
+  font-weight: 400 !important;
+}
+.site div.healcode .healcode-title-text {
+  color: #5f41a5;
+  font-weight: 400;
+}
+.site div.healcode .healcode-title-text br {
+  display: none;
+}
+.site div.healcode a.action_icon {
+  margin: 0px 0 0 10px;
+}
+.site div.healcode a.action_icon.my_account_version {
+  margin-top: 4px;
+}
+.site div.healcode div.hc_footer {
+  clear: both;
+}
+.site div.healcode .trainer_list .healcode-image-area > img {
+  display: none;
+}
+.site div.healcode .trainer_list h1.trainer_name {
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #5f41a5;
+}
+.site div.healcode .trainer_list .trainer_bio {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.site div.healcode .trainer_list .trainer_bio img {
+  width: 100% !important;
+  float: right !important;
+  margin: 0 0 1em 1em !important;
+}
+.site div.healcode .trainer_show {
+  width: 100%;
+  float: left;
+  margin-bottom: 30px !important;
+}
+.site div.healcode .back_link {
+  font-size: 16px;
+}
+.site div.healcode .trainer_list .class_offered_link,
+.site div.healcode .class_list .class_offered_link,
+.site div.healcode .trainer_list .trainer_teaches_link,
+.site div.healcode .class_list .trainer_teaches_link {
+  text-transform: none;
+  font-size: 16px;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  background-color: #e182a8;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 8px 30px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+.site div.healcode .trainer_list .class_offered_link a,
+.site div.healcode .class_list .class_offered_link a,
+.site div.healcode .trainer_list .trainer_teaches_link a,
+.site div.healcode .class_list .trainer_teaches_link a {
+  line-height: 22px;
+  font-weight: 400;
+}
+.site div.healcode .trainer_list .class_offered_link:hover,
+.site div.healcode .class_list .class_offered_link:hover,
+.site div.healcode .trainer_list .trainer_teaches_link:hover,
+.site div.healcode .class_list .trainer_teaches_link:hover {
+  background-color: #d2447d;
+}
+.site div.healcode a.hc-button,
+.site div.healcode input.hc-button {
+  background-color: #e182a8;
+}
+.site div.healcode a.hc-button:hover,
+.site div.healcode input.hc-button:hover {
+  background-color: #d2447d;
+}
+.site div.healcode .hc_availability,
+.site div.healcode .hc_waitlist {
+  font-size: 14px;
+  margin-left: 6px;
+}
+.site div.healcode .classname {
+  font-weight: 400;
+}
+.site div.healcode table.schedule {
+  margin-top: 2.35em;
+}
+.site div.healcode table.schedule tr th {
+  padding: 0.75em .5em;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.site div.healcode table.schedule tr td {
+  font-size: 14px;
+}
+.site div.healcode .class_list .healcode-image-area {
+  margin: 0 0 .5em 3em;
+}
+.site div.healcode .class_list .class_show {
+  border-bottom: 1px solid #EAEAEA;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  margin-top: 0;
+}
+.site div.healcode .class_list .class_name {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #5f41a5;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.site div.healcode .class_list .class_description {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.site div.healcode input:not([type='submit']) {
+  border: 1px solid #e2e2e2;
+  height: 45px;
+  width: 100%;
+  color: #888888;
+  font-size: 15px;
+  padding: 0 20px;
+  margin: 12.5px 0;
+}
+.site div.healcode input:not([type='submit'])::-moz-placeholder {
+  color: #888888;
+  opacity: 1;
+}
+.site div.healcode input:not([type='submit']):-ms-input-placeholder {
+  color: #888888;
+}
+.site div.healcode input:not([type='submit'])::-webkit-input-placeholder {
+  color: #888888;
+}
+.site div.healcode select:not([multiple]) {
+  margin: 12.5px 0;
+  height: 45px;
+  color: #888888;
+  font-size: 15px;
+  width: 100%;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 0 20px;
+  border: 1px solid #e2e2e2;
+  -webkit-box-shadow: none;
+  -khtml-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -khtml-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background: url(../images/arrow.png) no-repeat right center #ffffff;
+  cursor: pointer;
+}
+.site div.healcode select:not([multiple]):focus {
+  outline-color: transparent;
+  outline: none;
+}
+.site div.healcode textarea {
+  color: #888888;
+  font-size: 15px;
+  width: 100%;
+  border: 1px solid #e2e2e2;
+  padding: 20px;
+  margin-top: 12.5px;
+  height: 120px;
+}
+.site div.healcode input[type='submit'] {
+  background-color: #e182a8;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #ffffff;
+  line-height: 22px;
+  font-weight: 400;
+  padding: 8px 30px;
+  font-size: 16px;
+  text-decoration: none;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  margin-top: 22px;
+  display: inline-block;
+  border: 0;
+}
+.site div.healcode input[type='submit']:hover {
+  background: #d2447d;
+}
+.site div.healcode input[type='checkbox'] {
+  border: 0;
+  background: #f4f4f4;
+  color: #555;
+  clear: none;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 0;
+  height: 20px;
+  margin: -4px 4px 0 0;
+  outline: 0;
+  padding: 0 !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 20px;
+  -webkit-appearance: none;
+  -webkit-transition: 0.05s border-color ease-in-out;
+  -o-transition: 0.05s border-color ease-in-out;
+  transition: 0.05s border-color ease-in-out;
+  position: relative;
+}
+.site div.healcode input[type="checkbox"]:checked:before {
+  content: "\f00c";
+  color: #e182a8;
+  position: absolute;
+  float: left;
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  font-family: "fontawesome";
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  left: 3px;
+  top: 10px;
+  font-size: 12px;
+}
+.site div.healcode .parsley-errors-list {
+  display: inline-block;
+}
+.site div.healcode .hc-birth-date > div select {
+  width: 30%;
+  display: inline-block;
+  margin-right: 13px;
+  margin-left: 13px;
+}
+.site div.healcode .hc-birth-date > div select:first-child {
+  margin-left: 0;
+}
+.site div.healcode .hc_registration label,
+.site div.healcode .hc_registration .hc-label {
+  font-size: 20px;
+  font-weight: 400;
+}
+.site div.healcode .hc_registration .note {
+  font-size: 14px;
+}
+.site div.healcode .hc_registration .liability {
+  margin-top: 15px;
+  font-size: 14px;
+  max-width: initial;
+  height: 115px;
+}
+.site div.healcode.appointments .ui-datepicker-inline {
+  max-width: 320px;
+}
+.site div.healcode.appointments .ui-datepicker-calendar tr td:hover {
+  background-color: transparent;
+}
+.site div.healcode.appointments a.hc-button {
+  padding: 12px 30px;
+  font-size: 14px;
+}
+.site div.healcode.appointments .header h1 {
+  font-weight: 400;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.site div.healcode.appointments .trainer-label {
+  font-size: 16px;
+  margin: 20px 0;
+  font-weight: 400;
+}
+.site div.healcode .week_links span a {
+  background-color: #e182a8;
+  padding: 8px 30px;
+  font-size: 11px;
+}
+.site div.healcode .week_links span a:hover {
+  background-color: #d2447d;
+}
+.site div.healcode .week_links .healcode-jump-to-date input {
+  padding-left: 15px !important;
+  height: 32px;
+}
+.site div.healcode.schedule .header h1 {
+  margin-top: 0;
+}
+.site div.healcode.schedule.calendar .hc_time {
+  font-weight: 600;
+  color: #333333;
+}
+.site div.healcode.schedule.list_view .hc_availability {
+  margin-right: 6px;
+}
+.site div.healcode.schedule.list_view li.schedule_date {
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.site div.healcode.schedule.list_view div.header h1 {
+  padding-bottom: 10px;
+}

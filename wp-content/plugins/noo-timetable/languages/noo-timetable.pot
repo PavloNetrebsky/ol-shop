@@ -1,0 +1,3329 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: NOO Timetable\n"
+"POT-Creation-Date: 2019-06-11 14:50+0700\n"
+"PO-Revision-Date: 2019-06-11 14:50+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: noo-timetable.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: inc/elementor/index.php:57
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
+msgstr ""
+
+#: inc/elementor/index.php:58
+msgid "Noo Before After"
+msgstr ""
+
+#: inc/elementor/index.php:59
+msgid "Elementor"
+msgstr ""
+
+#: inc/framework/meta-boxes/class-helper.php:99
+msgid "The Link"
+msgstr ""
+
+#: inc/framework/meta-boxes/class-helper.php:108
+msgid "M4V File URL"
+msgstr ""
+
+#: inc/framework/meta-boxes/class-helper.php:109
+msgid "Place the URL to your .m4v video file here."
+msgstr ""
+
+#: inc/framework/meta-boxes/class-helper.php:114
+msgid "OGV File URL"
+msgstr ""
+
+#: inc/framework/meta-boxes/class-helper.php:115
+msgid "Place the URL to your .ogv video file here."
+msgstr ""
+
+#: inc/framework/meta-boxes/class-helper.php:120
+msgid "Video Aspect Ratio"
+msgstr ""
+
+#: inc/framework/meta-boxes/class-helper.php:121
+msgid "Choose the aspect ratio for your video."
+msgstr ""
+
+#: inc/framework/meta-boxes/class-helper.php:134
+msgid "Embedded Video Code"
+msgstr ""
+
+#: inc/framework/meta-boxes/class-helper.php:135
+msgid ""
+"If you are using something other than self hosted video (YouTube, Vimeo, "
+"etc.) paste the embed code here. This field will override the above settings."
+msgstr ""
+
+#: inc/framework/meta-boxes/class-helper.php:144
+msgid "Upload Image"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:106
+#: inc/framework/meta-boxes/generate-meta-box.php:176
+msgid "Edit Gallery"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:106
+#: inc/framework/meta-boxes/generate-meta-box.php:189
+msgid "Add Images"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:109
+msgid "Clear Gallery"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:209
+#: inc/framework/meta-boxes/generate-meta-box.php:250
+msgid "Change File"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:209
+#: inc/framework/meta-boxes/generate-meta-box.php:261
+msgid "Select File"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:212
+msgid "Clear File"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:233
+msgid "Select or Upload your File"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:235
+#: inc/framework/meta-boxes/generate-meta-box.php:306
+msgid "Select"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:279
+#: inc/framework/meta-boxes/generate-meta-box.php:332
+msgid "Change Image"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:279
+#: inc/framework/meta-boxes/generate-meta-box.php:343
+msgid "Select Image"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:282
+msgid "Clear Image"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:304
+msgid "Select or Upload your Image"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:594
+msgid "Full-Width Page"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:597
+msgid "Page With Right Sidebar"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:600
+msgid "Page With Left Sidebar"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:604
+#, php-format
+msgid ""
+"Global setting for the Layout of Single Post page is: <strong>%s</strong>"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:607
+#, php-format
+msgid "And the Sidebar is: <strong>%s</strong>"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:630
+msgid "Don't Need Menu"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:645
+msgid "No User"
+msgstr ""
+
+#: inc/framework/meta-boxes/generate-meta-box.php:673
+msgid " - No Slider - "
+msgstr ""
+
+#: inc/framework/settings/noo-setting.php:113
+msgid "Your settings have been saved."
+msgstr ""
+
+#: inc/framework/shortcodes/_init.php:81 noo-timetable.php:424
+msgid "Schedule"
+msgstr ""
+
+#: inc/framework/shortcodes/_init.php:82
+msgid "Class Schedule"
+msgstr ""
+
+#: inc/framework/shortcodes/_init.php:84
+msgid "Data List"
+msgstr ""
+
+#: inc/framework/shortcodes/_init.php:85
+msgid "Trainer List"
+msgstr ""
+
+#: inc/framework/shortcodes/_init.php:86
+msgid "Class List"
+msgstr ""
+
+#: inc/framework/shortcodes/_init.php:87
+msgid "Upcoming Class List"
+msgstr ""
+
+#: inc/framework/shortcodes/_init.php:88
+msgid "Event List"
+msgstr ""
+
+#: inc/framework/shortcodes/_init.php:89
+msgid "Upcoming Event List"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:27
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:27
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:27
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:27
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:103
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:22
+#: inc/shortcodes/builder/params/vc_link.php:35
+#: inc/widgets/event-widgets.php:218 inc/widgets/event-widgets.php:379
+msgid "Title"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:33
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:33
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:33
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:33
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:109
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:28
+msgid "Sub Title"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:40
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:40
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:40
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:40
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:35
+#: inc/shortcodes/map/map.php:78 inc/shortcodes/map/map.php:198
+#: inc/shortcodes/map/map.php:368
+msgid "Layout Style"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:43
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:43
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:43
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:43
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:38
+#: inc/functions/setting-general.php:67 inc/functions/setting-general.php:242
+#: inc/shortcodes/map/map.php:82 inc/shortcodes/map/map.php:202
+#: inc/shortcodes/map/map.php:372 inc/shortcodes/map/map.php:512
+msgid "Grid"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:44
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:44
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:44
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:44
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:39
+#: inc/functions/setting-general.php:68 inc/functions/setting-general.php:243
+#: inc/shortcodes/map/map.php:83 inc/shortcodes/map/map.php:203
+#: inc/shortcodes/map/map.php:373 inc/shortcodes/map/map.php:513
+#: inc/shortcodes/map/map.php:699 inc/shortcodes/map/map.php:714
+msgid "List"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:45
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:45
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:45
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:45
+#: inc/shortcodes/map/map.php:204 inc/shortcodes/map/map.php:374
+msgid "Slider"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:50
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:50
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:50
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:50
+#: inc/shortcodes/map/map.php:221 inc/shortcodes/map/map.php:380
+msgid "Auto Play Slider"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:53
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:53
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:53
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:53
+msgid "Auto Play Slider after 3 seconds"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:58
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:58
+#: inc/shortcodes/map/map.php:150
+msgid "Show Info"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:61
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:61
+#: inc/shortcodes/map/map.php:154
+msgid "Show Date & Time"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:62
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:62
+#: inc/shortcodes/map/map.php:155
+msgid "Only Date"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:63
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:63
+#: inc/shortcodes/map/map.php:156
+msgid "Only Time"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:64
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:64
+#: inc/shortcodes/map/map.php:157
+msgid "Hide Date & Time"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:69
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:69
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:57
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:57
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:44
+#: inc/shortcodes/map/map.php:89 inc/shortcodes/map/map.php:210
+#: inc/shortcodes/map/map.php:391
+msgid "Columns"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:76
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:76
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:64
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:64
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:51
+#: inc/legacy-import/noo-legacy-import.php:804
+msgid "Categories"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:82
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:82
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:70
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:70
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:135
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:153
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:192
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:57
+#: inc/functions/setting-schedule.php:20
+#: inc/shortcodes/builder/params/post_categories.php:28
+#: inc/shortcodes/builder/params/post_tags.php:28
+#: inc/shortcodes/map/map.php:553 inc/shortcodes/map/new_params.php:98
+#: inc/shortcodes/map/new_params.php:136
+msgid "All"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:93
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:106
+#: inc/shortcodes/map/map.php:189
+msgid "Max Number of Classes"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:99
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:112
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:87
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:101
+#: inc/shortcodes/map/map.php:176 inc/shortcodes/map/map.php:346
+msgid "Style Pagination"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:102
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:115
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:90
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:104
+#: inc/shortcodes/map/map.php:182 inc/shortcodes/map/map.php:352
+msgid "Disable pagination"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:103
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:96
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:116
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:91
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:84
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:105
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:207
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:221
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:233
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:245
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:257
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:269
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:295
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:305
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:338
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:348
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:359
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:370
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:381
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:71
+#: inc/functions/setting-general.php:283 inc/shortcodes/map/map.php:111
+#: inc/shortcodes/map/map.php:183 inc/shortcodes/map/map.php:292
+#: inc/shortcodes/map/map.php:353 inc/shortcodes/map/map.php:437
+#: inc/shortcodes/map/map.php:611 inc/shortcodes/map/map.php:624
+#: inc/shortcodes/map/map.php:755 inc/shortcodes/map/map.php:770
+#: inc/shortcodes/map/map.php:783 inc/shortcodes/map/map.php:812
+#: inc/shortcodes/map/map.php:825 inc/shortcodes/map/map.php:838
+#: inc/shortcodes/map/map.php:852 inc/shortcodes/map/map.php:865
+#: inc/shortcodes/map/map.php:892 inc/shortcodes/map/map.php:929
+#: inc/shortcodes/map/map.php:967 inc/shortcodes/map/map.php:980
+#: inc/shortcodes/map/map.php:994 inc/widgets/class-widgets.php:222
+msgid "Default"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:109
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:122
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:97
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:117
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:95
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:408
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:87
+#: inc/post-types/noo_class.php:646 inc/post-types/noo_class.php:1455
+#: inc/shortcodes/map/map.php:522 templates/shortcodes/ntt-schedule.php:870
+#: templates/shortcodes/ntt-schedule.php:877
+msgid "Class"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:112
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:125
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:100
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:120
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:411
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:90
+msgid "(Optional) Enter a unique class name."
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:117
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:130
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:105
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:125
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:416
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:95
+msgid "Save"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_coming_list.php:118
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:131
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:106
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:126
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:417
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:96
+msgid "Cancel"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:93
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:81
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:68
+#: inc/shortcodes/map/map.php:106 inc/shortcodes/map/map.php:287
+#: inc/shortcodes/map/map.php:432
+msgid "Order By"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:97
+#: inc/functions/setting-general.php:108
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:150
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:282
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:860
+#: inc/shortcodes/map/map.php:293 inc/widgets/class-widgets.php:223
+msgid "Open Date"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:98
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:72
+#: inc/shortcodes/map/map.php:112 inc/shortcodes/map/map.php:294
+#: inc/widgets/class-widgets.php:224 inc/widgets/event-widgets.php:248
+msgid "Recent First"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:99
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:73
+#: inc/shortcodes/map/map.php:113 inc/shortcodes/map/map.php:295
+#: inc/widgets/class-widgets.php:225 inc/widgets/event-widgets.php:249
+msgid "Older First"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:100
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:89
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:74
+#: inc/functions/setting-general.php:288 inc/shortcodes/map/map.php:114
+#: inc/shortcodes/map/map.php:296 inc/shortcodes/map/map.php:442
+#: inc/widgets/class-widgets.php:226 inc/widgets/event-widgets.php:250
+msgid "Title Alphabet"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_class_list.php:101
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:90
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:75
+#: inc/functions/setting-general.php:289 inc/shortcodes/map/map.php:115
+#: inc/shortcodes/map/map.php:297 inc/shortcodes/map/map.php:443
+#: inc/widgets/class-widgets.php:227 inc/widgets/event-widgets.php:251
+msgid "Title Reversed Alphabet"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_event_coming_list.php:81
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:95
+#: inc/shortcodes/map/map.php:359
+msgid "Max Number of Events"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:85
+#: inc/shortcodes/map/map.php:438
+msgid "Current Date"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:86
+#: inc/legacy-import/html-settings-output.php:70
+#: inc/legacy-import/noo-legacy-import.php:643
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:137
+#: inc/post-types/noo_event.php:712 inc/shortcodes/map/map.php:439
+msgid "Start Date"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:87
+#: inc/functions/setting-general.php:286 inc/shortcodes/map/map.php:440
+msgid "Recent Post Date First"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:88
+#: inc/functions/setting-general.php:287 inc/shortcodes/map/map.php:441
+msgid "Older Post Date First"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_event_list.php:110
+#: inc/shortcodes/map/map.php:447
+msgid "Hide Past Event"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:92
+#: inc/shortcodes/map/map.php:518
+msgid "Schedule Source"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:96
+#: inc/legacy-import/noo-legacy-import.php:642
+#: inc/post-types/noo_class.php:1458 inc/shortcodes/map/map.php:523
+#: templates/shortcodes/ntt-schedule.php:866
+#: templates/shortcodes/ntt-schedule.php:874
+msgid "Event"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:97
+#: inc/shortcodes/map/map.php:524
+msgid "Both Class and Event"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:116
+#: inc/shortcodes/map/map.php:529
+msgid "Default View"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:119
+#: inc/shortcodes/map/map.php:533
+msgid "Weekly View"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:120
+msgid "Monthly view"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:121
+msgid "Daily view"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:123
+msgid "You can select weekly, monthly and daily view."
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:129
+#: inc/shortcodes/map/map.php:169 inc/shortcodes/map/map.php:647
+msgid "Class Categories"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:147
+#: inc/post-types/noo_event.php:538 inc/post-types/noo_event.php:540
+#: inc/shortcodes/map/map.php:339 inc/shortcodes/map/map.php:540
+msgid "Event Categories"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:167
+#: inc/shortcodes/map/map.php:563
+msgid "Schedule Min Time"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:174
+#: inc/shortcodes/map/map.php:564
+msgid "Time start of Schedule (Hour), ex: 05:00:00"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:178
+#: inc/shortcodes/map/map.php:574
+msgid "Schedule Max Time"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:185
+#: inc/shortcodes/map/map.php:575
+msgid "Time end of Schedule (Hour), ex: 21:00:00"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:189
+#: inc/shortcodes/map/map.php:596
+msgid "Hide Time Ranges"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:200
+#: inc/shortcodes/map/map.php:597
+msgid ""
+"Hours selected here will be hidden from the schedule. Note that you "
+"shouldn't select hours that have classes as it will lead to wrong "
+"calculation."
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:204
+#: inc/functions/setting-schedule.php:49 inc/shortcodes/map/map.php:608
+msgid "Show Time Column"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:208
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:222
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:234
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:246
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:258
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:270
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:296
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:339
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:360
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:382
+#: inc/functions/setting-general.php:95 inc/functions/setting-general.php:270
+#: inc/functions/setting-general.php:301 inc/functions/setting-schedule.php:43
+#: inc/functions/setting-schedule.php:57 inc/functions/setting-schedule.php:85
+#: inc/functions/setting-schedule.php:99 inc/functions/setting-schedule.php:138
+#: inc/functions/setting-schedule.php:152
+#: inc/functions/setting-schedule.php:166
+#: inc/functions/setting-schedule.php:179
+#: inc/functions/setting-schedule.php:192
+#: inc/functions/setting-schedule.php:205
+#: inc/functions/setting-schedule.php:218
+#: inc/functions/setting-schedule.php:261
+#: inc/functions/setting-schedule.php:275
+#: inc/functions/setting-schedule.php:300
+#: inc/functions/setting-schedule.php:330
+#: inc/functions/setting-schedule.php:358
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:603
+#: inc/shortcodes/map/map.php:224 inc/shortcodes/map/map.php:383
+#: inc/shortcodes/map/map.php:612 inc/shortcodes/map/map.php:625
+#: inc/shortcodes/map/map.php:686 inc/shortcodes/map/map.php:727
+#: inc/shortcodes/map/map.php:740 inc/shortcodes/map/map.php:771
+#: inc/shortcodes/map/map.php:784 inc/shortcodes/map/map.php:826
+#: inc/shortcodes/map/map.php:839 inc/shortcodes/map/map.php:853
+#: inc/shortcodes/map/map.php:893 inc/shortcodes/map/map.php:905
+#: inc/shortcodes/map/map.php:944 inc/shortcodes/map/map.php:956
+#: inc/shortcodes/map/map.php:968 inc/shortcodes/map/map.php:995
+msgid "Yes"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:209
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:223
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:235
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:247
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:259
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:271
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:297
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:340
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:361
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:383
+#: inc/functions/setting-general.php:96 inc/functions/setting-general.php:271
+#: inc/functions/setting-general.php:302 inc/functions/setting-schedule.php:44
+#: inc/functions/setting-schedule.php:58 inc/functions/setting-schedule.php:86
+#: inc/functions/setting-schedule.php:100
+#: inc/functions/setting-schedule.php:139
+#: inc/functions/setting-schedule.php:153
+#: inc/functions/setting-schedule.php:167
+#: inc/functions/setting-schedule.php:180
+#: inc/functions/setting-schedule.php:193
+#: inc/functions/setting-schedule.php:206
+#: inc/functions/setting-schedule.php:219
+#: inc/functions/setting-schedule.php:260
+#: inc/functions/setting-schedule.php:274
+#: inc/functions/setting-schedule.php:301
+#: inc/functions/setting-schedule.php:329
+#: inc/functions/setting-schedule.php:359
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:605
+#: inc/shortcodes/map/map.php:225 inc/shortcodes/map/map.php:384
+#: inc/shortcodes/map/map.php:613 inc/shortcodes/map/map.php:626
+#: inc/shortcodes/map/map.php:687 inc/shortcodes/map/map.php:728
+#: inc/shortcodes/map/map.php:741 inc/shortcodes/map/map.php:772
+#: inc/shortcodes/map/map.php:785 inc/shortcodes/map/map.php:827
+#: inc/shortcodes/map/map.php:840 inc/shortcodes/map/map.php:854
+#: inc/shortcodes/map/map.php:894 inc/shortcodes/map/map.php:906
+#: inc/shortcodes/map/map.php:943 inc/shortcodes/map/map.php:955
+#: inc/shortcodes/map/map.php:969 inc/shortcodes/map/map.php:996
+msgid "No"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:211
+msgid "Show / Hide Time Column"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:218
+#: inc/functions/setting-schedule.php:35 inc/shortcodes/map/map.php:621
+msgid "Show Category Filter"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:225
+msgid "Show / Hide Filter"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:230
+#: inc/functions/setting-schedule.php:63 inc/shortcodes/map/map.php:750
+msgid "Show Weekends"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:242
+#: inc/functions/setting-schedule.php:252 inc/shortcodes/map/map.php:889
+msgid "Show Export"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:249
+msgid "Export to file iCal"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:254
+#: inc/functions/setting-schedule.php:77 inc/shortcodes/map/map.php:767
+msgid "Show Toolbar"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:261
+#: inc/functions/setting-schedule.php:78 inc/shortcodes/map/map.php:765
+msgid "Show forward and backward arrowhead on top of the schedule"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:266
+#: inc/functions/setting-schedule.php:91 inc/shortcodes/map/map.php:779
+msgid "Show Date"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:273
+#: inc/functions/setting-schedule.php:92 inc/shortcodes/map/map.php:780
+msgid "Only Weekly view"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:278
+#: inc/shortcodes/map/map.php:790
+msgid "Custom Default Date"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:284
+#: inc/functions/setting-schedule.php:105 inc/shortcodes/map/map.php:800
+msgid "Default Date"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:287
+#: inc/functions/setting-schedule.php:106 inc/shortcodes/map/map.php:801
+msgid "Leave blank to get the current time"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:292
+#: inc/functions/setting-schedule.php:130 inc/shortcodes/map/map.php:822
+msgid "Show Class/Event info in Popup"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:302
+#: inc/functions/setting-schedule.php:224 inc/shortcodes/map/map.php:862
+msgid "Popup Style"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:306
+#: inc/shortcodes/map/map.php:866
+msgid "Fade in and Scale"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:307
+#: inc/functions/setting-schedule.php:233 inc/shortcodes/map/map.php:867
+msgid "Slide in (right)"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:308
+#: inc/functions/setting-schedule.php:234 inc/shortcodes/map/map.php:868
+msgid "Slide in (bottom)"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:309
+#: inc/functions/setting-schedule.php:235 inc/shortcodes/map/map.php:869
+msgid "Newspaper"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:310
+#: inc/functions/setting-schedule.php:236 inc/shortcodes/map/map.php:870
+msgid "Fall"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:311
+#: inc/functions/setting-schedule.php:237 inc/shortcodes/map/map.php:871
+msgid "Side Fall"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:312
+#: inc/functions/setting-schedule.php:238 inc/shortcodes/map/map.php:872
+msgid "Sticky Up"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:313
+#: inc/functions/setting-schedule.php:239 inc/shortcodes/map/map.php:873
+msgid "3D Flip (horizontal)"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:314
+#: inc/functions/setting-schedule.php:240 inc/shortcodes/map/map.php:874
+msgid "3D Flip (vertical)"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:315
+#: inc/functions/setting-schedule.php:241 inc/shortcodes/map/map.php:875
+msgid "3D Sign"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:316
+#: inc/functions/setting-schedule.php:242 inc/shortcodes/map/map.php:876
+msgid "Super Scaled"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:317
+#: inc/functions/setting-schedule.php:243 inc/shortcodes/map/map.php:877
+msgid "Just Me"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:318
+#: inc/functions/setting-schedule.php:244 inc/shortcodes/map/map.php:878
+msgid "3D Slit"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:319
+#: inc/functions/setting-schedule.php:245 inc/shortcodes/map/map.php:879
+msgid "3D Rotate Bottom"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:320
+#: inc/functions/setting-schedule.php:246 inc/shortcodes/map/map.php:880
+msgid "3D Rotate In Left"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:321
+#: inc/functions/setting-schedule.php:247 inc/shortcodes/map/map.php:881
+msgid "Blur"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:327
+#: inc/shortcodes/map/map.php:585
+msgid "Schedule Height"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:330
+#: inc/shortcodes/map/map.php:586
+msgid "Input height of schedule, leave blank for auto height."
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:335
+msgid "Show Class category by its color"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:345
+#: inc/functions/setting-schedule.php:306 inc/shortcodes/map/map.php:926
+msgid "Class Item Style"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:349
+#: inc/functions/setting-schedule.php:314
+msgid "Category Color"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:350
+msgid "Background Color by Category"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:351
+#: inc/functions/setting-schedule.php:316 inc/shortcodes/map/map.php:931
+msgid "Item Background Image"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:356
+#: inc/shortcodes/map/map.php:964
+msgid "Class Show Icon"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:367
+#: inc/functions/setting-schedule.php:335 inc/shortcodes/map/map.php:977
+msgid "Event Item Style"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:371
+#: inc/functions/setting-schedule.php:343
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:111
+#: inc/shortcodes/map/map.php:981
+msgid "Background Color"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:372
+#: inc/functions/setting-schedule.php:344 inc/shortcodes/map/map.php:982
+msgid "Background Image"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:373
+#: inc/functions/setting-schedule.php:345 inc/shortcodes/map/map.php:983
+msgid "Background None"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:378
+#: inc/shortcodes/map/map.php:991
+msgid "Event Show Icon"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:389
+#: inc/functions/setting-schedule.php:364 inc/shortcodes/map/map.php:1005
+msgid "Heading Background Color"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:395
+#: inc/functions/setting-schedule.php:374 inc/shortcodes/map/map.php:1012
+msgid "Heading Text Color"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_schedule.php:401
+#: inc/functions/setting-schedule.php:384 inc/shortcodes/map/map.php:1019
+msgid "Today's background"
+msgstr ""
+
+#: inc/framework/shortcodes/noo_shortcodes_trainer_list.php:80
+#: inc/shortcodes/map/map.php:120
+msgid "Max Number of Trainers"
+msgstr ""
+
+#: inc/functions/noo-check-version.php:121
+#: inc/functions/noo-check-version.php:175
+#, php-format
+msgid "%s License"
+msgstr ""
+
+#: inc/functions/noo-check-version.php:143
+#, php-format
+msgid ""
+"License <a target=\"_blank\" href=\"%s\" style=\"\">How to get License key?</"
+"a>"
+msgstr ""
+
+#: inc/functions/noo-check-version.php:150
+msgid "License e-mail or domain address"
+msgstr ""
+
+#: inc/functions/noo-check-version.php:158
+msgid "License key"
+msgstr ""
+
+#: inc/functions/noo-check-version.php:239
+#, php-format
+msgid "Please enter your license key to enable updates to %s."
+msgstr ""
+
+#: inc/functions/noo-check-version.php:249
+msgid "Complete the setup now."
+msgstr ""
+
+#: inc/functions/setting-general.php:33 inc/post-types/noo_class.php:645
+msgid "Classes"
+msgstr ""
+
+#: inc/functions/setting-general.php:35
+msgid "The following options affect how classes are displayed on the frontend."
+msgstr ""
+
+#: inc/functions/setting-general.php:40
+msgid "Classes URL slug"
+msgstr ""
+
+#: inc/functions/setting-general.php:41
+msgid "The slug used for building the classes URL.Your current classes URL is:"
+msgstr ""
+
+#: inc/functions/setting-general.php:50
+msgid "Number of classes on a page"
+msgstr ""
+
+#: inc/functions/setting-general.php:60
+msgid "Class page layout"
+msgstr ""
+
+#: inc/functions/setting-general.php:73 inc/functions/setting-general.php:180
+#: inc/functions/setting-general.php:248
+msgid "Number of columns"
+msgstr ""
+
+#: inc/functions/setting-general.php:74 inc/functions/setting-general.php:181
+#: inc/functions/setting-general.php:249
+msgid "Number of columns shown on the grid interface (Only affect Grid Layout)"
+msgstr ""
+
+#: inc/functions/setting-general.php:80 inc/functions/setting-general.php:187
+#: inc/functions/setting-general.php:255
+msgid "One"
+msgstr ""
+
+#: inc/functions/setting-general.php:81 inc/functions/setting-general.php:188
+#: inc/functions/setting-general.php:256
+msgid "Two"
+msgstr ""
+
+#: inc/functions/setting-general.php:82 inc/functions/setting-general.php:189
+#: inc/functions/setting-general.php:257
+msgid "Three"
+msgstr ""
+
+#: inc/functions/setting-general.php:83 inc/functions/setting-general.php:190
+#: inc/functions/setting-general.php:258
+msgid "Four"
+msgstr ""
+
+#: inc/functions/setting-general.php:88
+msgid "Show Color by Class category"
+msgstr ""
+
+#: inc/functions/setting-general.php:101
+msgid "Order Classes By"
+msgstr ""
+
+#: inc/functions/setting-general.php:109
+msgid "Class Creation Date"
+msgstr ""
+
+#: inc/functions/setting-general.php:114
+msgid "Order Direction"
+msgstr ""
+
+#: inc/functions/setting-general.php:121
+msgid "Ascending"
+msgstr ""
+
+#: inc/functions/setting-general.php:122
+msgid "Descending"
+msgstr ""
+
+#: inc/functions/setting-general.php:127
+msgid "Class excerpt length"
+msgstr ""
+
+#: inc/functions/setting-general.php:140
+#: inc/legacy-import/noo-legacy-import.php:811
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:168
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:285
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:609
+#: inc/post-types/noo_trainer.php:99
+msgid "Trainers"
+msgstr ""
+
+#: inc/functions/setting-general.php:142
+msgid ""
+"The following options affect how trainers are displayed on the frontend."
+msgstr ""
+
+#: inc/functions/setting-general.php:147
+msgid "Trainers URL slug"
+msgstr ""
+
+#: inc/functions/setting-general.php:148
+msgid ""
+"The slug used for building the trainers URL.Your current trainers URL is:"
+msgstr ""
+
+#: inc/functions/setting-general.php:157
+msgid "Number of trainers on a page"
+msgstr ""
+
+#: inc/functions/setting-general.php:195
+msgid "Trainer excerpt length"
+msgstr ""
+
+#: inc/functions/setting-general.php:208 inc/post-types/noo_event.php:492
+#: inc/post-types/noo_event.php:493 inc/post-types/noo_event.php:494
+msgid "Events"
+msgstr ""
+
+#: inc/functions/setting-general.php:210
+msgid "The following options affect how events are displayed on the frontend."
+msgstr ""
+
+#: inc/functions/setting-general.php:215
+msgid "Events URL slug"
+msgstr ""
+
+#: inc/functions/setting-general.php:216
+msgid "The slug used for building the events URL.Your current events URL is:"
+msgstr ""
+
+#: inc/functions/setting-general.php:225
+msgid "Number of events on a page"
+msgstr ""
+
+#: inc/functions/setting-general.php:235
+msgid "Event page layout"
+msgstr ""
+
+#: inc/functions/setting-general.php:263
+msgid "Show Color by Event background"
+msgstr ""
+
+#: inc/functions/setting-general.php:276
+msgid "Order Events By"
+msgstr ""
+
+#: inc/functions/setting-general.php:285
+msgid "Event Date"
+msgstr ""
+
+#: inc/functions/setting-general.php:294
+msgid "Hide past events"
+msgstr ""
+
+#: inc/functions/setting-general.php:307
+msgid "Event excerpt length"
+msgstr ""
+
+#: inc/functions/setting-general.php:320 inc/functions/setting-general.php:327
+msgid "Google Maps API Key"
+msgstr ""
+
+#: inc/functions/setting-general.php:322
+msgid ""
+"To get started using the Google Maps JavaScript API, click the link below <a "
+"href=\"https://support.nootheme.com/knowledge-base/get-google-maps-api/\" "
+"target=\"_blank\">Get a key</a>"
+msgstr ""
+
+#: inc/functions/setting-general.php:328
+msgid "Input an API key so that Map on single event page can be displayed well"
+msgstr ""
+
+#: inc/functions/setting-general.php:340
+msgid "Google Maps Latitude and Longitude"
+msgstr ""
+
+#: inc/functions/setting-general.php:342
+msgid "Enter value of latitude and longitude"
+msgstr ""
+
+#: inc/functions/setting-general.php:347
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:197
+#: inc/post-types/noo_event.php:751
+msgid "Latitude"
+msgstr ""
+
+#: inc/functions/setting-general.php:348
+msgid "Default: 51.508742"
+msgstr ""
+
+#: inc/functions/setting-general.php:357
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:203
+#: inc/post-types/noo_event.php:757
+msgid "Longitude"
+msgstr ""
+
+#: inc/functions/setting-general.php:358
+msgid "Default: -0.120850"
+msgstr ""
+
+#: inc/functions/setting-general.php:367
+msgid "Zoom"
+msgstr ""
+
+#: inc/functions/setting-general.php:368
+msgid "Default: 11"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:28
+msgid "Schedule settings"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:30
+msgid "Here is default configuration of Schedule shortcode"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:50
+msgid "Only Weekly and Daily View"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:64
+msgid ""
+"Show Weekends = Select \"Saturday and Sunday\" or \"Saturday\" or \"Sunday"
+"\". Hide = \"None\"."
+msgstr ""
+
+#: inc/functions/setting-schedule.php:70
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:241
+#: inc/shortcodes/map/map.php:756
+msgid "None"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:71
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:287
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:334
+#: inc/shortcodes/map/map.php:757
+msgid "Saturday"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:72
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:288
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:328
+#: inc/shortcodes/map/map.php:758
+msgid "Sunday"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:115 inc/shortcodes/map/map.php:809
+msgid "Redirect link for Item"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:123 inc/shortcodes/map/map.php:813
+msgid "Go to Link"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:124 inc/shortcodes/map/map.php:814
+msgid "Go to Register link if available"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:125 inc/shortcodes/map/map.php:815
+msgid "Disable Link"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:144 inc/shortcodes/map/map.php:835
+msgid "Show Class level info in Popup"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:158
+msgid "Show Thumbnail in Popup"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:171
+msgid "Show Time in Popup"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:184
+msgid "Show Title in Popup"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:197
+msgid "Show Adress(Event) or Trainer(Class) in Popup"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:210 inc/shortcodes/map/map.php:849
+msgid "Show excerpt info in Popup"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:232
+msgid "Fade in & Scale"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:266 inc/shortcodes/map/map.php:901
+msgid "Show Category On Mobile"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:284
+#: inc/functions/setting-schedule.php:286 inc/shortcodes/map/map.php:583
+#: inc/shortcodes/map/map.php:923 inc/shortcodes/map/map.php:937
+#: inc/shortcodes/map/map.php:949 inc/shortcodes/map/map.php:961
+#: inc/shortcodes/map/map.php:974 inc/shortcodes/map/map.php:988
+#: inc/shortcodes/map/map.php:1001 inc/shortcodes/map/map.php:1008
+#: inc/shortcodes/map/map.php:1015 inc/shortcodes/map/map.php:1023
+msgid "Design Options"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:292
+msgid "Show Class category"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:315
+msgid "Background color by Category"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:321
+msgid "Show Class Icon"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:350
+msgid "Show Event Icon"
+msgstr ""
+
+#: inc/functions/setting-schedule.php:394
+msgid "Holiday Background Color"
+msgstr ""
+
+#: inc/functions/setting-update.php:21 inc/functions/setting-update.php:56
+msgid "CodeCanyon Purchase Code:"
+msgstr ""
+
+#: inc/functions/setting-update.php:46 inc/functions/setting-update.php:48
+msgid "Automatic Update Plugin"
+msgstr ""
+
+#: inc/functions/setting-update.php:55
+msgid "Purchase Code"
+msgstr ""
+
+#: inc/functions/setting-update.php:57
+msgid "(Optional)"
+msgstr ""
+
+#: inc/functions/setting-update.php:60
+msgid ""
+"This purchase code makes sure that our server recognizes your website thus "
+"allows you to download and install the new updates."
+msgstr ""
+
+#: inc/functions/setting-update.php:65
+#, php-format
+msgid "<a target=\"_blank\" href=\"%s\">How to get License key?</a>"
+msgstr ""
+
+#: inc/functions/template-func.php:412
+#: templates/shortcodes/ntt-class-coming.php:168
+#: templates/shortcodes/ntt-class.php:189
+msgid "Class Filter"
+msgstr ""
+
+#: inc/functions/template-func.php:417
+#: templates/shortcodes/ntt-class-coming.php:173
+#: templates/shortcodes/ntt-class.php:194
+msgid "Select Level"
+msgstr ""
+
+#: inc/functions/template-func.php:427 inc/functions/template-func.php:461
+#: inc/widgets/event-widgets.php:340
+#: templates/shortcodes/ntt-class-coming.php:183
+#: templates/shortcodes/ntt-class.php:204
+#: templates/shortcodes/ntt-event-coming.php:146
+#: templates/shortcodes/ntt-event.php:195
+msgid "Select Category"
+msgstr ""
+
+#: inc/functions/template-func.php:439
+#: templates/shortcodes/ntt-class-coming.php:199
+#: templates/shortcodes/ntt-class.php:220
+msgid "Select Trainer"
+msgstr ""
+
+#: inc/functions/template-func.php:447
+#: templates/shortcodes/ntt-class-coming.php:208
+#: templates/shortcodes/ntt-class.php:229
+msgid "Filter class by days:"
+msgstr ""
+
+#: inc/functions/template-func.php:457
+#: templates/shortcodes/ntt-event-coming.php:141
+#: templates/shortcodes/ntt-event.php:190
+msgid "Event Filter"
+msgstr ""
+
+#: inc/functions/template-func.php:472
+#: templates/shortcodes/ntt-event-coming.php:157
+#: templates/shortcodes/ntt-event.php:206
+msgid "Select Organizer"
+msgstr ""
+
+#: inc/functions/template-func.php:538
+msgid "Share on Facebook"
+msgstr ""
+
+#: inc/functions/template-func.php:547
+msgid "Share on Twitter"
+msgstr ""
+
+#: inc/functions/template-func.php:556
+msgid "Share on Google+"
+msgstr ""
+
+#: inc/functions/template-func.php:565
+msgid "Share on Pinterest"
+msgstr ""
+
+#: inc/functions/template-func.php:574
+msgid "Share on LinkedIn"
+msgstr ""
+
+#: inc/importer/noo-import.php:80
+msgid "Import Successfully!"
+msgstr ""
+
+#: inc/importer/noo-import.php:125 inc/importer/noo-import.php:134
+#: inc/importer/noo-import.php:184 inc/importer/noo-import.php:188
+#: inc/importer/noo-import.php:197
+msgid "Sorry, there has been an error."
+msgstr ""
+
+#: inc/importer/noo-import.php:126
+msgid "The file does not exist, please try again."
+msgstr ""
+
+#: inc/importer/noo-import.php:169
+msgid "All done. Have fun!"
+msgstr ""
+
+#: inc/importer/noo-import.php:189
+#, php-format
+msgid ""
+"The export file could not be found at <code>%s</code>. It is likely that "
+"this was caused by a permissions problem."
+msgstr ""
+
+#: inc/importer/noo-import.php:205
+#, php-format
+msgid ""
+"This NOO file (version %s) may not be supported by this version of the "
+"importer. Please consider updating."
+msgstr ""
+
+#: inc/importer/noo-import.php:230
+#, php-format
+msgid ""
+"Failed to import author %s. Their posts will be attributed to the current "
+"user."
+msgstr ""
+
+#: inc/importer/noo-import.php:252
+msgid "Import author:"
+msgstr ""
+
+#: inc/importer/noo-import.php:263
+msgid "or create new user with login name:"
+msgstr ""
+
+#: inc/importer/noo-import.php:266
+msgid "as a new user:"
+msgstr ""
+
+#: inc/importer/noo-import.php:274
+msgid "assign posts to an existing user:"
+msgstr ""
+
+#: inc/importer/noo-import.php:276
+msgid "or assign posts to an existing user:"
+msgstr ""
+
+#: inc/importer/noo-import.php:277 inc/legacy-import/html-class-output.php:11
+#: inc/legacy-import/html-class-output.php:24
+#: inc/legacy-import/html-event-output.php:14
+msgid "- Select -"
+msgstr ""
+
+#: inc/importer/noo-import.php:328
+#, php-format
+msgid ""
+"Failed to create new user for %s. Their posts will be attributed to the "
+"current user."
+msgstr ""
+
+#: inc/importer/noo-import.php:379
+#, php-format
+msgid "Failed to import category %s"
+msgstr ""
+
+#: inc/importer/noo-import.php:420
+#, php-format
+msgid "Failed to import post tag %s"
+msgstr ""
+
+#: inc/importer/noo-import.php:470 inc/importer/noo-import.php:612
+#, php-format
+msgid "Failed to import %s %s"
+msgstr ""
+
+#: inc/importer/noo-import.php:496
+#, php-format
+msgid "Failed to import &#8220;%s&#8221;: Invalid post type %s"
+msgstr ""
+
+#: inc/importer/noo-import.php:577
+#, php-format
+msgid "Failed to import %s &#8220;%s&#8221;"
+msgstr ""
+
+#: inc/importer/noo-import.php:743
+msgid "Menu item skipped due to missing menu slug"
+msgstr ""
+
+#: inc/importer/noo-import.php:750
+#, php-format
+msgid "Menu item skipped due to invalid menu slug: %s"
+msgstr ""
+
+#: inc/importer/noo-import.php:817
+msgid "The given object ID is not that of a menu item."
+msgstr ""
+
+#: inc/importer/noo-import.php:822
+msgid "Invalid menu ID."
+msgstr ""
+
+#: inc/importer/noo-import.php:974
+msgid "Fetching attachments is not enabled"
+msgstr ""
+
+#: inc/importer/noo-import.php:989
+msgid "Invalid file type"
+msgstr ""
+
+#: inc/importer/noo-import.php:1033
+msgid "Remote server did not respond"
+msgstr ""
+
+#: inc/importer/noo-import.php:1039
+#, php-format
+msgid "Remote server returned error response %1$d %2$s"
+msgstr ""
+
+#: inc/importer/noo-import.php:1046
+msgid "Remote file is incorrect size"
+msgstr ""
+
+#: inc/importer/noo-import.php:1051
+msgid "Zero size file downloaded"
+msgstr ""
+
+#: inc/importer/noo-import.php:1057
+#, php-format
+msgid "Remote file is too large, limit is %s"
+msgstr ""
+
+#: inc/importer/noo-import.php:1155
+msgid "Import WordPress"
+msgstr ""
+
+#: inc/importer/noo-import.php:1162
+#, php-format
+msgid ""
+"A new version of this importer is available. Please update to version %s to "
+"ensure compatibility with newer export files."
+msgstr ""
+
+#: inc/importer/noo-import.php:1177
+msgid ""
+"Howdy! Upload your WordPress eXtended RSS (NOO) file and we&#8217;ll import "
+"the posts, pages, comments, custom fields, categories, and tags into this "
+"site."
+msgstr ""
+
+#: inc/importer/noo-import.php:1178
+msgid "Choose a NOO (.xml) file to upload, then click Upload file and import."
+msgstr ""
+
+#: inc/importer/noo-import.php:1314
+msgid "Import data could not be read. Please try a different file."
+msgstr ""
+
+#: inc/importer/noo-import.php:1356
+msgid "Sidebar does not exist in theme (using Inactive)"
+msgstr ""
+
+#: inc/importer/noo-import.php:1378
+msgid "Site does not support widget"
+msgstr ""
+
+#: inc/importer/noo-import.php:1414
+msgid "Widget already exists"
+msgstr ""
+
+#: inc/importer/noo-import.php:1476
+msgid "Imported"
+msgstr ""
+
+#: inc/importer/noo-import.php:1479
+msgid "Imported to Inactive"
+msgstr ""
+
+#: inc/importer/noo-import.php:1486
+msgid "No Title"
+msgstr ""
+
+#: inc/importer/noo-settup-install.php:50
+msgid "Do you want to continue this action?"
+msgstr ""
+
+#: inc/importer/noo-settup-install.php:51
+msgid "Please waiting, not exit page."
+msgstr ""
+
+#: inc/importer/noo-settup-install.php:63
+msgid "Timetable"
+msgstr ""
+
+#: inc/importer/noo-settup-install.php:73
+#: inc/importer/noo-settup-install.php:75 noo-timetable.php:417
+msgid "Settings"
+msgstr ""
+
+#: inc/importer/noo-settup-install.php:83
+msgid "Import Post"
+msgstr ""
+
+#: inc/importer/noo-settup-install.php:88
+msgid "Import Nav Menu"
+msgstr ""
+
+#: inc/importer/noo-settup-install.php:93
+msgid "Import Comment"
+msgstr ""
+
+#: inc/importer/noo-settup-install.php:98
+msgid "One Click to Install Demo"
+msgstr ""
+
+#: inc/importer/noo-settup-install.php:110
+msgid "Install "
+msgstr ""
+
+#: inc/importer/noo-settup-install.php:119
+msgid "Install Demo"
+msgstr ""
+
+#: inc/importer/parsers.php:49 inc/importer/parsers.php:96
+#: inc/importer/parsers.php:104
+msgid "There was an error when reading this NOO file"
+msgstr ""
+
+#: inc/importer/parsers.php:50
+msgid ""
+"Details are shown above. The importer will now try again with a different "
+"parser..."
+msgstr ""
+
+#: inc/importer/parsers.php:108 inc/importer/parsers.php:113
+#: inc/importer/parsers.php:308 inc/importer/parsers.php:501
+msgid ""
+"This does not appear to be a NOO file, missing/invalid NOO version number"
+msgstr ""
+
+#: inc/legacy-import/html-class-output.php:7
+#: inc/legacy-import/html-event-output.php:10
+msgid "Set Category"
+msgstr ""
+
+#: inc/legacy-import/html-class-output.php:20
+msgid "Set Trainers"
+msgstr ""
+
+#: inc/legacy-import/html-event-output.php:23
+msgid "Set Color"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:5
+msgid "Sync & Import Classes"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:9
+msgid "Sync & Import Events"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:15
+msgid "Successfully executed."
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:17
+msgid "Recurring Import saved."
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:25
+msgid "Import Type"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:30
+msgid "Select Type"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:33
+msgid "One-Time Import"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:40
+#: inc/legacy-import/noo-legacy-import.php:900
+msgid "Recurring"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:50
+msgid "Import Source"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:55
+msgid "iCal URL"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:58
+msgid ".ics File"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:61
+msgid "Click to choose"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:62
+msgid "example.com/ical-url"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:67
+#: inc/legacy-import/noo-legacy-import.php:542
+msgid "Import Start"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:83
+msgid "Preview"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:84
+msgid "Import All"
+msgstr ""
+
+#: inc/legacy-import/html-settings-output.php:85
+msgid "Save Recurring"
+msgstr ""
+
+#: inc/legacy-import/iCal_Parser.php:70
+msgid "No iCal data was found at this URL."
+msgstr ""
+
+#: inc/legacy-import/iCal_Parser.php:72
+msgid "Not a valid .ics file"
+msgstr ""
+
+#: inc/legacy-import/iCal_Parser.php:123
+msgid "Unable to retrieve content from the provided URL."
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:149
+#: inc/legacy-import/noo-legacy-import.php:151
+msgid "Sync & Import"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:170
+msgid "You are not allowed to run cron events."
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:202
+msgid "You currently have no scheduled cron events."
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:231
+#, php-format
+msgid "%s year"
+msgid_plural "%s years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/legacy-import/noo-legacy-import.php:232
+#, php-format
+msgid "%s month"
+msgid_plural "%s months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/legacy-import/noo-legacy-import.php:233
+#, php-format
+msgid "%s week"
+msgid_plural "%s weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/legacy-import/noo-legacy-import.php:234
+#, php-format
+msgid "%s day"
+msgid_plural "%s days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/legacy-import/noo-legacy-import.php:235
+#, php-format
+msgid "%s hour"
+msgid_plural "%s hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/legacy-import/noo-legacy-import.php:236
+#, php-format
+msgid "%s minute"
+msgid_plural "%s minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/legacy-import/noo-legacy-import.php:237
+#, php-format
+msgid "%s second"
+msgid_plural "%s seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/legacy-import/noo-legacy-import.php:241
+msgid "now"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:295
+msgid "Every 30 minutes"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:299
+msgid "Once Weekly"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:303
+msgid "Once Monthly"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:312
+msgid "Every 30 Minutes"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:313
+msgid "Hourly"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:314
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:268
+msgid "Daily"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:315
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:269
+msgid "Weekly"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:316
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:270
+msgid "Monthly"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:536
+msgid "Saved Recurring Imports"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:541
+#: inc/legacy-import/noo-legacy-import.php:779
+msgid "Domain"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:543
+msgid "Create Date"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:544
+msgid "Next Run"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:545
+msgid "Recurrence"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:546
+msgid "Action"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:598
+msgid "Run Now"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:607
+#: inc/legacy-import/noo-legacy-import.php:698 inc/post-types/noo_class.php:649
+#: inc/post-types/noo_trainer.php:103
+msgid "Edit"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:615
+msgid "No data."
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:644
+#: templates/shortcodes/ntt-schedule.php:418
+msgid "Time"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:655
+msgid "All day"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:672
+msgid "No events."
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:693
+msgid "Recurring Imports"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:694
+msgid "Recurring Import"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:695
+msgctxt "Admin menu name"
+msgid "Recurring Imports"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:696
+msgid "Add Recurring Import"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:697
+msgid "Add New Recurring Import"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:699
+msgid "Edit Recurring Import"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:700
+msgid "New Recurring Import"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:701
+#: inc/legacy-import/noo-legacy-import.php:702
+msgid "View Recurring Import"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:703
+msgid "Search Recurring Imports"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:704
+msgid "No Recurring Imports found"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:705
+msgid "No Recurring Imports found in trash"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:706
+msgid "Parent Recurring Import"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:707
+msgid "Recurring Import Image"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:708
+msgid "Set Recurring Import image"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:709
+msgid "Remove Recurring Import image"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:710
+msgid "Use as Recurring Import image"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:711
+msgid "Insert into Recurring Import"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:712
+msgid "Uploaded to this Recurring Import"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:713
+msgid "Filter Recurring Imports"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:714
+msgid "Recurring Imports navigation"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:715
+msgid "Recurring Imports list"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:717
+msgid "This is where you can add new recurring import."
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:763
+msgid "Recurring Import Settings"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:767
+msgid "Post Type"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:773
+msgid "Initiated"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:785
+#: inc/shortcodes/builder/params/vc_link.php:36
+msgid "URL"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:791
+msgid "Frequency"
+msgstr ""
+
+#: inc/legacy-import/noo-legacy-import.php:798
+msgid "Start"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:48
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:73
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:120
+msgid "Color"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:145
+msgid "Class Settings"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:146
+msgid ""
+"Enter the opening date for the class, it will be shown out a timetable based "
+"on the number of weeks that you enter."
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:156
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:283
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:607
+#: inc/post-types/noo_class.php:1976 inc/post-types/noo_class.php:2167
+msgid "Open Time"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:162
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:284
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:608
+#: inc/post-types/noo_class.php:1977 inc/post-types/noo_class.php:2168
+msgid "Close Time"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:175
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:286
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:610
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:192
+#: inc/post-types/noo_class.php:1983 inc/post-types/noo_class.php:2174
+#: inc/post-types/noo_event.php:747
+msgid "Address"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:180
+msgid "Set Dates Manually"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:185
+msgid "Add your date"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:192
+msgid "Number of Weeks"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:197
+msgid "Days of Week"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:204
+msgid "Use Advanced Weekly Schedule"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:209
+msgid "Advanced Schedule"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:219
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:213
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:217
+msgid "Register Link"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:221
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:219
+msgid "Use this if you want to link the registration somewhere."
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:244
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:558
+msgid "Select Trainer&hellip;"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:275
+msgid "Include first settings"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:313
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:345
+msgid "Default is the general Open Date"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:317
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:349
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:629
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:657
+msgid "Default is the general Open Time"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:321
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:353
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:633
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:661
+msgid "Default is the general Close Time"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:861
+msgid "Number Days"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:862
+#: inc/post-types/noo_class.php:726 inc/post-types/noo_class.php:1980
+#: inc/post-types/noo_class.php:2171 inc/post-types/noo_trainer.php:100
+msgid "Trainer"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/class-meta-boxes.php:887
+msgid "Y/m/d"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:45
+#: inc/post-types/noo_event.php:633
+msgid "Information"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:50
+#: inc/post-types/noo_event.php:638
+msgid "Author"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:55
+#: inc/post-types/noo_event.php:643
+msgid "Avatar"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:61
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:67
+#: inc/post-types/noo_event.php:649 templates/single-noo_trainer.php:80
+msgid "Phone"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:66
+#: inc/post-types/noo_event.php:654
+msgid "Website"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:71
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:62
+#: inc/post-types/noo_event.php:659 templates/single-noo_trainer.php:77
+msgid "Email"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:76
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:52
+#: inc/post-types/noo_event.php:664 templates/single-noo_trainer.php:71
+msgid "Position"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:93
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:98
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:557
+#: inc/post-types/noo_event.php:581 inc/post-types/noo_event.php:583
+#: inc/post-types/noo_event.php:690 inc/post-types/noo_event.php:2883
+msgid "Organizers"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:133
+msgid "Date Time Setting"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:143
+msgid "Start Time"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:149
+#: inc/post-types/noo_event.php:718
+msgid "End Date"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:155
+msgid "End Time"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:161
+msgid "Recurrence Rules"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:183
+#: inc/post-types/noo_event.php:2889
+msgid "Location"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:240
+msgid ""
+"You can not change this field while configuring Recurrence Rule is Custom"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:242
+msgid "Every Day"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:243
+msgid "Every Week"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:244
+msgid "Every Month"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:245
+msgid "Every Year"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:247
+msgid "Custom"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:251
+msgid "End repeat"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:254
+msgid "After"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:255
+msgid "On Date"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:257
+msgid "Event(s)"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:266
+msgid "Frequency: "
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:268
+msgid "day(s)"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:269
+msgid "week(s) on:"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:270
+msgid "month(s)"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:271
+msgid "year(s) in:"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:271
+msgid "Yearly"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:274
+msgid "Every"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:282
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:329
+msgid "Monday"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:283
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:330
+msgid "Tuesday"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:284
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:331
+msgid "Wednesday"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:285
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:332
+msgid "Thursday"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:286
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:333
+msgid "Friday"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:293
+msgid "Each"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:301
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:313
+msgid "On the"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:319
+msgid "First"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:320
+msgid "Second"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:321
+msgid "Third"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:322
+msgid "Fourth"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:323
+msgid "Fifth"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:325
+msgid "Last"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:336
+#: inc/post-types/noo_event.php:1373
+msgid "Day"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:337
+#: inc/post-types/noo_event.php:1371
+msgid "Weekday"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:338
+msgid "Weekend day"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:490
+#: inc/post-types/noo_event.php:834
+msgid "Search your map"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:558
+msgid "Featured?"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:559
+msgid "Event Start Date"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:560
+msgid "Event Current Date"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/event-meta-boxes.php:601
+msgid "Toggle featured"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:37
+msgid "Trainer Class Category"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:48
+msgid "Trainer Information"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:57
+#: templates/single-noo_trainer.php:74
+msgid "Experience"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:72
+#: templates/single-noo_trainer.php:83
+msgid "Biography"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:77
+msgid "Skill"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:89
+msgid "Trainer Social Information"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:93
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:98
+msgid "Google URL"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:103
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:108
+msgid "Pinterest URL"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:164
+msgid "Label"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:165
+msgid "Value"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:248
+msgid "Thumbnail"
+msgstr ""
+
+#: inc/post-types/add-meta-boxes/trainer-meta-boxes.php:250
+#: inc/post-types/noo_class.php:674
+msgid "Class Category"
+msgstr ""
+
+#: inc/post-types/noo_class.php:280
+msgid "Holidays on Class Schedule"
+msgstr ""
+
+#: inc/post-types/noo_class.php:286
+msgid "Classes on the schedule will be hidden if the fall into the below days."
+msgstr ""
+
+#: inc/post-types/noo_class.php:287
+msgid ""
+"If your holiday is on a particular date, please only select Start Date and "
+"leave End Day Empty"
+msgstr ""
+
+#: inc/post-types/noo_class.php:288
+msgid ""
+"If your holiday lasts more than one day, please select both Start Day and "
+"End Day"
+msgstr ""
+
+#: inc/post-types/noo_class.php:296
+msgid "Select Start Day"
+msgstr ""
+
+#: inc/post-types/noo_class.php:297
+msgid "Select End Day"
+msgstr ""
+
+#: inc/post-types/noo_class.php:298
+msgid "Description"
+msgstr ""
+
+#: inc/post-types/noo_class.php:299
+msgid "Select Classes In Holiday"
+msgstr ""
+
+#: inc/post-types/noo_class.php:647
+msgid "Add New Class"
+msgstr ""
+
+#: inc/post-types/noo_class.php:648
+msgid "Add Class"
+msgstr ""
+
+#: inc/post-types/noo_class.php:650
+msgid "Edit Class"
+msgstr ""
+
+#: inc/post-types/noo_class.php:651
+msgid "New Class"
+msgstr ""
+
+#: inc/post-types/noo_class.php:652 inc/post-types/noo_trainer.php:106
+msgid "View"
+msgstr ""
+
+#: inc/post-types/noo_class.php:653
+msgid "View Class"
+msgstr ""
+
+#: inc/post-types/noo_class.php:654
+msgid "Search Class"
+msgstr ""
+
+#: inc/post-types/noo_class.php:655
+msgid "No Classes found"
+msgstr ""
+
+#: inc/post-types/noo_class.php:656
+msgid "No Classes found in Trash"
+msgstr ""
+
+#: inc/post-types/noo_class.php:657
+msgid "Parent Class"
+msgstr ""
+
+#: inc/post-types/noo_class.php:675
+msgid "Add New Class Category"
+msgstr ""
+
+#: inc/post-types/noo_class.php:676
+msgid "New Class Category"
+msgstr ""
+
+#: inc/post-types/noo_class.php:689
+msgid "Class Level"
+msgstr ""
+
+#: inc/post-types/noo_class.php:690
+msgid "Add New Class Level"
+msgstr ""
+
+#: inc/post-types/noo_class.php:691
+msgid "New Class Level"
+msgstr ""
+
+#: inc/post-types/noo_class.php:1190
+msgid "not trainer yet"
+msgstr ""
+
+#: inc/post-types/noo_class.php:1563 inc/post-types/noo_class.php:2312
+msgid " "
+msgstr ""
+
+#: inc/post-types/noo_class.php:1831
+msgid "Number of Week"
+msgstr ""
+
+#: inc/post-types/noo_class.php:1834 templates/content-class.php:86
+msgid "Open:"
+msgstr ""
+
+#: inc/post-types/noo_class.php:1837 templates/content-class.php:95
+msgid "Next:"
+msgstr ""
+
+#: inc/post-types/noo_class.php:1854
+msgid "Days"
+msgstr ""
+
+#: inc/post-types/noo_class.php:1869 templates/content-class.php:108
+msgid "Multiple time"
+msgstr ""
+
+#: inc/post-types/noo_class.php:1873 inc/post-types/noo_event.php:2877
+msgid "Register Now"
+msgstr ""
+
+#: inc/post-types/noo_class.php:1901 inc/post-types/noo_class.php:1924
+#: templates/content-trainer.php:31 templates/content-trainer.php:67
+#, php-format
+msgid "Post by %s"
+msgstr ""
+
+#: inc/post-types/noo_class.php:1925 templates/content-trainer.php:68
+msgid "View Profile"
+msgstr ""
+
+#: inc/post-types/noo_class.php:1943
+msgid "Class Information"
+msgstr ""
+
+#: inc/post-types/noo_class.php:1949
+msgid "Class Trainer"
+msgstr ""
+
+#: inc/post-types/noo_class.php:1967 inc/post-types/noo_class.php:2158
+msgid "Class Timetable"
+msgstr ""
+
+#: inc/post-types/noo_class.php:2116
+msgid "with "
+msgstr ""
+
+#: inc/post-types/noo_class.php:2132 inc/post-types/noo_class.php:2313
+#: templates/shortcodes/ntt-schedule.php:429
+#: templates/shortcodes/ntt-schedule.php:492
+msgid "at"
+msgstr ""
+
+#: inc/post-types/noo_class.php:2234
+msgid "not available"
+msgstr ""
+
+#: inc/post-types/noo_event.php:495
+msgid "Add New Event"
+msgstr ""
+
+#: inc/post-types/noo_event.php:496 inc/post-types/noo_event.php:498
+msgid "Add New Event Item"
+msgstr ""
+
+#: inc/post-types/noo_event.php:497
+msgid "Edit Event Item"
+msgstr ""
+
+#: inc/post-types/noo_event.php:499
+msgid "View Event"
+msgstr ""
+
+#: inc/post-types/noo_event.php:500
+msgid "Search Event"
+msgstr ""
+
+#: inc/post-types/noo_event.php:501
+msgid "No Event items found"
+msgstr ""
+
+#: inc/post-types/noo_event.php:502
+msgid "No Event items found in trash"
+msgstr ""
+
+#: inc/post-types/noo_event.php:539 inc/widgets/event-widgets.php:224
+msgid "Event Category"
+msgstr ""
+
+#: inc/post-types/noo_event.php:541
+msgid "All Event Categories"
+msgstr ""
+
+#: inc/post-types/noo_event.php:542
+msgid "Edit Event Category"
+msgstr ""
+
+#: inc/post-types/noo_event.php:543
+msgid "View Event Category"
+msgstr ""
+
+#: inc/post-types/noo_event.php:544
+msgid "Update Event Category"
+msgstr ""
+
+#: inc/post-types/noo_event.php:545
+msgid "Add New Event Category"
+msgstr ""
+
+#: inc/post-types/noo_event.php:546
+msgid "New Event Category Name"
+msgstr ""
+
+#: inc/post-types/noo_event.php:547
+msgid "Parent Event Category"
+msgstr ""
+
+#: inc/post-types/noo_event.php:548
+msgid "Parent Event Category:"
+msgstr ""
+
+#: inc/post-types/noo_event.php:549
+msgid "Search Event Categories"
+msgstr ""
+
+#: inc/post-types/noo_event.php:550
+msgid "Popular Event Categories"
+msgstr ""
+
+#: inc/post-types/noo_event.php:551
+msgid "Separate Event Categories with commas"
+msgstr ""
+
+#: inc/post-types/noo_event.php:552
+msgid "Add or remove Event Categories"
+msgstr ""
+
+#: inc/post-types/noo_event.php:553
+msgid "Choose from the most used Event Categories"
+msgstr ""
+
+#: inc/post-types/noo_event.php:554
+msgid "No Event Categories found"
+msgstr ""
+
+#: inc/post-types/noo_event.php:582
+msgid "Organizer"
+msgstr ""
+
+#: inc/post-types/noo_event.php:584
+msgid "Add New Organizer"
+msgstr ""
+
+#: inc/post-types/noo_event.php:585 inc/post-types/noo_event.php:587
+msgid "Add New Organizer Item"
+msgstr ""
+
+#: inc/post-types/noo_event.php:586
+msgid "Edit Organizer Item"
+msgstr ""
+
+#: inc/post-types/noo_event.php:588
+msgid "View Organizer"
+msgstr ""
+
+#: inc/post-types/noo_event.php:589
+msgid "Search Organizer"
+msgstr ""
+
+#: inc/post-types/noo_event.php:590
+msgid "No Organizer items found"
+msgstr ""
+
+#: inc/post-types/noo_event.php:591
+msgid "No Organizer items found in trash"
+msgstr ""
+
+#: inc/post-types/noo_event.php:685
+msgid "ORGANIZERS"
+msgstr ""
+
+#: inc/post-types/noo_event.php:708
+msgid "TIME & DATE"
+msgstr ""
+
+#: inc/post-types/noo_event.php:738
+msgid "LOCATION"
+msgstr ""
+
+#: inc/post-types/noo_event.php:908
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: inc/post-types/noo_event.php:912
+msgid "You have taken too long. Please go back and retry."
+msgstr ""
+
+#: inc/post-types/noo_event.php:1157
+#, php-format
+msgid "We found %s available events for you"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1202
+msgid "Read More"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1216
+msgid "Not Found"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1218
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#: inc/post-types/noo_event.php:1366
+msgid "and"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1369
+msgid "Weekend Day"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1409
+msgid "last"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1453
+#, php-format
+msgid "Repeats Every %s Days"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1460
+#, php-format
+msgid "Repeats Every %s Week on %s"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1465
+#, php-format
+msgid "Repeats Every %s Week"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1473
+#, php-format
+msgid "Repeats Every %s Month on the %s"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1480
+#, php-format
+msgid "Repeats Every %s Month on the %s %s"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1486
+#, php-format
+msgid "Repeats Every %s Month"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1497
+#, php-format
+msgid "Repeats Every %s Year on the %s %s of %s"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1504
+#, php-format
+msgid "Repeats Every %s Year in %s"
+msgstr ""
+
+#: inc/post-types/noo_event.php:1510
+#, php-format
+msgid "Repeats Every %s Year"
+msgstr ""
+
+#: inc/post-types/noo_event.php:2588
+msgid "all-day"
+msgstr ""
+
+#: inc/post-types/noo_event.php:2609
+msgid "No event for the week!"
+msgstr ""
+
+#: inc/post-types/noo_event.php:2755
+msgid "Call Phone"
+msgstr ""
+
+#: inc/post-types/noo_event.php:2767
+msgid "Mail To"
+msgstr ""
+
+#: inc/post-types/noo_event.php:2779
+msgid "Visit website"
+msgstr ""
+
+#: inc/post-types/noo_event.php:2831
+msgid "Start on"
+msgstr ""
+
+#: inc/post-types/noo_event.php:2845
+msgid "Event Information"
+msgstr ""
+
+#: inc/post-types/noo_event.php:2855
+msgid "Event occurred on:"
+msgstr ""
+
+#: inc/post-types/noo_event.php:2867
+msgid "More"
+msgstr ""
+
+#: inc/post-types/noo_event.php:2868
+msgid "Less"
+msgstr ""
+
+#: inc/post-types/noo_trainer.php:101
+msgid "Add New Trainer"
+msgstr ""
+
+#: inc/post-types/noo_trainer.php:102
+msgid "Add Trainer"
+msgstr ""
+
+#: inc/post-types/noo_trainer.php:104
+msgid "Edit Trainer"
+msgstr ""
+
+#: inc/post-types/noo_trainer.php:105
+msgid "New Trainer"
+msgstr ""
+
+#: inc/post-types/noo_trainer.php:107
+msgid "View Trainer"
+msgstr ""
+
+#: inc/post-types/noo_trainer.php:108
+msgid "Search Trainer"
+msgstr ""
+
+#: inc/post-types/noo_trainer.php:109
+msgid "No Trainers found"
+msgstr ""
+
+#: inc/post-types/noo_trainer.php:110
+msgid "No Trainers found in Trash"
+msgstr ""
+
+#: inc/post-types/noo_trainer.php:111
+msgid "Parent Trainer"
+msgstr ""
+
+#: inc/shortcodes/builder/functions/class-nselements.php:39
+#, php-format
+msgid "Wrong name for shortcode:%s. Name required"
+msgstr ""
+
+#: inc/shortcodes/builder/functions/class-nselements.php:41
+#, php-format
+msgid "Wrong base for shortcode:%s. Base required"
+msgstr ""
+
+#: inc/shortcodes/builder/functions/class-nselements.php:77
+msgid "Wrong ns_map object. Base attribute is required"
+msgstr ""
+
+#: inc/shortcodes/builder/params/attach_images.php:34
+msgid "Add images"
+msgstr ""
+
+#: inc/shortcodes/builder/params/attach_images.php:34
+msgid "Add image"
+msgstr ""
+
+#: inc/shortcodes/builder/params/google_fonts.php:27
+msgid "Font Family"
+msgstr ""
+
+#: inc/shortcodes/builder/params/google_fonts.php:31
+msgid "- Select Font -"
+msgstr ""
+
+#: inc/shortcodes/builder/params/google_fonts.php:45
+msgid "Font style"
+msgstr ""
+
+#: inc/shortcodes/builder/params/iconpicker.php:58
+msgid "From all categories"
+msgstr ""
+
+#: inc/shortcodes/builder/params/iconpicker.php:62
+msgid "Uncategorized"
+msgstr ""
+
+#: inc/shortcodes/builder/params/vc_link.php:33
+msgid "Insert link"
+msgstr ""
+
+#: inc/shortcodes/builder/templates/builder.php:24
+msgid "Close"
+msgstr ""
+
+#: inc/shortcodes/builder/templates/builder.php:25
+msgid "Save changes"
+msgstr ""
+
+#: inc/shortcodes/builder/templates/form.php:38
+msgid "General"
+msgstr ""
+
+#: inc/shortcodes/builder/templates/shortcode-list.php:15
+msgid "Insert shortcode"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:17
+msgid "By NooTimetable"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:23
+msgid "Noo Trainer"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:32 inc/shortcodes/map/map.php:136
+#: inc/shortcodes/map/map.php:324 inc/shortcodes/map/map.php:493
+msgid "Title (optional)"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:41
+msgid "Control Bar Background"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:46
+msgid "Control Bar Setting"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:51 inc/shortcodes/map/map.php:61
+#: inc/shortcodes/map/map.php:67 inc/shortcodes/map/map.php:143
+#: inc/shortcodes/map/map.php:331 inc/shortcodes/map/map.php:501
+msgid "Sub Title (optional)"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:99
+msgid "Trainer Categories"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:162
+msgid "Hide classes are going on"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:206 inc/shortcodes/map/map.php:217
+#: inc/shortcodes/map/map.php:228 inc/shortcodes/map/map.php:240
+#: inc/shortcodes/map/map.php:252 inc/shortcodes/map/map.php:264
+#: inc/shortcodes/map/map.php:276 inc/shortcodes/map/map.php:376
+#: inc/shortcodes/map/map.php:387 inc/shortcodes/map/map.php:398
+#: inc/shortcodes/map/map.php:410 inc/shortcodes/map/map.php:422
+msgid "Layout & Filter Setting"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:232 inc/shortcodes/map/map.php:402
+msgid "Filter by Level"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:244
+msgid "Filter by Cat"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:256
+msgid "Filter by Trainer"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:268
+msgid "Filter by Day"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:301
+msgid "Noo Class"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:313
+msgid "Noo Upcoming Class"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:414
+msgid "Filter by Organizer"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:453
+msgid "Noo Event"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:468
+msgid "Noo Upcoming Event"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:484
+msgid "Noo Schedule"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:508
+msgid "Schedule Layout"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:534
+msgid "Monthly View"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:535
+msgid "Daily View"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:548
+msgid "Number Item Displayed"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:554
+msgid "2 items"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:555
+msgid "3 items"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:556
+msgid "4 items"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:561 inc/shortcodes/map/map.php:572
+#: inc/shortcodes/map/map.php:594 inc/shortcodes/map/map.php:605
+msgid "Time Options"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:618 inc/shortcodes/map/map.php:634
+#: inc/shortcodes/map/map.php:648 inc/shortcodes/map/map.php:659
+#: inc/shortcodes/map/map.php:680 inc/shortcodes/map/map.php:693
+#: inc/shortcodes/map/map.php:708 inc/shortcodes/map/map.php:720
+#: inc/shortcodes/map/map.php:733 inc/shortcodes/map/map.php:748
+#: inc/shortcodes/map/map.php:762 inc/shortcodes/map/map.php:776
+#: inc/shortcodes/map/map.php:789 inc/shortcodes/map/map.php:796
+#: inc/shortcodes/map/map.php:806 inc/shortcodes/map/map.php:819
+#: inc/shortcodes/map/map.php:832 inc/shortcodes/map/map.php:846
+#: inc/shortcodes/map/map.php:859 inc/shortcodes/map/map.php:886
+#: inc/shortcodes/map/map.php:898
+msgid "Extend Options"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:637
+msgid "Filter Type"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:640
+msgid "Category"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:642
+msgid "Level"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:658
+msgid "Class Levels"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:683
+msgid "Show Filter"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:696 inc/shortcodes/map/map.php:711
+msgid "Filter Layout"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:700 inc/shortcodes/map/map.php:715
+msgid "Dropdown"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:723 inc/shortcodes/map/map.php:736
+msgid "Show All Tab"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:752
+msgid ""
+"Show Weekends = Select \"Saturday and Sunday\" or \"Saturday\" or \"Sunday"
+"\". Hide = \"None\""
+msgstr ""
+
+#: inc/shortcodes/map/map.php:930
+msgid "Category Background Color"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:932
+msgid "Item Background Color"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:940
+msgid "Show Teacher Of Class"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:952
+msgid "Show Address Of Class"
+msgstr ""
+
+#: inc/shortcodes/map/map.php:1027
+msgid "Holiday background"
+msgstr ""
+
+#: inc/widgets/_init.php:36
+msgid "Class Sidebar"
+msgstr ""
+
+#: inc/widgets/_init.php:38
+msgid "Recommend use in Class page."
+msgstr ""
+
+#: inc/widgets/_init.php:60
+msgid "Event Sidebar"
+msgstr ""
+
+#: inc/widgets/_init.php:62
+msgid "Recommend use in Event page."
+msgstr ""
+
+#: inc/widgets/_init.php:84
+msgid "Trainer Sidebar"
+msgstr ""
+
+#: inc/widgets/_init.php:86
+msgid "Recommend use in Trainer page."
+msgstr ""
+
+#: inc/widgets/class-widgets.php:27
+msgid "Noo Timetable: Popular Class Slider"
+msgstr ""
+
+#: inc/widgets/class-widgets.php:30
+msgid "Slider to show popular class"
+msgstr ""
+
+#: inc/widgets/class-widgets.php:200 inc/widgets/class-widgets.php:394
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/class-widgets.php:204 inc/widgets/class-widgets.php:398
+msgid "Class Category:"
+msgstr ""
+
+#: inc/widgets/class-widgets.php:206 inc/widgets/class-widgets.php:400
+#: inc/widgets/event-widgets.php:226
+msgid "All Categories"
+msgstr ""
+
+#: inc/widgets/class-widgets.php:220
+msgid "Order By:"
+msgstr ""
+
+#: inc/widgets/class-widgets.php:231 inc/widgets/class-widgets.php:413
+msgid "Number of classes to show:"
+msgstr ""
+
+#: inc/widgets/class-widgets.php:235 inc/widgets/class-widgets.php:417
+msgid "Display Trainer?"
+msgstr ""
+
+#: inc/widgets/class-widgets.php:238 inc/widgets/class-widgets.php:420
+msgid "Auto Play Slider?"
+msgstr ""
+
+#: inc/widgets/class-widgets.php:257
+msgid "Noo Timetable: Upcoming Class Slider"
+msgstr ""
+
+#: inc/widgets/class-widgets.php:260
+msgid "Slider to show upcoming class"
+msgstr ""
+
+#: inc/widgets/event-widgets.php:27 inc/widgets/event-widgets.php:31
+msgid "Noo Timetable: Event Slider"
+msgstr ""
+
+#: inc/widgets/event-widgets.php:240
+msgid "Number of posts to show:"
+msgstr ""
+
+#: inc/widgets/event-widgets.php:245
+msgid "Orderby"
+msgstr ""
+
+#: inc/widgets/event-widgets.php:252
+msgid "Featured"
+msgstr ""
+
+#: inc/widgets/event-widgets.php:253
+msgid "Random"
+msgstr ""
+
+#: inc/widgets/event-widgets.php:275
+msgid "Noo Timetable: Event Info"
+msgstr ""
+
+#: inc/widgets/event-widgets.php:279
+msgid "Noo Event Filters"
+msgstr ""
+
+#: inc/widgets/event-widgets.php:318
+msgid "Search"
+msgstr ""
+
+#: inc/widgets/event-widgets.php:326
+msgid "Select calendar"
+msgstr ""
+
+#: inc/widgets/event-widgets.php:387
+msgid "Show box calendar"
+msgstr ""
+
+#: inc/widgets/event-widgets.php:394
+msgid "Show box search"
+msgstr ""
+
+#: inc/widgets/event-widgets.php:401
+msgid "Show box category"
+msgstr ""
+
+#: noo-timetable.php:410
+msgid "NooTimetable"
+msgstr ""
+
+#: noo-timetable.php:417
+msgid "NooTimetable Settings"
+msgstr ""
+
+#: noo-timetable.php:424 noo-timetable.php:431 noo-timetable.php:438
+msgid "NooTimetable Schedule"
+msgstr ""
+
+#: noo-timetable.php:431
+msgid "Automatic Update"
+msgstr ""
+
+#: noo-timetable.php:438
+msgid "Import Demo"
+msgstr ""
+
+#: templates/content-class.php:57 templates/content-event.php:46
+#, php-format
+msgid "Permanent link to: \"%s\""
+msgstr ""
+
+#: templates/content-class.php:135 templates/content-event.php:65
+msgid "Learn More"
+msgstr ""
+
+#: templates/content-none.php:17
+msgid "Not found"
+msgstr ""
+
+#: templates/pagination.php:18
+msgid "Previous page"
+msgstr ""
+
+#: templates/pagination.php:19
+msgid "Next page"
+msgstr ""
+
+#: templates/pagination.php:20
+msgid "Page"
+msgstr ""
+
+#: templates/shortcodes/ntt-schedule.php:325
+#: templates/shortcodes/ntt-schedule.php:350
+#: templates/shortcodes/ntt-schedule.php:843
+msgid "All Category"
+msgstr ""
+
+#: templates/shortcodes/ntt-schedule.php:372
+msgid "Export"
+msgstr ""
+
+#: templates/shortcodes/ntt-schedule.php:424
+msgid "more"
+msgstr ""
+
+#: templates/shortcodes/ntt-schedule.php:431
+#: templates/shortcodes/ntt-schedule.php:494
+msgid "with"
+msgstr ""
+
+#: templates/shortcodes/ntt-schedule.php:433
+#: templates/shortcodes/ntt-schedule.php:496
+msgid "level"
+msgstr ""
+
+#: templates/shortcodes/ntt-schedule.php:797
+msgid "ical-class-chedule"
+msgstr ""
+
+#: templates/shortcodes/ntt-schedule.php:1035
+msgid "Register"
+msgstr ""
+
+#: templates/single-noo_class.php:41
+msgid "Category:"
+msgstr ""
+
+#: templates/single-noo_class.php:48
+msgid "Level:"
+msgstr ""
+
+#: templates/single-noo_trainer.php:89
+msgid "My skill"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "NOO Timetable"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://www.nootheme.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"NOO Timetable is a super flexible schedule plugin for WordPress, with fully "
+"responsive interface and fascinating UI. It is absolutely suitable for "
+"fitness, yoga classes, medical departments, any kind of event calendars and "
+"so on. NOO Timetable will help you easily create a timetable with custom "
+"data just in a few minutes."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "NooTheme"
+msgstr ""

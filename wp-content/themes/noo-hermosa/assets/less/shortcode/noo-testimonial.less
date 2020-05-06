@@ -1,0 +1,410 @@
+/**
+ * Style shortcode: Testimonial
+ */
+.noo-testimonial {
+	padding: 95px 25px;
+	position: relative;
+	text-align: center;
+	.noo-testimonial-wrap {
+		cursor: ew-resize;
+	}
+	&.style-1 {
+		.noo-testimonial-image {
+			position: relative;
+			z-index: 1;
+			img {
+				
+			}
+		}
+		.noo-testimonial-item {
+			.noo-testimonial-content {
+				color: #fff;
+				font-family: @special-font;
+				font-size: 18px;
+				font-style: italic;
+				line-height: 36px;
+			    letter-spacing: 1px;
+				padding: 60px 0 40px;
+			    margin: auto;
+			    width: 70%;
+			    font-smoothing: antialiased;
+			    -webkit-font-smoothing: antialiased;
+			    -moz-osx-font-smoothing: grayscale;
+			}
+			.box-user {
+				display: inline-block;
+				.box-avatar {
+					background: #fff;
+					float: left;
+					padding: 5px;
+					.border-radius( 50% );
+					img {
+						height: 75px;
+						width: 75px;
+						.border-radius( 50% );
+					}
+				}
+				.box-info {
+					padding: 0 30px;
+					float: right;
+					text-align: left;
+					.noo-testimonial-name {
+						color: #fff;
+						
+						font-size: 18px;
+						font-weight: 400;
+						line-height: 24px;
+					    margin: 10px 0 0;
+					}
+					.noo-testimonial-position {
+						color: fade(#fff, 70%);
+						font-size: 15px;
+						line-height: 24px;
+					}
+				}
+				.after_cler();
+			}
+		}
+		.owl-nav{
+			position: absolute;
+			width: 100%;
+			top: 50%;
+			.owl-prev{
+				float:left;
+				&:before{
+					content:'\f104';
+					font: normal normal normal 64px/1 FontAwesome;
+					line-height: 0px;
+					color:@white;
+				}
+				span{
+					display: none;
+				}
+				&:focus{
+					outline: none;
+				}
+			}
+			.owl-next{
+				float:right;
+				&:before{
+					content:'\f105';
+					font: normal normal normal 64px/1 FontAwesome;
+					line-height: 0px;
+					color:@white;
+				}
+				span{
+					display: none;
+				}
+				&:focus{
+					outline: none;
+				}
+			}
+		}
+		.owl-dots{
+			padding-top: 30px;
+			.owl-dot{
+				width: 12px;
+				height: 12px;
+				background: @white;
+				margin: 0 10px;
+				border-radius: 100px;
+				&:focus{
+					outline: none;
+				}
+			}
+		}
+	}
+	&.style-2 {
+		padding: 50px 25px;
+		text-align: initial;
+		.noo-testimonial-wrap {
+			position: relative;
+		}
+		.noo-testimonial-item {
+			.noo-testimonial-content {
+				border: 1px solid #fff;
+				border-bottom: none;
+				color: #fff;
+				font-family: @special-font;
+				padding: 45px 35px 25px;
+				position: relative;
+				font-size: 18px;
+				font-style: italic;
+				line-height: 36px;
+			    letter-spacing: 1px;
+			    margin: auto;
+			    font-smoothing: antialiased;
+			    -webkit-font-smoothing: antialiased;
+			    -moz-osx-font-smoothing: grayscale;
+				.border-radius(5px);
+				.icon-wrap {
+					bottom: 1px;
+					height: 22px;
+					left: 0;
+					position: absolute;
+					width: 100%;
+					span {
+					    position: absolute;
+						display: inline-block;
+					}
+					.icon-item-1 {
+					    bottom: 0;
+						border-top: 1px solid #fff;
+					    right: 0;
+						height: 1px;
+						width: ~"calc(100% - 70px)";
+					}
+					.icon-item-2 {
+						border-top: 1px solid #fff;
+						border-right: 1px solid #fff;
+					    bottom: -24px;
+					    left: 0;
+					    height: 25px;
+						width: 40px;
+					}
+					.icon-item-3 {
+						border-top: 1px solid #fff;
+					    bottom: -12px;
+					    left: 36px;
+					    height: 1px;
+					    width: 38px;
+					    .rotate(-38deg);
+					}
+				}
+				&:before {
+					content: "\f347";
+					color: #fff;
+					font-family: "Ionicons";
+					font-size: 20px;
+					font-style: italic;
+					line-height: 32px;
+					position: absolute;
+				    top: 15px;
+				    left: 15px;
+				}
+			}
+			.box-user {
+				display: inline-block;
+				padding-top: 50px;
+				.box-avatar {
+					background: #fff;
+					float: left;
+					padding: 3px;
+					.border-radius( 50% );
+					img {
+						height: 50px;
+						width: 50px;
+						.border-radius( 50% );
+					}
+				}
+				.box-info {
+					padding: 0 20px;
+					float: right;
+					text-align: left;
+					.noo-testimonial-name {
+						color: #fff;
+						font-size: 18px;
+						font-weight: 400;
+						line-height: 24px;
+					    margin: 3px 0 0;
+					}
+					.noo-testimonial-position {
+						color: fade(#fff, 70%);
+						font-size: 15px;
+						line-height: 24px;
+					}
+				}
+				.after_cler();
+			}
+		}
+		.owl-nav{
+			position: absolute;
+			right:0;
+			top: 60%;
+			.owl-prev{
+				&:before{
+					content: '\f104';
+					font: normal normal normal 20px/1 FontAwesome;
+					line-height: 0px;
+					color: @white;
+					padding: 7px 14px;
+					border-radius: 100px;
+					background: @gray-2;
+					margin:5px;
+				}
+				span{
+					display: none;
+				}
+				&:focus{
+					outline: none;
+				}
+			}
+			.owl-next{
+				&:before{
+					content: '\f105';
+					font: normal normal normal 20px/1 FontAwesome;
+					line-height: 0px;
+					color: @white;
+					padding: 7px 14px;
+					border-radius: 100px;
+					background: @gray-2;
+					margin:5px;
+				}
+				span{
+					display: none;
+				}
+				&:focus{
+					outline: none;
+				}
+			}
+		}
+		.owl-dots{
+			padding-top: 30px;
+			text-align: center;
+			.owl-dot{
+				width: 12px;
+				height: 12px;
+				background: @white;
+				margin: 0 10px;
+				border-radius: 100px;
+				&:focus{
+					outline: none;
+				}
+			}
+		}
+	}
+	&.style-3{
+		.title-testimonial{
+			color:@white;
+			margin: 0;
+			font-size: 30px;
+			font-weight: @font-weight-base;
+		}
+		.noo-testimonial-item {
+			.noo-testimonial-content {
+				color: @white;
+				font-family: @font-family-sans-serif;
+				font-size: 18px;
+				line-height: 30px;
+			    letter-spacing: 1px;
+				padding: 40px 0 40px;
+			    margin: auto;
+			    width: 70%;
+			    font-smoothing: antialiased;
+			    -webkit-font-smoothing: antialiased;
+			    -moz-osx-font-smoothing: grayscale;
+			    &:before{
+			    	content:'';
+			    	position: absolute;
+			    	width: 67px;
+			    	height:57px;
+			    	background-image:  url('../images/quocte1.png');
+			    	background-repeat: no-repeat;
+			    	top:0;
+			    	@media screen and (min-width: 320px){
+			    		left: 0%;
+			    	}
+			    	@media screen and (min-width: 992px){
+			    		left: 8%;
+			    	}
+			    }
+			    &:after{
+			    	content:'';
+			    	position: absolute;
+			    	width: 160px;
+			    	height:136px;
+			    	background-image:  url('../images/quocte2.png');
+			    	background-repeat: no-repeat;
+					bottom: 20%;
+					@media screen and (min-width: 320px){
+			    		right: 0%;
+			    	}
+			    	@media screen and (min-width: 992px){
+			    		right: 10%;
+			    	}
+			    }
+			}
+			.box-user {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				.box-avatar {
+					float: left;
+					.border-radius( 50% );
+					img {
+						height: 75px;
+						width: 75px;
+						.border-radius( 50% );
+					}
+				}
+				.box-info {
+					padding: 0 30px;
+					float: right;
+					text-align: center;
+					.noo-testimonial-name {
+						color: @white;
+						font-size: 20px;
+						font-weight: 400;
+						line-height: 24px;
+					    margin: 10px 0;
+					}
+					.noo-testimonial-position {
+						color: @white;
+						line-height: 24px;
+						text-transform: capitalize;
+					}
+				}
+				.after_cler();
+			}
+		}
+		.owl-nav{
+			position: absolute;
+			width: 100%;
+			top: 50%;
+			.owl-prev{
+				float:left;
+				&:before{
+					content:'\f104';
+					font: normal normal normal 64px/1 FontAwesome;
+					line-height: 0px;
+					color:@white;
+				}
+				span{
+					display: none;
+				}
+				&:focus{
+					outline: none;
+				}
+			}
+			.owl-next{
+				float:right;
+				&:before{
+					content:'\f105';
+					font: normal normal normal 64px/1 FontAwesome;
+					line-height: 0px;
+					color:@white;
+				}
+				span{
+					display: none;
+				}
+				&:focus{
+					outline: none;
+				}
+			}
+		}
+		.owl-dots{
+			padding-top: 30px;
+			.owl-dot{
+				width: 12px;
+				height: 12px;
+				background: @white;
+				margin: 0 10px;
+				border-radius: 100px;
+				&:focus{
+					outline: none;
+				}
+			}
+		}
+
+	}
+}

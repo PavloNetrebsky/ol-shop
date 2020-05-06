@@ -1,0 +1,44 @@
+/**
+ * Style slider revolution
+ */
+.ares .tp-bullet {
+   
+}
+.tp-bullet {
+	&.selected,
+	&:hover {
+		background-color: @brand-primary;
+		border: 3px solid lighten(#39262e, 20%);
+	    height: 8px;
+	    width: 8px;
+	    .tp-bullet-title {
+			display: none;
+		}
+	}
+}
+
+a.btn-link {
+	background-color: #806bb6;
+    border: 0;
+    color: #ffffff;
+    line-height: 22px;
+    font-weight: 400;
+    padding: 12px 38px;
+    display: inline-block;
+    font-size: 16px;
+    .border-radius(5px);
+    .transition(all 0.4s ease 0s);
+    &:hover {
+    	background: darken( #806bb6, 15% );
+    	color: #ffffff;
+	    text-decoration: none;
+    }
+}
+.tp-mask-wrap{
+    .slider-button{
+        &:hover{
+            text-decoration: none;
+            color:#face00 !important;
+        }
+    }
+}

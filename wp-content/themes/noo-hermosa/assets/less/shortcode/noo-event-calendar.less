@@ -1,0 +1,396 @@
+/**
+ * Style shortcode: Noo Event Calendar
+ */
+.noo-event-calendar-wrap {
+	
+	.fc-popover {
+		.fc-header  {
+			background-color: @secondary-color;
+			color: @white;
+		    padding: 10px 20px;
+			.fc-close {
+				margin: 7px 4px 6px 6px;
+				color: @white;
+			}
+		}
+	}
+
+	.fc-toolbar {
+		padding: 30px 0 25px;
+		.fc-left {
+
+		}
+		.fc-right {
+
+		}
+		.fc-center {
+			h2 {
+				color: @black-1;
+				font-weight: 400;
+				font-size: 24px;
+				text-transform: uppercase;
+			    .animation(LeftToRight 0.3s linear 0s 1 alternate);
+			}
+		}
+		button {
+			background: @white;
+			border: 1px solid @secondary-color;
+			height: 40px;
+			width:40px;
+			.border-radius(50%) !important;
+			.opacity(0.5);
+			.transition( all 0.4s ease 0s );
+			.box-shadow(none);
+			.fc-icon {
+				color: @secondary-color;
+				font-size: 18px;
+			}
+			&:hover, &:focus {
+				background: @secondary-color;
+			    outline: none;
+				.opacity(1);
+				.fc-icon {
+					color: @white;
+				}
+			}
+			&.fc-next-button {
+			    text-indent: -1px;
+			}
+			&.fc-prev-button {
+			    text-indent: -2px;
+			}
+		}
+	}
+
+	button .fc-icon {
+	    top: -2px;
+	    margin: 2px;
+	}
+
+	.fc-icon-right-single-arrow:after {
+	    content: "\f3d3";
+	    font-family: "Ionicons";
+	    font-weight: normal;
+	    font-size: 18px;
+	    top: auto;
+	    left: auto;
+	}
+
+	.fc-icon-left-single-arrow:after {
+	    content: "\f3d2";
+		font-family: "Ionicons";
+		font-weight: normal;
+	    font-size: 18px;
+	    top: auto;
+	    left: auto;
+	}
+
+	.fc-state-default.fc-corner-left,
+	.fc-state-default.fc-corner-right {
+
+	}
+
+	th,
+	td {
+		border-color: #ededed;
+		.transition(all 0.4s ease 0s);
+	}
+	th{
+	   padding: 20px;
+	}
+
+	th.fc-widget-header {
+		border-color: fade(darken( @secondary-color, 25%), 25%) !important;
+		font-size: 16px;
+		font-weight: 400;
+		padding: 6px 0;
+	    line-height: 50px;
+		text-transform: uppercase;
+		.fc-title {
+		    padding: 5px 15px;
+		    margin: 4px 2px;
+		}
+		.fc-close {
+			padding: 10px;
+			.opacity(0.5);
+			&:hover, &:focus {
+				.opacity(1);
+			}
+		}
+	}
+
+	.fc-view-container {
+
+	}
+	.fc-view {
+		table {
+			margin: 0;
+			.fc-head {
+				background: @secondary-color;
+				color: @white;
+			}
+		}
+	}
+
+	.fc-today {
+		background: transparent;
+	}
+
+	.fc-basic-view .fc-day-number {
+		color: #ababab;
+		font-family: @special-font;
+		font-weight: 400;
+		font-size: 16px;
+		padding: 4px 20px 6px;
+		line-height: 48px;
+	    text-align: left;
+	}
+
+	.fc-today.fc-state-highlight {
+		background: @secondary-color;
+		color: #fff;
+	    display: inline-block;
+	    height: 30px;
+	    padding: 0;
+	    margin: 10px;
+	    line-height: 30px;
+	    text-indent: 7px;
+	    width: 30px;
+		.border-radius(50%);
+	}
+
+	.fc-event {
+		background: transparent;
+		border: none;
+		color: @black-1;
+		font-size: 16px;
+		line-height: 24px;
+	    padding: 0 20px;
+	    margin: 0;
+	    max-height: 55px;
+	    overflow: hidden;
+		&:hover, &:focus {
+			color: @secondary-color;
+		}
+	}
+
+	.fc-trainer,
+	.fc-time {
+		display: none;
+	}
+
+	.fc-title {
+		font-weight: 400;
+	    white-space: normal;
+	    overflow: visible;
+	}
+
+	.fc-day-grid-container .fc-day,
+	.fc-row .fc-day {
+		&:hover, &:focus {
+			background: #fff;
+			.box-shadow( 0px 0px 8px 8px rgba(227,227,227,0.3) );
+		}
+	}
+
+	a.fc-more {
+	    margin: 20px;
+	    &:hover, &:focus {
+	    	color: @secondary-color;
+	    }
+	}
+
+	.fc-popover {
+		.fc-event {
+			padding: 10px !important;
+		    border-top: 1px solid #EAEAEA;
+		    font-size: 14px !important;
+		    line-height: 21px !important;
+		    &:first-child {
+		    	border: none;
+		    }
+		}
+	}
+	
+	.fc-h-event.fc-not-start, 
+	.fc-h-event.fc-not-end {
+		padding: 0 20px;
+	}
+}
+
+.export-timetable a {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+/**
+ * Reponsive
+ */
+
+.noo-event-calendar-wrap,
+.export-timetable {
+
+	@media screen and (max-width: 991px) {
+		display: none;
+	}
+}
+
+.noo-responsive-calendar-wrap {
+
+	padding: 0 15px;
+	
+	@media screen and (min-width: 992px) {
+		display: none;
+	}
+
+	a {
+		.transition(all 0.2s ease 0s);
+		&:focus,
+		&:hover {
+			outline: none;
+			text-decoration: none;
+		}
+	}
+
+	.res-calendar-navigation {
+		position: relative;
+		height: 20px;
+		margin: 20px 0;
+
+		h3 {
+			color: #454545;
+			font-size: 18px;
+			text-transform: uppercase;
+			font-weight: 400;
+			margin-top: 5px;
+			position: absolute;
+			top: 0px;
+			left: 50%;
+			white-space: nowrap;
+			.translate(-50%, 0);
+
+			@media screen and (max-width: 321px) {
+				white-space: normal;
+				font-size: 14px;
+			}
+		}
+
+		.prev, .next {
+			position: absolute;
+			top: 0;
+			.border-radius(50%);
+			border: 1px solid @secondary-color;
+			color: @secondary-color;
+			width: 30px;
+			height: 30px;
+			.transition(all 0.3s ease 0s);
+			text-align: center;
+			&:focus,
+			&:hover {
+				background-color: @secondary-color;
+				color: @white;
+			}
+
+			i {
+				font-size: 16px;
+				font-weight: bold;
+				display: inline;
+				vertical-align: baseline;
+				line-height: 28px;
+				margin: 0;
+
+			}
+		}
+
+		.prev {
+			left: 0;
+		}
+
+		.next {
+			right: 0;
+		}
+
+	}
+
+	.item-weekday {
+
+		background-color: #F7F7F7;
+		border: 1px solid #eee;
+		border-left-width: 3px;
+		border-right-width: 0;
+		padding: 5px 10px;
+		color: #333;
+		margin: 5px 0;
+		border-left-color: #B9B7B7;
+
+		&.today {
+			background: #fcf8e3;
+		}
+	}
+	.item-day {
+		
+		position: relative;
+		padding: 3px 0 3px 4px;
+		font-size: 15px;
+
+		span {
+			font-weight: 600;
+			color: #333;
+		}
+
+		i {
+			font-weight: 300;
+
+			@media screen and (max-width: 479px) {
+				display: none;
+			}
+		}
+
+		a {
+			margin-left: 10px;
+		}
+
+		.item-ribbon {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 3px;
+			border: 1px solid #fff;
+			border-left-width: 0;
+			border-right-width: 0;
+		}
+	}
+}
+@media (max-width: 768px) {
+	.noo-event-calendar-wrap {
+		.fc-day-number {
+			line-height: 21px !important;
+		    padding: 5px !important;
+		    font-size: 13px !important;
+		    font-weight: 400 !important;
+		    &.fc-today {
+		    	height: 20px !important;
+		    	margin: 4px !important;
+	    	    text-indent: 7px !important;
+			    width: 20px !important;
+		    }
+		}
+		.fc-widget-header {
+			font-size: 14px;
+			padding: 5px 0;
+		}
+		.fc-title {
+			font-size: 13px;
+		    font-weight: 400;
+		    white-space: nowrap;
+		    overflow: hidden;
+	        text-overflow: ellipsis;
+		}
+	}
+	.fc-view {
+	    width: 768px !important;
+	    margin: 0 auto;
+	}
+}

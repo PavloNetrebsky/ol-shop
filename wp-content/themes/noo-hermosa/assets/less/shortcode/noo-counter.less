@@ -1,0 +1,68 @@
+
+/*
+* 0.0 Counter
+* -----------------------------------------------------------------------------
+*/
+
+.noo_counter_background {
+  background-color: @brand-primary;
+}
+.noo-counter-wrap{
+  .clearfix;
+  padding: 40px 0;
+  display: flex;
+  -webkit-display: flex;
+  -ms-display: flex;
+  -moz-display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -moz-align-items: center;
+  img{
+    float: left;
+  }
+  .noo-counter-content{
+    float: left;
+    position: relative;
+    color: @white;
+    padding-left: 30px;
+    margin-left: 38px;
+    &:before{
+      width: 2px;
+      height: 45px;
+      top: 50%;
+      left: 0;
+      background: #ffffff;
+      content: '';
+      position: absolute;
+      .rotate(28deg);
+      margin-top: -22.5px;
+    }
+    h4{
+      font-size: 42px;
+      display: block;
+      font-weight: @font-weight-bold;
+      font-style: italic;
+      line-height: 1;
+      margin: 0 0 2px 0;
+      font-family: @special-font;
+      -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+    span{
+      font-size: @font-size-large;
+      line-height: 30.03px;
+      display: block;
+      font-weight: 300;
+    }
+  }
+}
+
+div.reponsive-counter{
+  @media( max-width: 1500px ){
+    .vc_column-inner{
+      padding-left: 15px !important;
+    }
+  }
+}

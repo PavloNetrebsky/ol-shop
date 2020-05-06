@@ -1,0 +1,357 @@
+.single-noo_trainer{
+	.noo_trainer{
+		.post-thumbnail{
+			img{
+				max-width: 250px;
+				border-radius: 100%;
+				margin: 0 auto;
+			}
+		}
+		.loop-item-category,.entry-title,.trainer-social{
+			text-align: center;
+		}
+	}
+}
+.noo-progress-bar {
+
+	.noo-single-bar {
+		background-color: #eeeff0;
+		margin-top: 34px;
+		margin-bottom: 46px;
+		position: relative;
+		height: 8px;
+		width: 78%;
+
+		&:last-child {
+
+			margin-bottom: 0;
+		}
+		
+		.label-bar {
+			padding: 0;
+
+			.noo-progress-label {
+				-webkit-transform: translate(0, -30px);
+				  -ms-transform: translate(0, -30px); // IE9 only
+				   -o-transform: translate(0, -30px);
+					  transform: translate(0, -30px);
+				display: block;
+				font-style: italic;
+				font-size: 14px;
+			}
+
+			.noo-label-units {
+
+				position: absolute;
+				right: -74px;
+				top: -8px;
+				display: inline-block;
+				font-size: 14px;
+				text-transform: uppercase;
+				color: @brand-primary;
+				padding: 0;
+				line-height: 20px;
+			}
+		}
+
+		.noo-bar {
+			display: block;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background-color: lighten(@secondary-color, 15%);
+			top: 0;
+			left: 0;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+
+		.noo-single-bar {
+			width: 100%;
+
+			.label-bar {
+				.noo-label-units {
+					right: 0px;
+					top: -28px;
+				}
+			}
+		}
+	}
+}
+
+.loadSkill {
+	-webkit-animation-name: loadSkill;
+	animation-name: loadSkill;
+}
+
+.single.trainer-page {
+
+	.all-social-share {
+		margin: 30px 0;
+	}
+
+	.entry-content {
+		float: none;
+		width: auto;
+	}
+
+	.content-featured {
+		margin-bottom: 30px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.trainer-info {
+
+		margin-bottom: 40px;
+
+		.content-title {
+
+			
+		}
+
+		.trainer-category {
+
+			font-size: 13px;
+			margin-bottom: 20px;
+			color: @brand-primary;
+
+			a {
+				color: @brand-primary;
+
+				&:hover{
+					color: @hover-primary;
+				}
+			}
+		}
+
+		.trainer-description {
+
+			margin-top: 38px;
+
+			> div {
+				margin-bottom: 10px;
+
+				&.trainer-skill {
+					margin-top: 20px;
+
+					&:after {
+						clear: both;
+						content: '';
+						display: table;
+					}
+				}
+
+				span.trainer-title {
+					color: #333;
+					font-weight: 600;
+					display: inline-block;
+					width: 24.5%;
+				}
+			}
+
+			.text-bio {
+
+				float: right;
+				width: 75.5%;
+				white-space: -moz-pre-wrap;
+				white-space: -pre-wrap;
+				white-space: -o-pre-wrap;
+				white-space: pre-wrap;
+				word-wrap: break-word;
+			}
+
+			.trainer-biography {
+				&:after {
+					clear: both;
+					display: table;
+					content: '';
+				}
+			}
+
+			.noo-progress-bar {
+
+				float: right;
+				width: 75.5%;
+				margin-bottom: 20px;
+			}
+
+			@media screen and (max-width: 479px) {
+
+				margin-top: 10px;
+
+				> div {
+					span.trainer-title {
+						width: 100%;
+					}
+				}
+				.noo-progress-bar,
+				.text-bio {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+}
+
+.noo-trainer-shortcode {
+
+	.hentry {
+		margin-bottom: 50px;
+		padding-bottom: 50px;
+		margin: 0;
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+		background: transparent;
+
+		+ .hentry {
+			margin-top: 0;
+		}
+	}
+
+	.hentry h3 {
+		margin: 20px 0 0;
+		font-size: 16px;
+		padding-bottom: 20px;
+	}
+
+	.posts-loop-content {
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		.noo-md-6 {
+			&:nth-child(2n+1) {
+				clear: both;
+			}
+		}
+		.noo-md-4 {
+			&:nth-child(3n+1) {
+				clear: both;
+			}
+		}
+		.noo-md-3 {
+			&:nth-child(4n+1) {
+				clear: both;
+			}
+		}
+	}
+}
+
+// Trainer template tag
+.trainer-tag-wrap {
+
+	a {
+		-webkit-box-shadow: none !important; // iOS <4.3 & Android <4.1
+          box-shadow: none !important;
+	}
+
+    .trainer-bio {
+        border: 1px solid #d8e0e8;
+        margin-bottom: 30px;
+        text-align: center;
+        .border-radius(4px);
+        .transition(all 0.6s ease 0s);
+        background-color: #fff;
+        
+        .trainer-avatar {
+			display: block;
+			
+            img {
+                .border-radius(50%);
+                max-width: 210px;
+                margin-top: 30px;
+                .transition(all 0.4s ease 0s);
+                display: inline-block;
+                width: 100%;
+                height: auto;
+
+                @media (min-width: 992px) and (max-width: 1199px) {
+					max-width: 150px;
+				}
+            }
+            
+        }
+
+        .trainer-info {
+
+        	font-size: 16px;
+
+            h4 {
+                font-size: 18px;
+                font-weight: 600;
+                margin: 28px 0 6px;
+                letter-spacing: 0;
+                text-transform: none;
+
+                a {
+                    color: @brand-primary;
+                    &:hover {
+                        color: @hover-primary;
+                    }
+                }
+            }
+
+            .trainer-category {
+                font-size: 14px;
+                margin-bottom: 20px;
+                color: @brand-primary;
+
+                a {
+                    color: @brand-primary;
+
+                    &:hover{
+                        color: @hover-primary;
+                    }
+                }
+                
+            }
+
+            .trainer-social {
+
+				margin-bottom: 22px;
+            }
+
+            .trainer-excerpt {
+            	display: none;
+            }
+
+            .view-profile {
+            	
+                margin-bottom: 20px !important;
+            }            
+        }
+    }
+}
+
+.trainer-tag-wrap {
+	&.list {
+		.trainer-bio {
+			
+			text-align: left;
+
+			.trainer-avatar img {
+				max-width: 100%;
+				width: 100%;
+				.border-radius(0);
+				margin-top: 0;
+			}
+
+			.trainer-info {
+
+				padding: 20px;
+
+				.trainer-excerpt {
+					display: block;
+				}
+			}	
+		}
+
+	}
+}

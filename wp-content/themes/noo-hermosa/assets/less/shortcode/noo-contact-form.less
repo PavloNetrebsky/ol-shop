@@ -1,0 +1,348 @@
+
+.ui-datepicker-calendar{
+  width: 350px;
+}
+.ui-timepicker-table td{
+  width: 35px;
+  text-align: center;
+}
+.ui-datepicker .ui-datepicker-header{
+  background: @brand-primary;
+  color: @white;
+}
+.ui-datepicker-calendar tr td{
+  text-align: center;
+  cursor: pointer;
+  &:hover{
+    background: @brand-primary;
+    a{
+      color: @white;
+    }
+  }
+}
+.ui-timepicker-table td{
+  a{
+    padding: 5px;
+    width: auto;
+  }
+}
+.contact-form-wrapper{
+  @media screen and (min-width: 767px) {
+    width: 100% !important;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 50% !important;
+  }
+  
+}
+.block-contact-form{
+  .vc_col-sm-6{
+    @media screen and (min-width: 768px){
+      width: 100%;
+    }
+    @media screen and (min-width: 1200px){
+      width: 50%;
+    }
+  }
+}
+.noo-contact-form-7{
+  &.style-default{
+    .noo-theme-title{
+      font-size: 42px;
+      line-height: 44px;
+      color: @brand-primary;
+      text-transform: uppercase;
+      font-weight: @font-weight-base;
+      margin: 0 0 3px 0;
+      padding: 0;
+      span{
+        color: @secondary-color;
+        display: block;
+      }
+      @media( max-width: 767px ){
+        font-size: 34px;
+        line-height: 36px;
+      }
+      @media (max-width: 479px) {
+        font-size: 26px;
+      }
+    }
+    p.desc{
+      font-size: 20px;
+      font-style: italic;
+    }
+    .wpcf7-form{
+      margin-top: 48px;
+      input:not([type='submit']){
+        border: 1px solid @gray-6;
+        height: 45px;
+        width: 100%;
+        color: @gray-8;
+        font-size: @font-size-base - 1;
+        padding: 0 20px;
+        .placeholder(@gray-8);
+        margin: 12.5px 0;
+      }
+      select:not([multiple]){
+        margin: 12.5px 0;
+        height: 45px;
+        color: @gray-8;
+        font-size: @font-size-base - 1;
+        width: 100%;
+        .border-radius(0);
+        padding: 0 20px;
+        border: 1px solid @gray-6;
+        -webkit-box-shadow: none;
+        -khtml-box-shadow: none;
+        -moz-box-shadow: none;
+        -ms-box-shadow: none;
+        -o-box-shadow: none;
+        box-shadow: none;
+        -webkit-appearance: none;
+        -khtml-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        background: url(../images/arrow.png) no-repeat right center #fff;
+        cursor: pointer;
+        &:focus{
+          outline-color: transparent;
+          outline: none;
+        }
+      }
+      select::-ms-expand {
+        display: none;
+      }
+      textarea{
+        color: @gray-8;
+        font-size: @font-size-base - 1;
+        width: 100%;
+        border: 1px solid @gray-6;
+        padding: 20px;
+        margin-top: 12.5px;
+        height: 120px;
+      }
+      input[type='submit']{
+        background-color: @brand-primary;
+        .border-radius(5px);
+        color: #ffffff;
+        line-height: 22px;
+        font-weight: 400;
+        padding: 10px 35px;
+        text-decoration: none;
+        .transition(all 0.4s ease 0s);
+        margin-top: 42px;
+        display: inline-block;
+        border: 0;
+        &:hover{
+          background: @hover-primary;
+        }
+      }
+    }
+    @media ( max-width: 320px ){
+      .noo-theme-title{
+        font-size: 32px;
+        line-height: 36px;
+      }
+      p.desc{
+        font-size: @font-size-large;
+      }
+    }
+  }
+  &.style-2{
+    margin: 100px 0 ;
+    display: inline-block;
+    .noo-theme-title{
+      font-size: 42px;
+      font-weight: @font-weight-base;
+      i{
+        font-style: normal;
+        color:@white;
+      }
+    }
+      p.desc{
+       font-size: 20px;
+      color:@white;
+    }
+    .wpcf7-form{
+      margin-top: 20px;
+      input:not([type='submit']){
+        height: 45px;
+        width: 100%;
+        color: @white;
+        font-size: @font-size-base - 1;
+        .placeholder(@gray-8);
+        margin: 20px 0 0;
+        background: transparent;
+        border:none;
+        //border-bottom: 1px solid @gray-6;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="email"]{
+        color:@white;
+        &:focus{
+          outline: none;
+        }
+      }
+      .hermosa-date-block{
+        display: flex;
+        align-items: center;
+        .fa-calendar-o{
+          color:@white;
+          position: absolute;
+          right: 15px;
+          bottom: 20%;
+        }
+      }
+      .wpcf7-form-control-wrap{
+        width: 100%;
+        ::-webkit-input-placeholder { /* WebKit browsers */
+            color: #fff !important;
+          }
+        ::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+          color: #fff !important;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+          color: #fff !important;
+        }
+        ::-ms-input-placeholder { /* Internet Explorer 10+ */
+          color: #fff !important;
+        }
+        &.repair{
+          .wpcf7-validates-as-required{
+            option{
+              background: @gray-8;
+            }
+          }
+        }
+      }
+      select:not([multiple]){
+        margin: 20px 0 0;
+        height: 45px;
+        color: @white;
+        font-size: @font-size-base - 1;
+        width: 100%;
+        .border-radius(0);
+        border: 1px solid @gray-6;
+        -webkit-box-shadow: none;
+        -khtml-box-shadow: none;
+        -moz-box-shadow: none;
+        -ms-box-shadow: none;
+        -o-box-shadow: none;
+        box-shadow: none;
+        -webkit-appearance: none;
+        -khtml-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        background: url(../images/arrow.png) no-repeat right center;
+        cursor: pointer;
+        background-position: 105% 0px;
+        border:none;
+        //border-bottom: 1px solid #fff;
+        &:focus{
+          outline-color: transparent;
+          outline: none;
+        }
+      }
+      select::-ms-expand {
+        display: none;
+      }
+      textarea{
+        color: @white;
+        font-size: @font-size-base - 1;
+        width: 100%;
+        border: 1px solid @gray-6;
+        padding: 20px;
+        margin-top: 12.5px;
+        height: 120px;
+        .placeholder(#fff);
+      }
+      input[type='submit']{
+        background-color: @brand-primary;
+        .border-radius(5px);
+        color: #ffffff;
+        line-height: 22px;
+        font-weight: 400;
+        padding: 10px 35px;
+        text-decoration: none;
+        .transition(all 0.4s ease 0s);
+        margin-top: 60px;
+        display: inline-block;
+        border: 0;
+        &:hover{
+          background: @hover-primary;
+        }
+      }
+    }
+    @media ( max-width: 320px ){
+      .noo-theme-title{
+        font-size: 32px;
+        line-height: 36px;
+      }
+      p.desc{
+        font-size: @font-size-large;
+      }
+    }
+  }
+}
+div.reponsive-form{
+  .vc_column-inner{
+    @media( max-width: 1500px ){
+      padding: 50px !important;
+    }
+    @media( max-width: 991px ){
+      padding: 30px 15px !important;
+    }
+  }
+}
+
+.noo-contact-form {
+  max-width: 633px;
+  text-align: center;
+  .noo-title {
+    padding: 0 0 40px;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    background: #fff;
+    border: 1px solid #eeeeee;
+    color: #888888;
+    font-size: 15px;
+    line-height: 24px;
+    margin: 0 0 25px;
+    padding: 8px 15px;
+    width: 100%;
+    .placeholder(#888888);
+  }
+
+  input[type="submit"] {
+    background: @brand-primary;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    margin: 10px 0 0;
+    padding: 10px 40px;
+    .border-radius(4px);
+    .transition(all .4s ease 0s);
+    &:hover {
+      background: @hover-primary;
+    }
+  }
+  span.wpcf7-not-valid-tip{
+    text-align: left;
+    margin-bottom: 25px;
+  }
+}
+.contact-form{
+  .noo-contact-form-7{
+    padding: 0 15% 0 15%;
+  }
+}
+

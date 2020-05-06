@@ -1,0 +1,135 @@
+/*
+ * Timepicker stylesheet
+ * Highly inspired from datepicker
+ * FG - Nov 2010 - Web3R
+ *
+ * version 0.0.3 : Fixed some settings, more dynamic
+ * version 0.0.4 : Removed width:100% on tables
+ * version 0.1.1 : set width 0 on tables to fix an ie6 bug
+ */
+
+.ui-timepicker-inline { display: inline; }
+
+#ui-timepicker-div { padding: 0; }
+.ui-timepicker-table table { margin:0.15em 0 0 0; border-collapse: collapse; }
+
+.ui-timepicker-hours, .ui-timepicker-minutes { padding: 0.2em;  }
+
+.ui-timepicker-table .ui-timepicker-title { line-height: 1.8em; text-align: center; }
+.ui-timepicker-table td { padding: 0.1em; width: 2.2em; }
+.ui-timepicker-table th.periods { padding: 0.1em; width: 2.2em; }
+
+/* span for disabled cells */
+.ui-timepicker-table td span {
+	display:block;
+    padding:0.2em 0.3em 0.2em 0.5em;
+    width: 1.2em;
+
+    text-align:right;
+    text-decoration:none;
+}
+/* anchors for clickable cells */
+.ui-timepicker-table td a {
+    display:block;
+    padding:0.2em 0.3em 0.2em 0.5em;
+    width: 1.2em;
+    cursor: pointer;
+    text-align:right;
+    text-decoration:none;
+}
+
+
+/* buttons and button pane styling */
+.ui-timepicker .ui-timepicker-buttonpane {
+    background-image: none; margin: .7em 0 0 0; padding:0 .2em; border-left: 0; border-right: 0; border-bottom: 0;
+}
+.ui-timepicker .ui-timepicker-buttonpane button { margin: .5em .2em .4em; cursor: pointer; padding: .2em .6em .3em .6em; width:auto; overflow:visible; }
+/* The close button */
+.ui-timepicker .ui-timepicker-close { float: right }
+
+/* the now button */
+.ui-timepicker .ui-timepicker-now { float: left; }
+
+/* the deselect button */
+.ui-timepicker .ui-timepicker-deselect { float: left; }
+.ui-widget-content,
+.ui-datepicker-calendar{
+    border: 0;
+    background: #fff;
+    color: #333;
+    width: auto;
+    margin: 0;
+}
+.ui-timepicker-table td{
+    border: 1px solid #f04040;
+}
+.ui-timepicker-table td,
+.ui-timepicker-table th{
+    border: 0;
+    &:hover{
+        background: #ff8000;
+    }
+}
+.ui-timepicker-table th{
+    text-align: center;
+}
+.ui-timepicker-table td a{
+    font-size: 12px;
+}
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    padding: 10px;
+    background: #ff514a;
+    text-align: center;
+}
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+}
+.ui-datepicker .ui-datepicker-prev {
+    left: 2px;
+}
+.ui-datepicker .ui-datepicker-next {
+    right: 2px;
+}
+.ui-datepicker-calendar tr td{
+    padding: 5px 13px;
+    font-size: 14px;
+
+}
+.ui-icon-circle-triangle-w{
+    width: 30px;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    text-indent: -60px;
+    position: relative;
+}
+.ui-icon-circle-triangle-w:before{
+    font-family: 'FontAwesome';
+    position: absolute;
+    left: 45px;
+    top: 6px;
+    font-size: 20px;
+    content: "\f104";
+    color: #fff;;
+}
+.ui-icon-circle-triangle-e{
+    width: 30px;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    text-indent: 30px;
+    position: relative;
+}
+.ui-icon-circle-triangle-e:before{
+    font-family: 'FontAwesome';
+    position: absolute;
+    left: -20px;
+    top: 6px;
+    font-size: 20px;
+    content: "\f105";
+    color: #fff;;
+}

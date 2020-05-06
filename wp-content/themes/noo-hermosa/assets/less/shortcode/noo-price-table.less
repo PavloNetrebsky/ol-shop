@@ -1,0 +1,118 @@
+/**
+ * Shortcode: [noo_pricetable]
+ */
+.noo-pricetable {
+	text-align: center;
+	overflow: hidden;
+	margin: 0 0 45px;
+	.border-radius(5px);
+	a {
+		.transition(all 0.3s ease 0s);
+		&:focus,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.noo-pricetable-header {
+		position: relative;
+		padding: 45px 0 90px;
+		span {
+			color: #fff;
+			font-size: 18px;
+			font-family: @special-font;
+			font-style: italic;
+		}
+		h4 {
+			color: #fff;
+			font-size: 24px;
+			font-weight: 400;
+            padding: 0 15px;
+			text-transform: uppercase;
+		}
+		.item-price {
+			border: 9px solid #f4f9fb;
+			background: #fff;
+			bottom: 0;
+			display: inline-block;
+			font-family: @special-font;
+			font-size: 56px;
+		    font-style: normal;
+			height: 157px;
+			left: 50%;
+			position: absolute;
+			padding: 13px;
+			width: 157px;
+			.translate( -50%, 50% );
+			.border-radius(50%);
+		}
+	}
+	.noo-pricetable-content {
+		background: #fff;
+		padding: 95px 0 10px;
+		.item {
+			border-top: 1px solid #e9f3f7;
+			color: #696969;
+			
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 64px;
+			&:first-child {
+				border: none;
+			}
+		}
+	}
+	.button {
+		color: #fff;
+		display: block;
+		
+		font-size: 16px;
+		line-height: 22px;
+		letter-spacing: .2px;
+	    padding: 15px;
+	    .transition(all .4s ease 0s);
+	}
+		
+	&.style-1 {
+		.noo-pricetable-header,
+		.button {
+			background: @brand-primary;
+		}
+		.button {
+			&:hover {
+				background: @hover-primary;
+			}
+		}
+		.item-price {
+			color: @brand-primary
+		}
+	}
+	&.style-2 {
+		.noo-pricetable-header,
+		.button {
+			background: @secondary-color;
+		}
+		.button {
+			&:hover {
+				background: @hover-secondary;
+			}
+		}
+		.item-price {
+			color: @secondary-color;
+		}
+	}
+}
+.text-pricetable {
+	color: #333;
+	font-family: @special-font;
+	font-size: 34px;
+	line-height: 48px;
+	font-style: italic;
+	font-weight: 400;
+	text-align: center;
+	padding: 0 20%;
+    @media( max-width: 767px ){
+      padding: 0 30px;
+      font-size: 28px;
+      line-height: 38px;
+    }
+}

@@ -1,0 +1,229 @@
+/*
+* 0.0 Noo Blog
+* -----------------------------------------------------------------------------
+*/
+.noo_sh_blog_wraper{
+  margin: 0 -15px;
+}
+.masonry-item{
+  margin-bottom: 60px;
+}
+.yes_shadow{
+  .our-blog-item{
+    .box-shadow(0 0 24px 0 rgba(0,0,0,0.16));
+  }
+}
+.our-blog-item{
+
+  a {
+		.transition(all 0.4s ease 0s);
+		
+	}
+
+  background: @white;
+  .border-radius(5px);
+  overflow: hidden;
+  .translate3d(0,0,0);
+  .transition(all 0.4s ease 0s);
+
+  .blog-item-header{
+    overflow: hidden;
+    iframe{
+      width: 100%;
+      min-height: 225px;
+      border: 0;
+    }
+  }
+  .noo-blog-meta{
+    padding: 22px 30px 7px;
+    .clearfix;
+    .cats-links{
+      display: block;
+      float: left;
+      font-size: @font-size-small;
+      text-transform: uppercase;
+      padding-top: 3px;
+      a{
+        color: @secondary-color;
+      }
+    }
+    .comment-meta{
+      display: block;
+      float: right;
+      font-size: 15px;
+      i{
+        color: @brand-primary;
+        padding-right: 8px;
+        font-size: @font-size-base;
+      }
+      span{
+        &:first-child{
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+  .noo-blog-entry{
+    padding: 0 30px 15px;
+    h3{
+      margin: 0 0 10px 0;
+      padding: 0;
+      font-weight: @font-weight-base;
+      line-height: 34px;
+      a{
+        color: @gray-dark;
+        text-decoration: none;
+        &:hover{
+          color: @brand-primary;
+        }
+      }
+    }
+  }
+  .noo-blog-footer{
+    border-top: 1px solid fade(#ddeef5,70%);
+    padding: 20px 30px;
+    .clearfix;
+    span{
+      float: left;
+      color: #ababab;
+      font-size: @font-size-base - 2;
+      font-style: italic;
+      font-family: @special-font;
+      padding-top: 9px;
+    }
+    a{
+      float: right;
+      background-color: @brand-primary;
+      .border-radius(5px);
+      color: #ffffff;
+      line-height: 22px;
+      font-weight: 400;
+      padding: 7px 20px;
+      font-size: @font-size-base - 2;
+      text-decoration: none;
+      .transition(all 0.4s ease 0s);
+      display: inline-block;
+      border: 0;
+      &:hover{
+        background: @hover-primary;
+      }
+    }
+  }
+}
+.style_1{
+  .our-blog-item{
+    &:hover{
+      .box-shadow(0 0 24px 0 rgba(0,0,0,0.16));
+      .translate3d(0, -10px, 0);
+    }
+  }
+}
+
+
+.style_2{
+  .blog-item-header{
+   img{
+     .transition(all 0.4s ease 0s);
+   }
+  }
+ .our-blog-item{
+   &:hover{
+     .blog-item-header{
+       img{
+         .scale(1.1);
+       }
+     }
+   }
+   .border-radius(0);
+   .noo-blog-entry{
+     margin-left: 50px;
+     background: @white;
+     margin-top: -80px;
+     position: relative;
+     padding-top: 33px;
+     padding-right: 0;
+     padding-bottom: 0;
+     h3{
+       text-transform: uppercase;
+       font-size: @font-size-base;
+       line-height: 26px;
+       font-weight: @font-weight-bold;
+       margin-bottom: 15px;
+       a{
+         color: @secondary-color;
+       }
+     }
+   }
+   .noo-blog-footer{
+     margin-left: 50px;
+     background: @white;
+     border-top: 0;
+     padding-right: 0;
+     padding-top: 0;
+     .noo-readmore{
+       float: left;
+       background: transparent;
+       color: @text-color;
+       padding: 4px 0;
+       &:before{
+         content: "\f362";
+         font-family: "Ionicons";
+         color: @brand-primary;
+         padding-right: 10px;
+       }
+       &:hover{
+         color: @brand-primary;
+       }
+     }
+     .comment-meta{
+       display: block;
+       float: right;
+       font-size: 15px;
+       padding-top: 0;
+       i{
+         color: @brand-primary;
+         padding-right: 8px;
+         font-size: @font-size-base;
+       }
+       span{
+         padding-top: 0;
+         &:first-child{
+           padding-right: 20px;
+         }
+       }
+     }
+   }
+ }
+  @media ( max-width: 479px ){
+    .our-blog-item {
+      .noo-blog-footer,
+      .noo-blog-entry{
+        margin-left: 15px;
+      }
+    }
+  }
+}
+.blog-pagination{
+  text-align: center;
+  .custom_link{
+    background-color: @brand-primary;
+    .border-radius(5px);
+    color: #ffffff;
+    line-height: 22px;
+    font-weight: 400;
+    padding: 12px 38px;
+    text-decoration: none;
+    .transition(all 0.4s ease 0s);
+    display: inline-block;
+    border: 0;
+    font-size: @font-size-large;
+    &:hover{
+      background: @hover-primary;
+    }
+  }
+}
+.noo_sh_blog_wraper{
+  .pagination{
+    display: none;
+  }
+}

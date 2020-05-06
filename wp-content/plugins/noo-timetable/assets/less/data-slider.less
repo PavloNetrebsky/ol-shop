@@ -1,0 +1,80 @@
+.noo-data-slider {
+    .hentry {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .owl-controls {
+
+        margin-bottom: 30px;
+
+        .owl-buttons {
+
+            div.owl-next,
+            div.owl-prev {
+                position: absolute;
+                top: 50%;
+                .translate(0, -50%);
+                width: 48px;
+                height: 48px;
+                .transition(all 0.3s ease 0s);
+                margin-top: -52px;
+                color: #333;
+                background: transparent;
+
+                &:before {
+                    font-family: "FontAwesome";
+                    font-size: 34px;
+                    line-height: 42px;
+                }
+
+                &:hover {
+                    color: @brand-primary;
+                }
+            }
+
+            .owl-next {
+                right: -70px;
+                &:before {
+                    content: '\f054';
+                }
+            }
+
+            .owl-prev {
+                left: -70px;
+                &:before {
+                    content: "\f053";
+                }
+            }
+        }
+    }
+}
+
+.noo-event-shortcode {
+    &.noo-data-slider {
+        .hentry {
+            margin-bottom: 0;
+        }
+        .owl-dots{
+            text-align: center;
+            .owl-dot{
+                &.active{
+                    span{
+                        border-color: #F6D937;
+                    }
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+            span{
+                width: 12px;
+                height: 12px;
+                border: 2px solid #d4d4d4;
+                display: block;
+                margin-right: 10px;
+                border-radius: 50%;
+            }
+        }
+    }
+}

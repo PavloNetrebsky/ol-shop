@@ -1,0 +1,222 @@
+// Shortcode title
+
+.noo-theme-wraptext {
+	text-align: center;
+	margin: 10px 0 50px;
+
+	.wrap-title {
+		display: inline-block;
+		position: relative;
+		
+		.noo-theme-title-bg {
+			background-image: url('../images/theme-icon.png');
+			background-position: center center;
+			background-size: contain;
+			background-repeat: no-repeat;
+			height: 81px;
+			width: 149px;
+			position: absolute;
+			top: -13px;
+			left: 50%;
+			.translate(-50%, 0);
+		}
+
+		.noo-theme-title {
+			color: @brand-primary;
+			font-weight: @font-weight-base;
+			
+			letter-spacing: 0.5px;
+			text-transform: uppercase;
+			position: relative;
+			font-size: 42px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 34px;
+			}
+			@media screen and (max-width: 479px) {
+				font-size: 26px;
+			}
+			.first-word {
+				color: @secondary-color;
+			}
+		}
+
+		.noo-theme-sub-title {
+			color: @gray-2;
+			font-family: @special-font;
+			font-style: italic;
+			font-weight: @font-weight-base;
+			font-size: 20px;
+			line-height: 24px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 18px;
+			}
+			@media screen and (max-width: 479px) {
+				font-size: 16px;
+			}
+		}
+	}
+	&.center{
+		&.style-1{
+			text-align: center;
+			margin: 10px 0 50px;
+
+			.wrap-title {
+				display: inline-block;
+				position: relative;
+				
+				.noo-theme-title-bg {
+					background-image: url('../images/theme-icon.png');
+					background-position: center center;
+					background-size: contain;
+					background-repeat: no-repeat;
+					height: 81px;
+					width: 149px;
+					position: absolute;
+					top: -13px;
+					left: 50%;
+					.translate(-50%, 0);
+				}
+
+				.noo-theme-title {
+					color: @brand-primary;
+					font-weight: @font-weight-base;
+					
+					letter-spacing: 0.5px;
+					text-transform: uppercase;
+					position: relative;
+					font-size: 42px;
+
+					@media screen and (max-width: 767px) {
+						font-size: 34px;
+					}
+					@media screen and (max-width: 479px) {
+						font-size: 26px;
+					}
+					.first-word {
+						color: @secondary-color;
+					}
+				}
+
+				.noo-theme-sub-title {
+					color: @gray-2;
+					font-family: @special-font;
+					font-style: italic;
+					font-weight: @font-weight-base;
+					font-size: 20px;
+					line-height: 24px;
+
+					@media screen and (max-width: 767px) {
+						font-size: 18px;
+					}
+					@media screen and (max-width: 479px) {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+	&.right {
+		&.style-1{
+			text-align: right;
+			.wrap-title {
+				.noo-theme-title-bg {
+					right: 0;
+					left: auto;
+					.translate(0, 0);
+				}
+			}
+		}
+	}
+	&.left {
+		&.style-1{
+			text-align: left;
+			.wrap-title {
+				.noo-theme-title-bg {
+					left: 0;
+					right: auto;
+					.translate(0, 0);
+				}
+			}
+		}
+	}
+/* STYLE-2 */
+	&.center, &.left, &.right{
+		&.style-2{
+			margin-bottom:45px;
+			.wrap-title{
+				display: inline-block;
+				position: relative;
+				.noo-theme-title {
+					font-weight: @font-weight-base;
+					letter-spacing: 0.5px;
+					position: relative;
+					font-size: 36px;
+					font-weight: @font-weight-bold;
+					text-transform: none;
+
+					@media screen and (max-width: 767px) {
+						font-size: 32px;
+					}
+					@media screen and (max-width: 479px) {
+						font-size: 24px;
+					}
+				}
+				.noo-theme-sub-title {
+					font-weight: @font-weight-base;
+					font-size: 18px;
+					line-height: 24px;
+					font-style: normal;
+					font-family: @font-family-sans-serif;
+					@media screen and (max-width: 767px) {
+						font-size: 16px;
+					}
+					@media screen and (max-width: 479px) {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+	&.center{
+		&.style-2{
+			text-align: center;
+			.wrap-title {
+				.noo-theme-title-bg {
+					background-image: none;
+				}
+				.noo-theme-title {
+					color: @brand-primary;
+				}
+				.noo-theme-sub-title {
+					color: @gray-2;
+				}
+			}
+		}
+	}
+	&.right {
+		&.style-2{
+			text-align: right;
+			.wrap-title {
+				.noo-theme-title-bg {
+					right: 0;
+					left: auto;
+					.translate(0, 0);
+				}
+			}
+		}
+	}
+	&.left {
+		&.style-2{
+			text-align: left;
+			.wrap-title {
+				.noo-theme-title-bg {
+					left: 0;
+					right: auto;
+					.translate(0, 0);
+				}
+			}
+		}
+	}
+}

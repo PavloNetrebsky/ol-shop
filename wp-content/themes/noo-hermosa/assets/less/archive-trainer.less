@@ -1,0 +1,910 @@
+// Trainer template tag
+.noo-trainer-shortcode{
+	.slider{
+		.trainer-tag-wrap {
+
+		    a {
+				.transition(all 0.4s ease 0s);
+				&:focus,
+				&:hover {
+					text-decoration: none;
+				}
+			}
+
+			.masonry-container {
+				z-index: 1;	
+			}
+
+		    .trainer-bio {
+		        margin-bottom: 30px;
+		        text-align: center;
+		        .border-radius(4px);
+		        .transition(all 0.6s ease 0s);
+		        background-color: @white;
+		        
+		        .trainer-avatar {
+					display: block;
+					position: relative;
+					overflow: hidden;
+					&:before{
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						width: 100%;
+						height: 87%;
+						content: '';
+						border-width: 3px 3px 0 3px;
+						border-color: #f4eede;
+						border-style: solid;
+					}
+					span {
+			            position: absolute;
+			            left: 0;
+			            bottom: 0;
+			            width: 100%;
+			            height: 87%;
+			            display: block;
+			            &.first {
+			                &:before {
+			                    position: absolute;
+			                    left: 0;
+			                    top: 0;
+			                    width: 50%;
+			                    height: 3px;
+			                    content: '';
+			                    background: @brand-primary; // sửa màu
+			                    display: block;
+			                    .transform-origin(center center);
+			                    .transition(all 0.4s ease 0s);
+			                }
+			                &:after {
+			                    position: absolute;
+			                    right: 0;
+			                    top: 0;
+			                    width: 50%;
+			                    height: 3px;
+			                    content: '';
+			                    background: @secondary-color; // sửa màu
+			                    display: block;
+			                    .transform-origin(center center);
+			                    .transition(all 0.4s ease 0s);
+			                }
+			            }
+			            &.second {
+			                &:before {
+			                    position: absolute;
+			                    left: 0;
+			                    top: 0;
+			                    width: 3px;
+			                    height: 50%;
+			                    content: '';
+			                    background: @brand-primary;// su mau
+			                    display: block;
+			                    .transform-origin(center center);
+			                    .transition(all 0.4s ease 0s);
+			                }
+			                &:after {
+			                    position: absolute;
+			                    left: 0;
+			                    bottom: 0;
+			                    width: 3px;
+			                    height: 50%;
+			                    content: '';
+			                    background: @secondary-color; // sua mau
+			                    display: block;
+			                    .transform-origin(center center);
+			                    .transition(all 0.4s ease 0s);
+			                }
+			            }
+			            &.third{
+			            	&:before {
+			                    position: absolute;
+			                    right: 0;
+			                    top: 0;
+			                    width: 3px;
+			                    height: 100%;
+			                    content: '';
+			                    background: @secondary-color;// su mau
+			                    display: block;
+			                    .transform-origin(center center);
+			                    .transition(all 0.4s ease 0s);
+			                }
+			            }
+		       		}
+					
+		            img {
+		            	position: relative;
+    					z-index: 1;
+		                .transition(all 0.4s ease 0s);
+
+		                @media (min-width: 992px) and (max-width: 1199px) {
+						}
+		            }
+		            
+		        }
+		        &:hover{
+		        	.trainer-avatar{
+		        		span {
+		        			 &:before {
+		        			 	//.scale(1);
+		        			 	background: @brand-primary;
+		        			 }
+		        			 &:after {
+		        			 	//.scale(1);
+		        			 	background: @brand-primary;
+		        			 }
+		        		}
+		        		img{
+		        			 .translate(15px, 0);
+		        		}
+		        	}
+		        }
+
+		        .trainer-info {
+		        	.transition(all 0.6s ease 0s);
+					background-color:#2a2924;
+		            h4 {
+		                font-size: @font-size-large;
+		                font-weight: @font-weight-semibold;
+		                padding: 35px 0 15px;
+		                margin: 0px;
+		                a {
+		                    color: @white;
+		                    &:hover {
+		                        color: @white;
+		                    }
+		                }
+		            }
+
+		            .trainer-category {
+		                font-size: @font-size-base - 1;
+		                margin-bottom: 20px;
+		                color: @brand-primary;
+
+		                a {
+		                    color: @white;
+
+		                    &:hover{
+		                        color: @hover-primary;
+		                    }
+		                }
+		                
+		            }
+
+		            .trainer-social {
+						padding-bottom: 30px;
+						display: flex;
+						justify-content: center;
+						a{
+							border:none;
+						}
+		            }
+
+					.trainer-excerpt {
+		            	display: none;
+		            }
+
+		            .view-profile {
+		                color: @white;
+		                background-color: @brand-primary;
+		                padding: 4.5px 12px;
+		                width: 100%;
+		                .border-top-radius(0);
+		                .scale(1.008);
+
+		                &:hover {
+		                    background-color: @hover-primary;
+		                }
+		            }            
+		        }
+		    }
+
+		    .trainer-bio:hover {
+				
+		    }
+
+		    .trainer-item {
+		    	&.noo-md-3 {
+		    		.trainer-bio {
+		    			.trainer-avatar {
+		    				img {
+		    					max-width: 130px;
+		    					margin: 0 auto;
+		    				}
+		    			}
+		    		}
+		    	}
+		    }
+		}
+		.trainer-tag-wrap {
+			&.list {
+				.trainer-bio {
+					text-align: left;
+					.trainer-avatar img {
+						max-width: 100%;
+						width: 100%;
+						.border-radius(0);
+						margin-top: 0;
+					}
+					.trainer-info {
+						padding: 20px;
+						.trainer-excerpt {
+							display: block;
+						}
+					}	
+				}
+			}
+			
+			.owl-nav{
+				position: absolute;
+				top:40%;
+				width: 100%;
+				@media screen and (min-width: 480px) {
+					top:0;
+				}
+				@media screen and (min-width: 567px) {
+					top:-5%;
+				}
+				@media screen and (min-width: 767px) {
+					top:40%;
+				}
+				.owl-prev{
+					float: left;
+					position: absolute;
+					left: -50px;
+					line-height: 35px;
+					width: 40px;
+					height: 40px;
+					.border-radius(0%);
+					border:1px solid #e3e3e3;
+					background: none;
+					color:@black;
+					opacity: 1;
+					.transition(all 0.4s ease 0s);
+					span{
+						font-size: 32px;
+					}
+					&:focus{
+						outline: none;
+					}
+					@media screen and (min-width: 480px) {
+						left: 15px;
+					}
+					@media screen and (min-width: 768px) {
+						left: -50px;
+					}
+				}
+				.owl-next{
+					float: right;
+					.transition(all 0.4s ease 0s);
+					position: absolute;
+					right: -50px;
+					line-height: 35px;
+					width: 40px;
+					height: 40px;
+					.border-radius(0%);
+					border:1px solid #e3e3e3;
+					background: none;
+					color:@black;
+					opacity: 1;
+					span{
+						font-size: 32px;
+					}
+					&:focus{
+						outline: none;
+					}
+					@media screen and (min-width: 480px) {
+						right: 15px;
+					}
+					@media screen and (min-width: 768px) {
+						right: -50px;
+					}
+				}
+				
+			}	
+			.owl-dots{
+				text-align: center;
+				margin-bottom: 100px;
+				.owl-dot{
+					width: 12px;
+					height: 12px;
+					background: @black;
+					margin: 0 10px;
+					border-radius: 100px;
+					&:focus{
+						outline: none;
+					}
+				}
+			}
+		}
+		// Trainer List
+		.trainer-item {
+			width: 100%;
+			&.noo-md-6 {
+				&:nth-child(2n+1) {
+					clear: both;
+				}	
+			}
+
+			&.noo-md-4 {
+				@media screen and (min-width: 992px) {
+					&:nth-child(3n+1) {
+						clear: both;
+					}	
+				}
+				@media screen and (max-width: 991px) {
+					&:nth-child(2n+1) {
+						clear: both;
+					}	
+				}	
+			}
+
+			&.noo-md-3 {
+				@media screen and (min-width: 992px) {
+					&:nth-child(4n+1) {
+						clear: both;
+					}
+				}
+				@media screen and (max-width: 991px) {
+					&:nth-child(2n+1) {
+						clear: both;
+					}	
+				}	
+			}
+
+			.trainer-bio {
+
+				.trainer-avatar {
+					img {
+						
+					}
+				}
+			}
+		}
+	}
+	.masonry{
+
+		.trainer-tag-wrap {
+
+		    a {
+				.transition(all 0.4s ease 0s);
+				&:focus,
+				&:hover {
+					text-decoration: none;
+				}
+			}
+
+			.masonry-container {
+				z-index: 1;	
+			}
+
+		    .trainer-bio {
+		        border: 1px solid #e9f3f7;
+		        margin-bottom: 30px;
+		        text-align: center;
+		        .border-radius(4px);
+		        .transition(all 0.6s ease 0s);
+		        background-color: @white;
+		        
+		        .trainer-avatar {
+					display: block;
+					
+		            img {
+		                .border-radius(50%);
+		                max-width: 210px;
+		                margin-top: 30px;
+		                .transition(all 0.4s ease 0s);
+
+		                @media (min-width: 992px) and (max-width: 1199px) {
+							max-width: 150px;
+						}
+		            }
+		            
+		        }
+
+		        .trainer-info {
+
+		            h4 {
+		                font-size: @font-size-large;
+		                font-weight: @font-weight-semibold;
+		                margin: 28px 0 6px;
+
+		                a {
+		                    color: @black-1;
+		                    &:hover {
+		                        color: @brand-primary;
+		                    }
+		                }
+		            }
+
+		            .trainer-category {
+		                font-size: @font-size-base - 1;
+		                margin-bottom: 20px;
+		                color: @brand-primary;
+
+		                a {
+		                    color: @brand-primary;
+
+		                    &:hover{
+		                        color: @hover-primary;
+		                    }
+		                }
+		                
+		            }
+
+		            .trainer-social {
+
+						margin-bottom: 22px;
+		            }
+
+					.trainer-excerpt {
+		            	display: none;
+		            }
+
+		            .view-profile {
+		                color: @white;
+		                background-color: @brand-primary;
+		                padding: 4.5px 12px;
+		                width: 100%;
+		                .border-top-radius(0);
+		                .scale(1.008);
+
+		                &:hover {
+		                    background-color: @hover-primary;
+		                }
+		            }            
+		        }
+		    }
+
+		    .trainer-bio:hover {
+				.box-shadow(0 0 24px 0 fade(#000, 16%));
+		    	border: 1px solid #eee;
+		    }
+
+		    .trainer-item {
+		    	&.noo-md-3 {
+		    		.trainer-bio {
+		    			.trainer-avatar {
+		    				img {
+		    					max-width: 130px;
+		    				}
+		    			}
+		    		}
+		    	}
+		    }
+		}
+
+		.trainer-tag-wrap {
+			&.list {
+				.trainer-bio {
+					
+					text-align: left;
+
+					.trainer-avatar img {
+						max-width: 100%;
+						width: 100%;
+						.border-radius(0);
+						margin-top: 0;
+					}
+
+					.trainer-info {
+
+						padding: 20px;
+
+						.trainer-excerpt {
+							display: block;
+						}
+					}	
+				}
+
+			}
+		}
+
+		// Trainer List
+		.trainer-item {
+
+			
+			&.noo-md-6 {
+				&:nth-child(2n+1) {
+					clear: both;
+				}	
+			}
+
+			&.noo-md-4 {
+				@media screen and (min-width: 992px) {
+					&:nth-child(3n+1) {
+						clear: both;
+					}	
+				}
+				@media screen and (max-width: 991px) {
+					&:nth-child(2n+1) {
+						clear: both;
+					}	
+				}	
+			}
+
+			&.noo-md-3 {
+				@media screen and (min-width: 992px) {
+					&:nth-child(4n+1) {
+						clear: both;
+					}
+				}
+				@media screen and (max-width: 991px) {
+					&:nth-child(2n+1) {
+						clear: both;
+					}	
+				}	
+			}
+
+			.trainer-bio {
+
+				.trainer-avatar {
+					img {
+						@media (min-width: 435px) and (max-width: 580px) {
+							max-width: 150px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.masonry{
+
+		.trainer-tag-wrap {
+
+		    a {
+				.transition(all 0.4s ease 0s);
+				&:focus,
+				&:hover {
+					text-decoration: none;
+				}
+			}
+
+			.masonry-container {
+				z-index: 1;	
+			}
+
+		    .trainer-bio {
+		        border: 1px solid #e9f3f7;
+		        margin-bottom: 30px;
+		        text-align: center;
+		        .border-radius(4px);
+		        .transition(all 0.6s ease 0s);
+		        background-color: @white;
+		        
+		        .trainer-avatar {
+					display: block;
+					
+		            img {
+		                .border-radius(50%);
+		                max-width: 210px;
+		                margin-top: 30px;
+		                .transition(all 0.4s ease 0s);
+
+		                @media (min-width: 992px) and (max-width: 1199px) {
+							max-width: 150px;
+						}
+		            }
+		            
+		        }
+
+		        .trainer-info {
+
+		            h4 {
+		                font-size: @font-size-large;
+		                font-weight: @font-weight-semibold;
+		                margin: 28px 0 6px;
+
+		                a {
+		                    color: @black-1;
+		                    &:hover {
+		                        color: @brand-primary;
+		                    }
+		                }
+		            }
+
+		            .trainer-category {
+		                font-size: @font-size-base - 1;
+		                margin-bottom: 20px;
+		                color: @brand-primary;
+		                opacity: 0.7;
+
+		                a {
+		                    color: @brand-primary;
+
+		                    &:hover{
+		                        color: @hover-primary;
+		                        opacity: 1;
+		                    }
+		                }
+		                
+		            }
+
+		            .trainer-social {
+
+						margin-bottom: 22px;
+		            }
+
+					.trainer-excerpt {
+		            	display: none;
+		            }
+
+		            .view-profile {
+		                color: @white;
+		                background-color: @brand-primary;
+		                padding: 4.5px 12px;
+		                width: 100%;
+		                .border-top-radius(0);
+		                .scale(1.008);
+						opacity:0.7;
+		                &:hover {
+		                    background-color: @hover-primary;
+		                    opacity: 1;
+		                }
+		            }            
+		        }
+		    }
+
+		    .trainer-bio:hover {
+				.box-shadow(0 0 24px 0 fade(#000, 16%));
+		    	border: 1px solid #eee;
+		    }
+
+		    .trainer-item {
+		    	&.noo-md-3 {
+		    		.trainer-bio {
+		    			.trainer-avatar {
+		    				img {
+		    					max-width: 130px;
+		    				}
+		    			}
+		    		}
+		    	}
+		    }
+		}
+
+		.trainer-tag-wrap {
+			&.list {
+				.trainer-bio {
+					
+					text-align: left;
+
+					.trainer-avatar img {
+						max-width: 100%;
+						width: 100%;
+						.border-radius(0);
+						margin-top: 0;
+					}
+
+					.trainer-info {
+
+						padding: 20px;
+
+						.trainer-excerpt {
+							display: block;
+						}
+					}	
+				}
+
+			}
+		}
+
+		// Trainer List
+		.trainer-item {
+
+			
+			&.noo-md-6 {
+				&:nth-child(2n+1) {
+					clear: both;
+				}	
+			}
+
+			&.noo-md-4 {
+				@media screen and (min-width: 992px) {
+					&:nth-child(3n+1) {
+						clear: both;
+					}	
+				}
+				@media screen and (max-width: 991px) {
+					&:nth-child(2n+1) {
+						clear: both;
+					}	
+				}	
+			}
+
+			&.noo-md-3 {
+				@media screen and (min-width: 992px) {
+					&:nth-child(4n+1) {
+						clear: both;
+					}
+				}
+				@media screen and (max-width: 991px) {
+					&:nth-child(2n+1) {
+						clear: both;
+					}	
+				}	
+			}
+
+			.trainer-bio {
+
+				.trainer-avatar {
+					img {
+						@media (min-width: 435px) and (max-width: 580px) {
+							max-width: 150px;
+						}
+					}
+				}
+			}
+		}
+	}
+.noo-sidebar-wrap{
+	.trainer-tag-wrap{
+		.trainer-bio{
+				border: 1px solid #e9f3f7;
+				margin-bottom: 30px;
+				text-align: center;
+				-webkit-border-radius: 4px;
+				border-radius: 4px;
+				-webkit-transition: all .6s ease 0s;
+				-o-transition: all .6s ease 0s;
+				transition: all .6s ease 0s;
+				background-color: #fff;
+				.trainer-avatar {
+					display: block;
+					img{
+						border: 1px solid #e9f3f7;
+						margin-top: 30px;
+						text-align: center;
+						.border-radius(50%);
+						.transition(all 0.6s ease 0s);
+					}
+			}
+			&:hover{
+				.box-shadow(0 0 24px 0 fade(#000, 16%));
+			}
+			.trainer-info{
+			 	.view-profile {
+	                color: @white;
+	                background-color: @brand-primary;
+	                padding: 4.5px 12px;
+	                width: 100%;
+	                .border-top-radius(0);
+	                .scale(1.008);
+	                .opacity(0.6);
+	                &:hover {
+	                    opacity: 1;
+	                }
+	            }   
+	            .trainer-category{
+	            	margin-bottom:15px;
+	            }
+	            .trainer-social {
+	            	margin-bottom: 22px;
+					a{
+						height: 32px;
+						width: 32px;
+						line-height: 30px;
+						border: 1px solid #ccc;
+						display: inline-block;
+						.border-radius(50%);
+						color: #ccc;
+						margin: 0 3px 10px;
+						font-size: 14px;
+						.transition(all 0.6s ease 0s);
+						text-align: center;
+					}
+	            }
+			}
+		}
+	}
+}
+// Widget title trainer
+.widget-single-class-trainer {
+
+    h4.widget-title {
+        margin-bottom: 45px;
+    }
+}
+
+// Filter trainer category
+.trainer-filters {
+/* 	display: none; */
+	margin: 20px 0 56px;
+}
+// Filter style
+.noo-filters {
+	
+	text-align: center;
+
+	a {
+		.transition(all 0.4s ease 0s);
+		&:focus,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+
+		&:after {
+			content: '';
+			clear: both;
+			display: table;
+		}
+
+		li {
+			float: left;
+			margin-bottom: 16px;
+			height: 50px;
+
+			a {
+				padding: 0 20px 24px;
+				position: relative;
+
+				&:before {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					height: 1px;
+					width: 100%;
+					background-color: @gray-5;
+					z-index: 2;
+				}
+
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					.translate(-50%, 45%);
+					height: 15px;
+					width: 15px;
+					background-color: @gray-5;
+					.border-radius(50%);
+					border: 4px solid @white;
+					z-index: 1;
+				}
+
+				&.selected {
+					//color: @brand-primary;
+
+					&:after {
+						background-color: @brand-primary;
+						height: 15px;
+						width: 15px;
+						border: 4px solid lighten(@brand-primary, 20%);
+						.transition(all 0.4s ease 0s);
+						z-index: 3;
+					}
+				}
+			}
+		}
+
+		li:first-child {
+			
+			a {
+				&:before {
+					width: 50%;
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+
+		li:last-child {
+			
+			a {
+				&:before {
+					width: 50%;
+				}
+			}
+		}
+	}
+
+}

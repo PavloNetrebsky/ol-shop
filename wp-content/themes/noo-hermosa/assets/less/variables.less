@@ -1,0 +1,96 @@
+@import "variables/variables-core.less";
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+@white:                   #fff;
+@black:                   #000;
+@gray-base:               #000;
+@gray-darker:             lighten(@gray-base, 13.5%); // #222
+@gray-dark:               lighten(@gray-base, 20%);   // #333
+@gray:                    lighten(@gray-base, 33.5%); // #555
+@gray-light:              lighten(@gray-base, 46.7%); // #777
+@gray-lighter:            lighten(@gray-base, 93.5%); // #eee
+
+@black-1: 				  #333333;
+
+@gray-1: 				  #f5f5f5;
+@gray-2: 				  #696969;
+@gray-3: 				  #cccccc;
+@gray-4: 				  #e3deed;
+@gray-5: 				  #eeeeee;
+@gray-6: 				  #e2e2e2;
+@gray-7: 				  #eeeff0;
+@gray-8: 				  #888888;
+@gray-9: 				  #555555;
+@gray-10: 				  #f8f8f8;
+@gray-11: 				  #dadada;
+@gray-12: 				  #aaaaaa;
+
+
+@brand-primary:           #e182a8; // #337ab7
+@hover-primary:           darken(@brand-primary, 15%);	
+@secondary-color:         #5f41a5; // #337ab7
+@primary_color:			  #64bc8f;
+@hover-secondary:         darken(@secondary-color, 15%);
+
+
+//** Background color for `<body>`.
+@body-bg:                 #fff;
+@body-bg-image:         "";
+@body-bg-repeat:        no-repeat;
+@body-bg-align:         left top;
+@body-bg-attachment:    fixed;
+@body-bg-cover:         auto;
+
+// Site layout
+@site-background:       #fff; // lighten(@gray-lighter, 5%);
+@site-box-shadow:       0 0 7px rgba(0, 0, 0, 0.4);
+@site-border-color:     #d5d5d5;
+@site-border-color-rgba: rgba(0, 0, 0, 0.275);
+@site-width:            100%;
+@site-max-width:        1200px;
+@site-featured-width:        1600px;
+
+
+//** Global text color on `<body>`.
+@text-color:              #696969;
+
+//** Global textual link color.
+@link-color:              @text-color;
+//** Link hover color set via `darken()` function.
+@link-hover-color:        @brand-primary;
+
+
+//== Typography
+@font-family-sans-serif:  'Lato', serif;
+
+@headings-font-family:    'Lato', serif;
+
+@special-font:            'Droid Serif', serif;
+
+@headings-font-weight:    700;
+@headings-line-height:    1.1;
+@headings-color:          inherit;
+
+@font-size-base:          16px;
+@font-size-large:         18px;
+@font-size-small:         12px;
+
+@font-size-h1:            36px;
+@font-size-h2:            30px;
+@font-size-h3:            24px;
+@font-size-h4:            18px;
+@font-size-h5:            @font-size-base;
+@font-size-h6:            12px;
+
+
+// font weight
+@font-weight-small:       300;
+@font-weight-base:        400;
+@font-weight-semibold:    600;
+@font-weight-bold:        700;
+
+
+
+

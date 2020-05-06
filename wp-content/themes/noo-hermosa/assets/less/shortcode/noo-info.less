@@ -1,0 +1,47 @@
+/**
+ * Style shortcode: [noo_info]
+ */
+.noo-info-wrap {
+	padding: 20px 0;
+	.icon {
+		background: @secondary-color;
+		display: inline-block;
+		float: left;
+		height: 60px;
+		text-align: center;
+		position: relative;
+		width: 60px;
+		.border-radius(50%);
+		.opacity(0.75);
+		.transition( all .4s ease 0s );
+		.icon-child {
+			border: 3px solid #fff;
+			display: inline-block;
+			height: 56px;
+			left: 2px;
+			position: absolute;
+			top: 2px;
+			width: 56px;
+			.border-radius(50%);
+		}
+		i {
+			color: #fff;
+			font-size: 24px;
+			line-height: 60px;
+			width: 100%;
+		}
+		&:hover {
+			i {
+				.animation-name(bounceIn);
+				.animation-duration(2s);
+			}
+		}
+	}
+	.content {
+		color: #333333;
+		font-size: 18px;
+		line-height: 24px;
+		padding: 5px 0 0 75px;
+	}
+	.clearfix();
+}

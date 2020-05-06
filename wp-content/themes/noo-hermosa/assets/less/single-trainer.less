@@ -1,0 +1,433 @@
+// Single Page Trainer
+
+.single-noo_trainer {
+
+	a {
+		.transition(all 0.4s ease 0s);
+		&:focus,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	
+	.welcome-text {
+		font-size: 30px;
+		font-family: @special-font;
+		text-align: center;
+		font-style: italic;
+		color: @black-1;
+		margin-bottom: 90px;
+		white-space: -moz-pre-wrap;
+		white-space: -pre-wrap;
+		white-space: -o-pre-wrap;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		line-height: 48px;
+		-webkit-font-smoothing: antialiased;
+		font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+
+		@media screen and (max-width: 991px) {
+			font-size: 24px;
+			margin-bottom: 60px;
+		}
+		@media screen and (max-width: 480px) {
+			display: none;
+		}
+	}
+
+	.hentry {
+		.box-shadow(0 0 22px 0 fade(#000, 10%));
+		border: 1px solid @gray-5;
+		padding: 50px 0;
+		position: relative;
+		z-index: 1;
+
+		@media screen and (max-width: 991px) {
+			padding: 30px 0;
+		}
+		@media screen and (max-width: 480px) {
+			margin-top: 0;
+		}
+
+		.view-class {
+
+			@media screen and (min-width: 992px) {
+				position: absolute;
+				top: 40px;
+				right: 30px;
+				margin-top: 0;
+			}
+
+			margin-left: 30px;
+			margin-top: 10px;
+    		display: inline-block;
+			
+
+			i {
+				margin-right: 5px;
+			}
+		}
+		
+		.trainer-info,
+		.content-header {
+			padding: 0 20px;
+
+			@media screen and (max-width: 991px) {
+				padding: 0;
+			}
+		}
+
+		.content-featured {
+			margin-bottom: 30px;
+
+			img {
+				border: 1px solid @gray-5;
+				width: 100%;
+			}
+
+			@media screen and (max-width: 991px) {
+				
+				text-align: center;
+
+				img {
+					width: 60%;
+					.border-radius(50%);
+				}
+			}
+		}
+
+		.all-social-share {
+			
+			text-align: center;
+
+			@media screen and (max-width: 991px) {
+
+				margin-bottom: 30px;
+			}
+
+
+			a {
+				width: 38px;
+				height: 38px;
+				line-height: 38px;
+				margin: 0 2px; 
+			}
+		}
+
+		.trainer-info {
+
+			.content-title {
+				
+				font-size: 34px;
+                
+                font-weight: @font-weight-base;
+                color: @secondary-color;
+                margin: -7px 0 8px;
+
+				@media screen and (max-width: 479px) {
+					font-size: 24px;
+				}
+			}
+
+			.trainer-category {
+
+				font-size: @font-size-base - 1;
+                margin-bottom: 20px;
+                color: @brand-primary;
+
+                a {
+                    color: @brand-primary;
+
+                    &:hover{
+                        color: @hover-primary;
+                    }
+                }
+			}
+
+			.trainer-description {
+
+				margin-top: 38px;
+
+				> div {
+					margin-bottom: 10px;
+
+					&.trainer-skill {
+						margin-top: 20px;
+					}
+
+					span.trainer-title {
+						color: @black-1;
+						font-weight: @font-weight-semibold;
+						display: inline-block;
+						width: 24.5%;
+					}
+				}
+
+				.text-bio {
+
+					float: right;
+					width: 75.5%;
+					white-space: -moz-pre-wrap;
+					white-space: -pre-wrap;
+					white-space: -o-pre-wrap;
+					white-space: pre-wrap;
+					word-wrap: break-word;
+				}
+
+				.trainer-biography {
+					&:after {
+						clear: both;
+						display: table;
+						content: '';
+					}
+				}
+
+				.noo-progress-bar {
+
+					float: right;
+					width: 75.5%;
+					margin-bottom: 20px;
+				}
+
+				@media screen and (max-width: 479px) {
+
+					margin-top: 10px;
+
+					> div {
+						span.trainer-title {
+							width: 100%;
+						}
+					}
+					.noo-progress-bar,
+					.text-bio {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	.trainer-content {
+
+		background-color: fade(#e9f3f7, 50%);
+		padding: 264px 0 80px;
+		margin-top: -304px;
+
+		.content {
+			
+			padding: 0 9.5%;
+
+			@media screen and (max-width: 991px) {
+				padding: 0;
+			}
+
+
+			iframe {
+				width: 100%;
+				max-height: 280px;
+			}
+
+			blockquote {
+				font-family: @special-font;
+				font-size: @font-size-h3 - 2;
+				font-style: italic;
+				color: @secondary-color;
+				line-height: 36px;
+				border: none;
+				position: relative;
+				padding: 12px 34px;
+				margin: 22px 0 26px 66px;
+
+				@media screen and (max-width: 767px) {
+					margin: 0px;
+					font-size: 20px;
+				}
+
+				@media screen and (max-width: 480px) {
+					margin: 0;
+					font-size: 18px;
+				}
+
+				&:before {
+					font-family: "Ionicons";
+					content: "\f347";
+					color: @brand-primary;
+					position: absolute;
+					top: 0;
+					left: 0;
+					font-style: normal;
+				}
+        	}
+			
+			h1, h2, h3, h4, h5, h6 {
+			
+				
+				color: @secondary-color;
+				font-weight: @font-weight-base;
+			}
+
+			ul {
+				list-style: none;
+				padding: 0;
+
+
+				li:before {
+					content: "\f375";
+					position: relative;
+					display: inline-block;
+					font-family: "Ionicons";
+					font-style: normal;
+					font-weight: normal;
+					line-height: 1;
+					text-decoration: inherit;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					speak: none;
+					padding-right: 12px;
+					color: @brand-primary;
+				}
+			}
+		}
+	}
+
+	.noo-column-2 {
+		@media screen and (max-width: 991px) {
+			width: 100% !important;
+			padding: 0 0 20px !important;
+		}
+	}
+
+	.noo-progress-bar {
+
+		.noo-single-bar {
+			background-color: @gray-7;
+			margin-top: 34px;
+			margin-bottom: 46px;
+			position: relative;
+			height: 8px;
+			width: 78%;
+			.border-radius(8px);
+			
+			&:last-child {
+				
+				margin-bottom: 0;
+			}
+
+			.label-bar {
+				padding: 0;
+
+    			.noo-progress-label {
+					.translate(0, -30px);
+					display: block;
+					font-style: italic;
+					font-size: 14px;
+					font-family: @special-font;
+    			}
+
+    			.noo-label-units {
+
+    				position: absolute;
+					right: -74px;
+					top: -8px;
+					display: inline-block;
+					font-size: 14px;
+					text-transform: uppercase;
+					color: @brand-primary;
+					padding: 0;
+					line-height: 20px;
+    			}
+			}
+
+			.noo-bar {
+				display: block;
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background-color: lighten(@secondary-color, 15%);
+				top: 0;
+				left: 0;
+				.transition(width 1s linear);
+				.border-radius(8px);
+
+/* 				.animation(loadSkill 1s linear 0.5s 1 alternate); */
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+			
+			.noo-single-bar {
+				width: 100%;
+
+				.label-bar {
+					.noo-label-units {
+						right: 0px;
+    					top: -28px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.loadSkill {
+	-webkit-animation-name: loadSkill;
+	animation-name: loadSkill;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+.animated.flip {
+  -webkit-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  backface-visibility: visible;
+  -webkit-animation-name: flip;
+  animation-name: flip;
+}
+
+/**
+* loadSkill
+*/
+
+@-webkit-keyframes loadSkill {
+	from {
+		width: 0;
+	}
+	to {
+	    width: 100%;
+	}
+}
+@-moz-keyframes loadSkill {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+@-ms-keyframes loadSkill {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+@keyframes loadSkill {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}

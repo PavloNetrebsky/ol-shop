@@ -1,0 +1,196 @@
+// --- Hide element
+.mega-entry,
+.mega-list-icon,
+.hide,
+.megamenu-status {
+	display: none;
+}
+
+// --- Show element
+.menu-item-depth-0 {
+	.megamenu-status {
+		display: block;
+	}
+	.noo-mega-menu-widgetarea {
+		display: none !important;
+	}
+}
+.menu-item-depth-1 {
+	.noo-mega-menu-widgetarea {
+		display: block !important;
+		margin-top: 15px;
+	}
+}
+.noo-icon {
+	margin: 15px 0px;
+	span {
+		&.icon {
+			background-color: #fff;
+		    border: 1px solid #ddd;
+		    padding: 5px 14px;
+		    font-size: 16px;
+		    font-weight: bold;
+		}
+		&.select_icon, &.select_color {
+			background-color: #eee;
+		    border: 1px solid #ddd;
+		    padding: 5px 7px;
+		    font-size: 16px;
+		    font-weight: bold;
+		    border-left: none;
+		    cursor: pointer;
+		}
+		&.display{
+		    float: right;
+		    border: 1px solid #ddd;
+		    padding: 6px 18px;
+		    margin: -6px 10px;
+		}
+	}
+}
+
+.mega-entry {
+	border: 1px solid #ddd;
+    padding: 2px;
+    background: transparent;
+    margin-top: 6px;
+ 	width: 96%; 
+ 	.box-search {
+	    width: 99.5%;
+	}
+	.mega-list-icon {
+		i {
+			border: 1px solid #ddd;
+		    padding: 8px;
+		    margin: 3px;
+		    cursor: pointer;
+		    width: 19px;
+		    text-align: center;
+		    &:hover {
+		    	background: #ddd;
+		    }
+		}
+	}
+}
+
+.megamenu-search {
+ 	position: relative;
+ 	i.fa-search {
+	    position: absolute;
+	    top: 0;
+	    right: 9px;
+	    cursor: pointer;
+	}
+}
+
+
+
+.mega-list-icon {
+	overflow-y:scroll; 
+	width:93.8%; 
+	height:100px;
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    margin: 3px 1px;
+}
+
+.box-set {
+    // position: relative;
+    padding: 2px;
+    width: 96%;
+    >div {
+	    padding: 2px 10px
+	}
+	input[type="number"] {
+	    width: 60px;
+	    height: 23px;
+	    padding: 1px;
+	    border-radius: 4px;
+	    font-size: 13px;
+	}
+	.select_alignment {
+	    // position: relative;
+	    // top: -11px;
+	    // left: 66px;
+	    height: 22px !important;
+	    border-radius: 3px;
+	    padding: 0;
+	    margin: 0;
+	    font-size: 13px;
+	}
+}
+
+@media (max-width: 786px) {
+	.mega-entry {
+		width: 99%;
+	}
+    .box-set {
+
+    }
+}
+
+/**
+ * Tooltip Styles
+ */
+
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+// -- Hide the tooltip content by default
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  opacity: 0;
+  pointer-events: none;
+}
+
+// -- Position tooltip above the element
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+// -- Triangle hack to make tooltip look like a speech bubble
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+// -- Show tooltip content on hover
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  opacity: 1;
+}

@@ -1,0 +1,134 @@
+/*
+* 0.0 Short introduction
+* -----------------------------------------------------------------------------
+*/
+.noo-short-intro{
+  position: relative;
+  text-align: right;
+  padding: 153px 90px 100px 15px;
+  @media ( max-width: 1300px ) {
+    padding: 153px 30px 100px 15px;
+  }
+  @media ( max-width: 1199px ) {
+    padding: 153px 15px 100px 15px;
+  }
+  @media ( max-width: 320px ) {
+    padding: 70px 15px;
+    p{
+      font-size: @font-size-large;
+    }
+  }
+  img{
+    position: absolute;
+    left: -160px;
+    top: -75px;
+    @media ( max-width: 1700px ) {
+      display: none;
+    }
+  }
+  h3{
+    font-size: 48px;
+    line-height: 1;
+    color: @secondary-color;
+    text-transform: uppercase;
+    font-weight: @font-weight-base;
+    margin: 0 0 6px 0;
+    padding: 0;
+    position: relative;
+    span{
+      color: @brand-primary;
+    }
+    @media( max-width: 767px ){
+      font-size: 34px;
+      line-height: 36px;
+    }
+    @media (max-width: 479px) {
+      font-size: 26px;
+    }
+  }
+  p{
+    font-size: @font-size-large + 2;
+    font-family: @special-font;
+    font-style: italic;
+    position: relative;
+  }
+  .custom_link{
+    background-color: @brand-primary;
+    .border-radius(5px);
+    color: #ffffff;
+    line-height: 22px;
+    font-weight: 400;
+    padding: 10px 35px;
+    text-decoration: none;
+    .transition(all 0.4s ease 0s);
+    margin-top: 15px;
+    display: inline-block;
+    position: relative;
+    &:hover{
+      background: @hover-primary;
+    }
+  }
+}
+
+
+
+// noo custom html
+.noo-custom-html{
+  position: relative;
+  width: 100%;
+  padding: 66px 0 76px;
+  span{
+    color: @white;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: @font-weight-small;
+  }
+  h3{
+    font-size: 32px;
+    color: @white;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    max-width: 450px;
+    line-height: 42px;
+    font-weight: @font-weight-base;
+    @media( max-width: 767px ){
+      font-size: 24px;
+      line-height: 32px;
+    }
+    @media (max-width: 479px) {
+      font-size: 22px;
+    }
+  }
+  img{
+    position: absolute;
+    right: -20%;
+    top: -20%;
+    @media( max-width: 1700px ){
+      right: -50px;
+      top: -42px;
+    }
+    @media( max-width: 1119px ){
+      display: none;
+    }
+  }
+  a{
+    border: 1px solid @white;
+    .border-radius(5px);
+    color: #ffffff;
+    line-height: 22px;
+    font-weight: 400;
+    padding: 9px 26px;
+    text-decoration: none;
+    .transition(all 0.4s ease 0s);
+    margin-top: 32px;
+    display: inline-block;
+    i{
+      padding-right: 10px;
+    }
+    &:hover{
+      background: @white;
+      color: @gray-dark;
+    }
+  }
+}

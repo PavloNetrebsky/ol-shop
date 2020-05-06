@@ -1,0 +1,248 @@
+/**
+ * NOO Framework Package.
+ *
+ * StyleSheet used in admin for NOO Theme
+ */
+/* ============================================================================= */
+
+/* Admin Typo */
+h2 small {
+	font-weight: normal;
+	line-height: 1;
+	font-size: 14px;
+}
+
+a.noo-copyright {
+	text-decoration: none;
+	color: #47bfa9;
+}
+
+a.noo-copyright:hover {
+	color: #369d8a;
+	border-bottom: 1px dotted #369d8a;
+}
+
+/* Admin Icons */
+#toplevel_page_noo_timetable div.wp-menu-image.dashicons-admin-generic:before,
+#menu-posts-noo_event div.wp-menu-image.dashicons-admin-generic:before,
+#menu-posts-noo_class div.wp-menu-image.dashicons-admin-generic:before,
+#toplevel_page_noo_timetable div.wp-menu-image.dashicons-megaphone:before,
+#menu-posts-noo_event div.wp-menu-image.dashicons-megaphone:before,
+#menu-posts-noo_class div.wp-menu-image.dashicons-megaphone:before,
+#toplevel_page_noo_timetable div.wp-menu-image.dashicons-calendar-alt:before,
+#menu-posts-noo_event div.wp-menu-image.dashicons-calendar-alt:before,
+#menu-posts-noo_class div.wp-menu-image.dashicons-calendar-alt:before {
+	color: #47bfa9; /* NOO Color */
+}
+
+/* Image thumbnail */
+.noo-thumb-wrapper img {
+	max-width: 120px;
+	max-height: 120px;
+	vertical-align: top;
+	margin: 15px 15px 0 0;
+	background:#ccc;
+	display: inline-block;
+}
+
+/* Fix form-field error with checkbox and radio field */
+.form-field input[type="checkbox"],
+.form-field input[type="radio"] {
+	width: 16px;
+}
+
+.form-field input[type="button"] {
+	width: auto;
+}
+
+/* NOO form */
+.noo-form-body {	
+	max-height: 540px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding-right: 15px;
+	padding-left: 5px;
+}
+
+.noo-form-group {
+	margin-top: 20px;
+	line-height: 2em;
+}
+
+.noo-form-group:before,
+.noo-form-group:after {
+	content: " ";
+	display: table;
+}
+
+.bar-item-group .noo-form-group,
+.bar-item-group hr {
+	margin-top: 10px;
+}
+
+.noo-form-footer {
+	position: absolute;
+	bottom: 40px;
+	right: 35px;
+}
+
+.noo-form-group:after {
+	clear: both;
+}
+
+.noo-form-group + hr {
+	margin-top: 20px;
+}
+
+.noo-form-group > label {
+	margin-top: 0;
+	margin-bottom: 0;
+	width: 30%;
+	max-width: 200px;
+	min-width: 150px;
+	top: 0;
+	float: left;
+	font-weight: bold;
+}
+
+.noo-form-group	.noo-control {
+	width: 65%;
+	float: left;
+}
+
+.noo-form-group	.field-desc {
+	font-weight: normal;
+}
+
+#side-sortables .noo-form-group > label,
+#side-sortables .noo-form-group .noo-control {
+	width: 100%;
+	max-width: none;
+}
+
+.customize-control .noo-control,
+.vc-shortcode-param .noo-control {
+	width: 100%;
+	float: none;
+}
+
+.noo-control input[type="button"] + input[type="button"] {
+	margin-left: 10px;
+}
+
+.noo-control input[type="text"],
+.noo-control textarea,
+.noo-control select {
+	display: block;
+	width: 100%;
+	/* max-width: 600px; */
+}
+
+.noo-control input.wp-color-picker {
+	display: inline-block;
+}
+
+.noo-control select[multiple] {
+	height: 150px;
+}
+
+.noo-control input[type="radio"] {
+	margin: 1px 10px 0 0;
+}
+
+.noo-control textarea {
+	height: 100px;
+}
+
+.noo-control .wp-picker-container input[type="text"].noo-color-picker {
+	display: inline-block;
+	width: 86px;
+	line-height: 24px;
+	height: 24px;
+	vertical-align: top;
+}
+
+.noo-control .icon-selector input,
+.noo-control .icon-selector a {
+	display: inline-block;
+	width: 45%;
+}
+
+.noo-control input[type="text"].noo-slider {
+	display: inline-block;
+	width: 20%;
+}
+
+.noo-control .ui-slider.ui-slider-horizontal {
+	display: inline-block;
+	width: 75%;
+	margin-left: 3%;
+}
+
+.noo-control small {
+	line-height: 15px;
+	display: block;
+	color: #888;
+}
+
+.noo-control a > i {
+	margin-top: 3px;
+}
+
+.noo-fontawesome-dialog {
+	text-decoration: none;
+}
+
+#TB_overlay {
+	z-index: 100000 !important;
+}
+
+#TB_window {
+	z-index: 100001 !important;
+}
+/*----------  Subsection comment block  ----------*/
+.noo-settings nav.noo-nav-tab-wrapper {
+	margin: 1.5em 0 1em;
+	border-bottom: 1px solid #ccc;
+}
+
+.noo-settings .shortcode {
+	background-color: #1e8cbe;
+	display: block;
+}
+
+.noo-settings .scg_result {
+	background: inherit;
+	color: inherit;
+	font-size: 14px;
+	border: none;
+	box-shadow: none;
+	padding: 4px 8px;
+	margin: 0;
+	font-weight: 300;
+}
+
+.xdsoft_datetimepicker {
+	z-index: 999999 !important;
+}
+.noo-form-group._manual_settings{
+	margin-top: 50px;
+}
+._manual_settings label {
+    width: 100%;
+    max-width: 100%;
+    border-bottom: 1px solid #eee;
+}
+._manual_settings label strong {
+    font-weight: 600;
+    font-size: 15px;
+}
+.vc_ui-panel-content-container .noo_vc_custom_param .chosen-container-multi .chosen-choices {
+	padding: 3px 6px;
+}
+.vc_ui-panel-content-container .noo_vc_custom_param .chosen-container-multi .chosen-choices li.search-choice {
+	padding: 5px 20px 5px 7px;
+}
+.vc_ui-panel-content-container .noo_vc_custom_param .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+	top: 6px;
+}

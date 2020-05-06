@@ -1,0 +1,35 @@
+/**
+* Class Listing page
+*/
+.posts-loop-title {
+	background-color: @gray-1;
+	position: relative;
+	margin-bottom: 30px;
+	background: red;
+
+	h3 {
+		font-size: @font-size-base;
+		font-weight: @font-weight-base;
+		padding: 0;
+		margin: 0;
+		line-height: 70px;
+		padding-left: 30px;
+	}
+
+	.loop-view-mode {
+		position: absolute;
+		top: 50%;
+		right: 30px;
+		.translate(0, -50%);
+
+		a {
+			background: @white;
+			display: inline-block;
+			text-align: center;
+			line-height: 35px;
+			width: 35px;
+			.border-radius(4px);
+			margin-left: 10px;
+		}
+	}
+}

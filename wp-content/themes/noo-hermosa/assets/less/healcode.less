@@ -1,0 +1,417 @@
+/*
+ * HealCode
+ */
+
+@import "variables.less";
+@import "mixins.less";
+
+.semantic-content .modal-inner {
+	top: 90px;
+}
+.semantic-content .modal-close:after {
+	top: 65px;
+}
+
+.ui-widget-content {
+	max-width: 320px;
+	tr td {
+		padding: 0;
+
+		&:hover {
+			background-color: transparent;
+		}
+	}
+}
+
+.site {
+	div.healcode {
+		
+		a {
+			.transition(all 0.4s ease 0s);
+			&:focus,
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		
+
+		.healcode-title-text,
+		.hc_header_time {
+			font-size: 20px;
+			text-transform: uppercase;
+			font-weight: 400;
+			color: @brand-primary;
+		}
+
+		h1 .healcode-title-text {
+			font-weight: 400 !important;
+		}
+
+		.healcode-title-text {
+			color: @secondary-color;
+			font-weight: 400;
+
+			br {
+				display: none;
+			}
+		}
+
+		a.action_icon {
+			margin: 0px 0 0 10px;
+
+			&.my_account_version {
+				margin-top: 4px;
+			}
+		}
+
+		div.hc_footer {
+			clear: both;
+		}
+
+		.trainer_list {
+
+			.healcode-image-area >img {
+				display: none;
+			}	
+		} 
+
+		
+		
+		.trainer_list h1.trainer_name {
+			font-weight: @font-weight-base;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+			font-size: 20px;
+			color: @secondary-color;
+		}
+
+		.trainer_list {
+			.trainer_bio {
+				font-size: 16px;
+				line-height: 1.6;
+
+				img {
+					width: 100% !important;
+					float: right !important;
+					margin: 0 0 1em 1em !important;
+				}
+			}
+		}
+
+		.trainer_show {
+			width: 100%;
+			float: left;
+			margin-bottom: 30px !important;
+		}
+
+		.back_link {
+			font-size: 16px;
+		}
+
+		.trainer_list,
+		.class_list {
+
+			.class_offered_link,			
+			.trainer_teaches_link {
+				text-transform: none;
+				font-size: @font-size-base;
+				.transition(all 0.4s ease 0s);
+				background-color: @brand-primary;
+				.border-radius(5px);
+				padding: 8px 30px;
+				.box-shadow(none);
+				display: inline-block;
+    			margin-top: 10px;
+
+				a {
+					line-height: 22px;
+					font-weight: 400;
+				}
+
+				&:hover {
+					background-color: @hover-primary;	
+				}
+			}
+		}
+
+		
+
+		a, input {
+			&.hc-button {
+				background-color: @brand-primary;
+
+				&:hover {
+					background-color: @hover-primary;
+				}
+			}
+		}
+
+		.hc_availability,
+		.hc_waitlist {
+			font-size: 14px;
+			margin-left: 6px;
+		}
+
+		.classname {
+			font-weight: @font-weight-base;
+		}
+
+		//Table
+		table.schedule {
+
+			margin-top: 2.35em;
+
+			tr {
+				th {
+					    padding: 0.75em .5em;
+						font-size: 14px;
+						line-height: 18px;
+						font-weight: 400;
+						text-transform: uppercase;
+						letter-spacing: 0;
+				}
+
+				td {
+					font-size: 14px;
+				}
+			}
+		}
+
+		// Class list
+		.class_list {
+
+			.healcode-image-area {
+				margin: 0 0 .5em 3em;
+			}
+
+			.class_show {
+				border-bottom: 1px solid #EAEAEA;
+				margin-bottom: 40px;
+				padding-bottom: 40px;
+				margin-top: 0;
+
+			}
+
+			.class_name {
+
+				font-size: 20px;
+				text-transform: uppercase;
+				color: @secondary-color;
+				font-weight: 400;
+				margin-bottom: 10px;
+			}
+
+			.class_description {
+				font-size: 16px;
+				line-height: 1.6;
+			}
+		}
+		
+		input:not([type='submit']){
+			border: 1px solid @gray-6;
+			height: 45px;
+			width: 100%;
+			color: @gray-8;
+			font-size: @font-size-base - 1;
+			padding: 0 20px;
+			.placeholder(@gray-8);
+			margin: 12.5px 0;
+		}
+		select:not([multiple]){
+			margin: 12.5px 0;
+			height: 45px;
+			color: @gray-8;
+			font-size: @font-size-base - 1;
+			width: 100%;
+			.border-radius(0);
+			padding: 0 20px;
+			border: 1px solid @gray-6;
+			-webkit-box-shadow: none;
+			-khtml-box-shadow: none;
+			-moz-box-shadow: none;
+			-ms-box-shadow: none;
+			-o-box-shadow: none;
+			box-shadow: none;
+			-webkit-appearance: none;
+			-khtml-appearance: none;
+			-moz-appearance: none;
+			-ms-appearance: none;
+			-o-appearance: none;
+			appearance: none;
+			background: url(../images/arrow.png) no-repeat right center #fff;
+			cursor: pointer;
+
+			&:focus{
+				outline-color: transparent;
+				outline: none;
+			}
+		}
+		textarea{
+			color: @gray-8;
+			font-size: @font-size-base - 1;
+			width: 100%;
+			border: 1px solid @gray-6;
+			padding: 20px;
+			margin-top: 12.5px;
+			height: 120px;
+		}
+		input[type='submit']{
+
+			background-color: @brand-primary;
+			.border-radius(5px);
+			color: #ffffff;
+			line-height: 22px;
+			font-weight: 400;
+			padding: 8px 30px;
+			font-size: 16px;
+			text-decoration: none;
+			.transition(all 0.4s ease 0s);
+			margin-top: 22px;
+			display: inline-block;
+			border: 0;
+
+			&:hover{
+				background: @hover-primary;
+			}
+		}
+
+		input[type='checkbox'] {
+			border: 0;
+			background: #f4f4f4;
+			color: #555;
+			clear: none;
+			cursor: pointer;
+			display: inline-block;
+			line-height: 0;
+			height: 20px;
+			margin: -4px 4px 0 0;
+			outline: 0;
+			padding: 0 !important;
+			text-align: center;
+			vertical-align: middle;
+			width: 20px;
+			-webkit-appearance: none;
+			.transition(0.05s border-color ease-in-out);
+			position: relative;
+		}
+
+		input[type="checkbox"]:checked:before {
+			content: "\f00c";
+			color: @brand-primary;
+			position: absolute;
+			float: left;
+			display: inline-block;
+			vertical-align: middle;
+			width: 16px;
+			font-family: "fontawesome";
+			speak: none;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			left: 3px;
+			top: 10px;
+			font-size: 12px;
+		}
+
+		.parsley-errors-list {
+			display: inline-block;
+		}
+
+		.hc-birth-date > div select {
+			width: 30%;
+			display: inline-block;
+			margin-right: 13px;
+			margin-left: 13px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+		
+		.hc_registration {
+
+			label,
+			.hc-label {
+				font-size: 20px;
+				font-weight: 400;
+			}
+
+			.note {
+				font-size: 14px;
+			}
+
+			.liability {
+				margin-top: 15px;
+				font-size: 14px;
+				max-width: initial;
+				height: 115px;
+			}
+		}
+
+		&.appointments {
+
+			.ui-datepicker-inline {
+				max-width: 320px;
+			}
+
+			.ui-datepicker-calendar tr td:hover {
+				background-color: transparent;
+			}
+			
+			a.hc-button {
+				padding: 12px 30px;
+				font-size: 14px;
+			}
+
+			.header h1 {
+				font-weight: 400;
+				padding-bottom: 10px;
+				margin-bottom: 20px;
+			}
+
+			.trainer-label {
+				font-size: 16px;
+				margin: 20px 0;
+				font-weight: 400;
+			}
+		}
+
+		.week_links span a {
+			background-color: @brand-primary;
+			padding: 8px 30px;
+			font-size: 11px;
+
+			&:hover {
+				background-color: @hover-primary;	
+			}
+		}
+
+		.week_links .healcode-jump-to-date input {
+			padding-left: 15px !important;
+			height: 32px;
+		}
+
+		&.schedule .header h1 {
+			margin-top: 0;
+		}
+
+		&.schedule.calendar .hc_time {
+			font-weight: 600;
+			color: @black-1;
+		}
+
+		&.schedule.list_view .hc_availability {
+			margin-right: 6px;
+		}
+
+		&.schedule.list_view li.schedule_date {
+			font-size: 16px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		&.schedule.list_view div.header h1 {
+			padding-bottom: 10px;
+		}
+		
+	}
+}
