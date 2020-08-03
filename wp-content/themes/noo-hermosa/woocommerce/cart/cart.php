@@ -143,7 +143,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					</div>
 				<?php } ?>
 
-				<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'noo-hermosa' ); ?>" />
+				<input id="update_cart_button_id" type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'noo-hermosa' ); ?>" />
 
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
 

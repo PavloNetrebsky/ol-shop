@@ -607,3 +607,44 @@ if ( ! function_exists( 'noo_hermosa_class_get_count_arrange' ) ) {
 
 add_action( 'wp_ajax_noo_class_get_count_arrange', 'noo_hermosa_class_get_count_arrange' );
 add_action( 'wp_ajax_nopriv_noo_class_get_count_arrange', 'noo_hermosa_class_get_count_arrange' );
+
+/**
+ * @snippet       Automatically Update Cart on Quantity Change - WooCommerce
+ * @how-to        Get CustomizeWoo.com FREE
+ * @sourcecode    https://businessbloomer.com/?p=73470
+ * @author        Rodolfo Melogli
+ * @compatible    Woo 3.5.1
+ */
+ 
+add_filter( 'woocommerce_currencies', 'add_my_currency' );
+
+function add_my_currency( $currencies ) {
+
+     $currencies['UAH'] = __( 'Українська гривня', 'woocommerce' );
+
+     return $currencies;
+
+}
+
+add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
+
+function add_my_currency_symbol( $currency_symbol, $currency ) {
+
+     switch( $currency ) {
+
+         case 'UAH': $currency_symbol = 'грн'; break;
+
+     }
+
+     return $currency_symbol;
+
+}
+
+add_filter( 'woocommerce_checkout_fields' , 'virtual_products_less_fields' );
+ 
+function virtual_products_less_fields( $fields ) { 
+    unset($fields['billing']['billing_email']);
+     
+    return $fields;
+}
+
