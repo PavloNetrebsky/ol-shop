@@ -648,3 +648,8 @@ function virtual_products_less_fields( $fields ) {
     return $fields;
 }
 
+function delete_post_type(){
+    unregister_post_type( 'noo_event' );
+	unregister_post_type( 'noo_class' );
+}
+add_action('init','delete_post_type');

@@ -11,7 +11,7 @@ $this->start('source');
 
     <div class="notice inline notice-generic">
         <h2>
-            Choose a new location for these translations
+            <?php self::e( __('Choose a new location for these translations','loco-translate') );?> 
         </h2>
         <table class="form-table">
             <tbody class="loco-paths"><?php
@@ -21,7 +21,7 @@ $this->start('source');
                         <p class="description"><?php $location->e('label')?>:</p>
                     </td>
                     <td><?php
-                        /* @var Loco_mvc_FileParams $choice */
+                        /* @var Loco_mvc_ViewParams $choice */
                         foreach( $location['paths'] as $choice ):?> 
                         <p><?php
                             if( $choice->active ):?> 

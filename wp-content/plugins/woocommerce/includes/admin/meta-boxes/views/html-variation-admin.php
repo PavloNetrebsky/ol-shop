@@ -6,7 +6,7 @@
  * @var int $variation_id
  * @var WP_POST $variation
  * @var WC_Product_Variation $variation_object
- * @var array $variation_data array of variation data @deprecated.
+ * @var array $variation_data array of variation data @deprecated 4.4.0.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -210,6 +210,35 @@ defined( 'ABSPATH' ) || exit;
 						)
 					);
 
+					$low_stock_placeholder = ( $product_object->get_manage_stock() && '' !== $product_object->get_low_stock_amount() )
+						? sprintf(
+							/* translators: %d: Amount of stock left */
+							esc_attr__( 'Parent product\'s threshold (%d)', 'woocommerce' ),
+							esc_attr( $product_object->get_low_stock_amount() )
+						)
+						: sprintf(
+							/* translators: %d: Amount of stock left */
+							esc_attr__( 'Store-wide threshold (%d)', 'woocommerce' ),
+							esc_attr( get_option( 'woocommerce_notify_low_stock_amount' ) )
+						);
+
+					woocommerce_wp_text_input(
+						array(
+							'id'                => "variable_low_stock_amount{$loop}",
+							'name'              => "variable_low_stock_amount[{$loop}]",
+							'value'             => $variation_object->get_low_stock_amount( 'edit' ),
+							'placeholder'       => $low_stock_placeholder,
+							'label'             => __( 'Low stock threshold', 'woocommerce' ),
+							'desc_tip'          => true,
+							'description'       => __( 'When variation stock reaches this amount you will be notified by email. The default value for all variations can be set in the product Inventory tab. The shop default value can be set in Settings > Products > Inventory.', 'woocommerce' ),
+							'type'              => 'number',
+							'custom_attributes' => array(
+								'step' => 'any',
+							),
+							'wrapper_class' => 'form-row',
+						)
+					);
+
 					/**
 					 * Variation options inventory action.
 					 *
@@ -378,7 +407,7 @@ defined( 'ABSPATH' ) || exit;
 
 							if ( $downloads ) {
 								foreach ( $downloads as $key => $file ) {
-									include 'html-product-variation-download.php';
+									include __DIR__ . '/html-product-variation-download.php';
 								}
 							}
 							?>
@@ -394,7 +423,7 @@ defined( 'ABSPATH' ) || exit;
 										'name' => '',
 									);
 									ob_start();
-									require 'html-product-variation-download.php';
+									require __DIR__ . '/html-product-variation-download.php';
 									echo esc_attr( ob_get_clean() );
 									?>
 									"><?php esc_html_e( 'Add file', 'woocommerce' ); ?></a>

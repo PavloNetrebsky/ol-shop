@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'MC4WP_API' => $baseDir . '/includes/api/class-api.php',
     'MC4WP_API_Connection_Exception' => $baseDir . '/includes/api/class-connection-exception.php',
     'MC4WP_API_Exception' => $baseDir . '/includes/api/class-exception.php',
@@ -73,6 +74,4 @@ return array(
     'MC4WP_WPForms_Field' => $baseDir . '/integrations/wpforms/class-field.php',
     'MC4WP_WPForms_Integration' => $baseDir . '/integrations/wpforms/class-wpforms.php',
     'MC4WP_WooCommerce_Integration' => $baseDir . '/integrations/woocommerce/class-woocommerce.php',
-    'xrstf\\Composer52\\AutoloadGenerator' => $vendorDir . '/xrstf/composer-php52/lib/xrstf/Composer52/AutoloadGenerator.php',
-    'xrstf\\Composer52\\Generator' => $vendorDir . '/xrstf/composer-php52/lib/xrstf/Composer52/Generator.php',
 );

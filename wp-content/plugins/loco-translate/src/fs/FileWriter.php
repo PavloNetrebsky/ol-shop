@@ -248,7 +248,13 @@ class Loco_fs_FileWriter {
             Loco_error_AdminNotices::debug( sprintf('Unknown write failure via "%s" method; check %s',$fs->method,$path) );
             throw new Loco_error_WriteException( __('Failed to save file','loco-translate').': '.$file->basename() );
         }
-        
+        // trigger hook every time a file is written. This allows caches to be invalidated
+        try {
+            do_action( 'loco_file_written', $path );
+        }
+        catch( Exception $e ){
+            Loco_error_AdminNotices::add( Loco_error_Exception::convert($e) );
+        }
         return $this;
     }
 
@@ -298,9 +304,15 @@ class Loco_fs_FileWriter {
         if( $this->disabled() ){
             throw new Loco_error_WriteException( __('File modification is disallowed by your WordPress config','loco-translate') );
         }
+        $opts = Loco_data_Settings::get();
         // deny system file changes (fs_protect = 2)
-        if( 1 < Loco_data_Settings::get()->fs_protect && $this->file->getUpdateType() ){
+        if( 1 < $opts->fs_protect && $this->file->getUpdateType() ){
             throw new Loco_error_WriteException( __('Modification of installed files is disallowed by the plugin settings','loco-translate') );
+        }
+        // deny POT modification (pot_protect = 2)
+        // this assumes that templates all have .pot extension, which isn't guaranteed. UI should prevent saving of wrongly files like "default.po"
+        if( 'pot' === $this->file->extension() &&  1 < $opts->pot_protect ){
+            throw new Loco_error_WriteException( __('Modification of POT (template) files is disallowed by the plugin settings','loco-translate') );
         }
         return $this;
     } 

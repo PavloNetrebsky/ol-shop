@@ -755,6 +755,12 @@ S2.define('select2/utils',[
     });
   };
 
+  Utils.entityDecode = function(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+  }
+
   // Append an array of jQuery nodes to a given element.
   Utils.appendMany = function ($element, $nodes) {
     // jQuery 1.7.x does not support $.fn.append() with an array
@@ -1611,9 +1617,9 @@ S2.define('select2/selection/single',[
     var selection = data[0];
 
     var $rendered = this.$selection.find('.select2-selection__rendered');
-    var formatted = this.display(selection, $rendered);
+    var formatted = Utils.entityDecode(this.display(selection, $rendered));
 
-    $rendered.empty().append(formatted);
+    $rendered.empty().text(formatted);
     $rendered.prop('title', selection.title || selection.text);
   };
 
@@ -1742,12 +1748,14 @@ S2.define('select2/selection/multiple',[
       var selection = data[d];
 
       var $selection = this.selectionContainer();
+      var removeItemTag = $selection.html();
       var formatted = this.display(selection, $selection);
       if ('string' === typeof formatted) {
-        formatted = formatted.trim();
+        formatted = Utils.entityDecode(formatted.trim());
       }
 
-      $selection.append(formatted);
+      $selection.text(formatted);
+      $selection.prepend(removeItemTag);
       $selection.prop('title', selection.title || selection.text);
 
       $selection.data('data', selection);
@@ -1786,7 +1794,7 @@ S2.define('select2/selection/placeholder',[
   Placeholder.prototype.createPlaceholder = function (decorated, placeholder) {
     var $placeholder = this.selectionContainer();
 
-    $placeholder.html(this.display(placeholder));
+    $placeholder.text(Utils.entityDecode(this.display(placeholder)));
     $placeholder.addClass('select2-selection__placeholder')
                 .removeClass('select2-selection__choice');
 
@@ -4390,7 +4398,6 @@ S2.define('select2/dropdown/attachBody',[
 
     var parentOffset = $offsetParent.offset();
 
-    css.top -= parentOffset.top;
     css.left -= parentOffset.left;
 
     if (!isCurrentlyAbove && !isCurrentlyBelow) {
@@ -4405,7 +4412,7 @@ S2.define('select2/dropdown/attachBody',[
 
     if (newDirection == 'above' ||
       (isCurrentlyAbove && newDirection !== 'below')) {
-      css.top = container.top - parentOffset.top - dropdown.height;
+      css.top = container.top - dropdown.height;
     }
 
     if (newDirection != null) {

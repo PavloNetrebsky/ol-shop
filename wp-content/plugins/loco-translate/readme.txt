@@ -1,10 +1,10 @@
-=== Plugin Name ===
+=== Loco Translate ===
 Contributors: timwhitlock
 Tags: translation, translators, localization, localisation, l10n, i18n, Gettext, PO, MO, productivity, multilingual, internationalization
 Requires at least: 4.1
 Requires PHP: 5.2.4
-Tested up to: 5.4
-Stable tag: 2.3.3
+Tested up to: 5.7
+Stable tag: 2.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,13 +13,14 @@ Translate WordPress plugins and themes directly in your browser
 
 == Description ==
 
-Loco Translate provides in-browser editing of WordPress translation files.
+Loco Translate provides in-browser editing of WordPress translation files and integration with automatic translation services.
 
-It also provides localization tools for developers, such as extracting strings and generating templates.
+It also provides Gettext/localization tools for developers, such as extracting strings and generating templates.
 
 Features include:
 
 * Built-in translation editor within WordPress admin
+* Integration with translation APIs including DeepL, Google, Microsoft and Yandex
 * Create and update language files directly in your theme or plugin
 * Extraction of translatable strings from your source code
 * Native MO file compilation without the need for Gettext on your system
@@ -67,11 +68,13 @@ More information on using the plugin is [available here](https://localise.biz/wo
 
 == Frequently Asked Questions ==
 
-= How do I use it? = 
+Please visit the [FAQs page](https://localise.biz/wordpress/plugin/faqs) on our website for the most common issues.
+
+= How do I use Loco Translate? = 
 
 Try our [Guides and Tutorials](https://localise.biz/wordpress/plugin#guides).
 
-= How do I get help? =
+= How do I get more help? =
 
 If you have a problem using Loco Translate, please try our [help pages](https://localise.biz/wordpress/plugin).
 There's a lot of information there to help you understand how it works and the most common pitfalls to avoid.
@@ -92,10 +95,97 @@ We don't collect your data or snoop on you. See the [plugin privacy notice](http
 3. PO source view with text filter and clickable file references
 4. Restore tab showing PO diff view with revert function
 5. Showing access to translations by installed language
-
+6. Suggestion feature showing results from several providers
 
 
 == Changelog ==
+
+= 2.5.2 =
+* Added implied formality and loco_locale_formality filter
+* Added cli fetch command (experimental)
+* Bumped WordPress version to 5.7
+
+= 2.5.1 =
+* Support for new Yandex translate API
+* Support for DeepL formality parameter
+* Removed literal "1" and "one" instances from singular strings
+* Buffering compiled JSON to support strings from multiple sources
+* Added `loco_compile_single_json` filter for specifying custom JSON
+* Added `loco_extracted_template` hook for adding custom strings
+* Sync no longer removes the editor's current text filter
+* Bumped WordPress version to 5.6.2
+
+= 2.5.0 =
+* PHP 8.0.0 compatibility
+* Bumped WordPress version to 5.6.0
+* Added JSON translation file generation
+* Added custom JSON loading to LoadHelper
+* Disabled emoji image replacement on our admin screens
+
+= 2.4.6 =
+* Fixed critical bug syncing PO directly to source code
+* Added plugin setting for allowing/disallowing missing POT
+* Fixed WP5.5 issue with multiple ID attributes on script tags
+
+= 2.4.5 =
+* Added WP-CLI sync and extract commands
+* Fixed {locale} placeholder bug introduced in 2.4.4
+* Improved handling of invalid character encodings
+* Sync (msgmerge) moved to back end 
+* New fuzzy matching with fuzziness setting
+* Bumped WordPress version to 5.5.3
+
+= 2.4.4 =
+* Added PO file upload feature
+* Added download button to file info page
+* Fix for extracting plurals also used as singulars
+* Updating API keys no longer require editor page reload
+* Catching fatal startup errors in loco.php
+* Supporting max_php_size=0 to mean no size restriction
+* Auto-update detection now checks new site options
+* Bumped WordPress version to 5.5.1
+
+= 2.4.3 =
+* Improved fix for default syncing of msgstr fields
+* Reverted accidental removal of js debug flag
+* Minor fixes to API error messages
+* Removed use of jQuery.browser
+* Bugfix for new preferences in usermeta
+
+= 2.4.2 =
+* Added loco_file_written hook
+* Improved script tampering warning
+* Added keypress for selecting auto-suggestion
+* Sync no longer copies msgstr fields by default
+* Style tweaks for WordPress 5.5
+
+= 2.4.1 =
+* Fixed mapping of some API languages
+* Added locale filter to user preferences
+* Added debugging for credential form failures
+* Fixed deprecated use of array_key_exists
+* Added DeepL API service provider
+* Improved script tampering detection
+* Bumped WordPress version to 5.5
+* Added "modern" skin styles
+
+= 2.4.0 =
+* Added support for third party translation APIs
+* Added file references to editor source pane in code view
+* Added fuzzy matching during editor Sync operation
+* Style changes including rearrangement of editor buttons
+* Elevated warnings when scripts are tampered with
+* Removed remnants of legacy version 1.x
+
+= 2.3.4 =
+* Updated translatable strings
+* Added missing template recommendation
+* Alerting in debug mode when scripts are tampered with
+* Fix for Hello Dolly being installed into a folder
+* Removed translation column in POT edit mode
+* Added setting to prevent 'translating' of POT files
+* Enabled some linkable translations using wp_kses
+* Bumped WordPress version to 5.4.1
 
 = 2.3.3 =
 * Fixed fatal error when class not found
@@ -322,8 +412,8 @@ We don't collect your data or snoop on you. See the [plugin privacy notice](http
 
 == Upgrade Notice ==
 
-= 2.3.3 =
-* Various bug fixes and improvements
+= 2.5.2 =
+* Various improvements and bugfixes
 
 
 
@@ -341,5 +431,6 @@ The PO file editor supports the following keyboard shortcuts for faster translat
 * Toggle Fuzzy: `Ctrl U`
 * Save PO / compile MO: `Ctrl S`
 * Toggle invisibles: `Shift Ctrl I`
+* Suggest translation: `Ctrl J`
 
 Mac users can use ⌘ Cmd instead of Ctrl.

@@ -196,15 +196,27 @@ class MailChimp_WooCommerce_MailChimpApi
      * @throws MailChimp_WooCommerce_Error
      * @throws MailChimp_WooCommerce_ServerError
      */
-    public function subscribe($list_id, $email, $subscribed = true, $merge_fields = array(), $list_interests = array(), $language = null)
+    public function subscribe($list_id, $email, $subscribed = true, $merge_fields = array(), $list_interests = array(), $language = null, $gdpr_fields = null)
     {
+        if (is_string($subscribed)) {
+            $status = $subscribed;
+        } else {
+            if ($subscribed === true) {
+                $status = 'subscribed';
+            } elseif ($subscribed === false) {
+                $status = 'pending';
+            } else {
+                $status = 'transactional';
+            }
+        }
         $data = array(
             'email_type' => 'html',
             'email_address' => $email,
-            'status' => ($subscribed === true ? 'subscribed' : 'pending'),
+            'status' => $status,
             'merge_fields' => $merge_fields,
             'interests' => $list_interests,
-            'language' => $language
+            'language' => $language,
+            'marketing_permissions' => $gdpr_fields,
         );
 
         if (empty($data['merge_fields'])) {
@@ -217,6 +229,10 @@ class MailChimp_WooCommerce_MailChimpApi
         
         if (empty($data['language'])) {
             unset($data['language']);
+        }
+        
+        if (empty($data['marketing_permissions'])) {
+            unset($data['marketing_permissions']);
         }
 
         mailchimp_debug('api.subscribe', "Subscribing {$email}", $data);
@@ -234,7 +250,7 @@ class MailChimp_WooCommerce_MailChimpApi
      * @throws Exception
      * @throws MailChimp_WooCommerce_Error
      */
-    public function update($list_id, $email, $subscribed = true, $merge_fields = array(), $list_interests = array(), $language = null)
+    public function update($list_id, $email, $subscribed = true, $merge_fields = array(), $list_interests = array(), $language = null, $gdpr_fields = null)
     {
         $hash = md5(strtolower(trim($email)));
 
@@ -253,7 +269,8 @@ class MailChimp_WooCommerce_MailChimpApi
             'status' => $status,
             'merge_fields' => $merge_fields,
             'interests' => $list_interests,
-            'language' => $language
+            'language' => $language,
+            'marketing_permissions' => $gdpr_fields,
         );
 
         if (empty($data['merge_fields'])) {
@@ -266,6 +283,10 @@ class MailChimp_WooCommerce_MailChimpApi
 
         if (empty($data['language'])) {
             unset($data['language']);
+        }
+
+        if (empty($data['marketing_permissions'])) {
+            unset($data['marketing_permissions']);
         }
 
         mailchimp_debug('api.update_member', "Updating {$email}", $data);
@@ -317,13 +338,14 @@ class MailChimp_WooCommerce_MailChimpApi
      * @param $list_id
      * @param $email
      * @param bool $fail_silently
+     * @param MailChimp_WooCommerce_Order $order
      * @return array|bool|mixed|object|null
      * @throws MailChimp_WooCommerce_Error|\Exception
      */
-    public function updateMemberTags($list_id, $email, $fail_silently = false)
+    public function updateMemberTags($list_id, $email, $fail_silently = false, $order = null)
     {
         $hash = md5(strtolower(trim($email)));
-        $tags = mailchimp_get_user_tags_to_update();
+        $tags = mailchimp_get_user_tags_to_update($email, $order);
 
         if (empty($tags)) return false;
 
@@ -642,8 +664,11 @@ class MailChimp_WooCommerce_MailChimpApi
      */
     public function getCampaign($campaign_id, $throw_if_invalid = true)
     {
+        // don't let an empty campaign ID do anything
+        if (empty($campaign_id)) return false;
+
         // if we found the campaign ID already and it's been stored in the cache, return it from the cache instead.
-        if (($data = get_site_transient('mailchimp-woocommerce-has-campaign-id-'.$campaign_id))) {
+        if (($data = get_site_transient('mailchimp-woocommerce-has-campaign-id-'.$campaign_id)) && !empty($data)) {
             return $data;
         }
         if (get_site_transient('mailchimp-woocommerce-no-campaign-id-'.$campaign_id)) {
@@ -794,8 +819,10 @@ class MailChimp_WooCommerce_MailChimpApi
         try {
             return (bool) $this->delete("ecommerce/stores/$store_id");
         } catch (MailChimp_WooCommerce_Error $e) {
+            mailchimp_error("delete_store {$store_id}", $e->getMessage());
             return false;
         } catch (\Exception $e) {
+            mailchimp_error("delete_store {$store_id}", $e->getMessage());
             return false;
         }
     }
@@ -1024,7 +1051,7 @@ class MailChimp_WooCommerce_MailChimpApi
             }
 
             // update the member tags but fail silently just in case.
-            $this->updateMemberTags(mailchimp_get_list_id(), $email_address, true);
+            $this->updateMemberTags(mailchimp_get_list_id(), $email_address, true, $order);
 
             update_option('mailchimp-woocommerce-resource-last-updated', time());
             $order = new MailChimp_WooCommerce_Order();
@@ -1071,7 +1098,7 @@ class MailChimp_WooCommerce_MailChimpApi
             }
 
             // update the member tags but fail silently just in case.
-            $this->updateMemberTags(mailchimp_get_list_id(), $email_address, true);
+            $this->updateMemberTags(mailchimp_get_list_id(), $email_address, true, $order);
 
             $order = new MailChimp_WooCommerce_Order();
             return $order->fromArray($data);
@@ -1560,6 +1587,48 @@ class MailChimp_WooCommerce_MailChimpApi
     }
 
     /**
+     * @param string $list_id
+     * @param int $minutes
+     * @return false|mixed
+     */
+    public function getCachedGDPRFields($list_id, $minutes = 5)
+    {
+        $transient = "mailchimp-woocommerce-gdpr-fields.{$list_id}";
+        $GDPRfields = get_site_transient($transient);
+
+        // only return the values if it's a false - or an array
+        if (is_array($GDPRfields)) return $GDPRfields;
+
+        try {
+            $GDPRfields = $this->getGDPRFields($list_id);
+            set_site_transient($transient, $GDPRfields, 60 * $minutes);
+        } catch (\Exception $e) {
+            $GDPRfields = array();
+        }
+
+        return $GDPRfields;
+    }
+
+     /**
+     * @param 
+     * @return 
+     */
+    public function getGDPRFields($list_id)
+    {
+        $one_member = $this->get("lists/$list_id/members?fields=members.marketing_permissions&count=1");
+        $fields = false;
+        
+        if (is_array($one_member) &&
+            isset($one_member['members']) &&
+            isset($one_member['members'][0]) &&
+            isset($one_member['members'][0]['marketing_permissions'])) {
+            $fields = $one_member['members'][0]['marketing_permissions'];
+        }
+                
+        return $fields;
+    }
+
+    /**
      * @param $url
      * @param null $params
      * @return array|mixed|null|object
@@ -1752,7 +1821,7 @@ class MailChimp_WooCommerce_MailChimpApi
         curl_close($curl);
 
         if ($err) {
-            throw new MailChimp_WooCommerce_Error('CURL error :: '.$err, '500');
+            throw new MailChimp_WooCommerce_Error('CURL error :: '.$err, 500);
         }
 
         $data = json_decode($response, true);
@@ -1786,7 +1855,7 @@ class MailChimp_WooCommerce_MailChimpApi
                 throw new MailChimp_WooCommerce_RateLimitError();
             }
 
-            throw new MailChimp_WooCommerce_Error($data['title'] .' :: '.$data['detail'], $data['status']);
+            throw new MailChimp_WooCommerce_Error($data['title'] .' :: '.$data['detail'], (int) $data['status']);
         }
 
         if ($http_code >= 500) {
@@ -1814,7 +1883,7 @@ class MailChimp_WooCommerce_MailChimpApi
             foreach ($data['errors'] as $error) {
                 $message .= '<p>'.$error['field'].': '.$error['message'].'</p>';
             }
-            throw new MailChimp_WooCommerce_Error($message, $data['status']);
+            throw new MailChimp_WooCommerce_Error($message, (int) $data['status']);
         }
 
         // make sure the response is correct from the data in the response array
@@ -1822,7 +1891,7 @@ class MailChimp_WooCommerce_MailChimpApi
             if (isset($data['http_code']) && $data['http_code'] == 403) {
                 throw new MailChimp_WooCommerce_RateLimitError();
             }
-            throw new MailChimp_WooCommerce_Error($data['detail'], $data['status']);
+            throw new MailChimp_WooCommerce_Error($data['detail'], (int) $data['status']);
         }
 
         return false;

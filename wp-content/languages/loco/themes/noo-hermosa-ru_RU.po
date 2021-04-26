@@ -4,7 +4,7 @@ msgstr ""
 "n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "Project-Id-Version: NOO Hermosa\n"
 "POT-Creation-Date: 2020-04-15 16:05+0700\n"
-"PO-Revision-Date: 2020-05-06 21:11+0000\n"
+"PO-Revision-Date: 2020-07-21 17:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -22,11 +22,11 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Report-Msgid-Bugs-To: \n"
 "Language: ru_RU\n"
-"X-Loco-Version: 2.3.3; wp-5.4.1"
+"X-Loco-Version: 2.4.0; wp-5.4.2"
 
 #: 404.php:9
 msgid "Sorry. The page you are looking for does not exist"
-msgstr ""
+msgstr "   Запрашиваемая страница не найдена"
 
 #: 404.php:10
 msgid "404 not found."
@@ -63,7 +63,7 @@ msgstr ""
 #: comments.php:45 includes/functions/noo-html.php:130
 #: woocommerce/single-product-reviews.php:78
 msgid "Submit"
-msgstr ""
+msgstr "Отправить"
 
 #: content-audio.php:13 content-audio.php:17 content-gallery.php:13
 #: content-gallery.php:17 content-image.php:13 content-image.php:17
@@ -1983,7 +1983,7 @@ msgstr ""
 
 #: includes/functions/noo-html.php:120 includes/functions/noo-html.php:135
 msgid "Message"
-msgstr ""
+msgstr "Сообщение"
 
 #: includes/functions/noo-html.php:124
 #, php-format
@@ -2059,7 +2059,7 @@ msgstr ""
 
 #: includes/functions/noo-html.php:363
 msgid "Share:"
-msgstr ""
+msgstr "Поделится:"
 
 #: includes/functions/noo-user.php:18
 msgid "Google+ Profile URL"
@@ -2118,11 +2118,11 @@ msgstr ""
 
 #: includes/functions/noo-utilities.php:67
 msgid "Oops! We could not find anything."
-msgstr ""
+msgstr "Упс! Страница не найдена."
 
 #: includes/functions/noo-utilities.php:68
 msgid "Would you like going else where to find your stuff."
-msgstr ""
+msgstr "Вернитесь на главную и повторите запрос."
 
 #: includes/functions/noo-utilities.php:96
 msgid "Blog Detail"
@@ -2528,7 +2528,7 @@ msgstr "1 товар"
 #: includes/woocommerce.php:249 includes/woocommerce.php:326
 #: includes/woocommerce.php:332
 msgid "View Cart"
-msgstr "Просмотр корзины"
+msgstr "Корзина"
 
 #: includes/woocommerce.php:250
 msgid "Cart"
@@ -2536,7 +2536,7 @@ msgstr "Корзина"
 
 #: includes/woocommerce.php:273
 msgid "View cart"
-msgstr "Просмотр корзины"
+msgstr "Корзина"
 
 #: includes/woocommerce.php:284
 msgid "in the shopping cart"
@@ -2735,11 +2735,11 @@ msgstr ""
 
 #: woocommerce/cart/cart.php:140 woocommerce/cart/cart.php:166
 msgid "Coupon code"
-msgstr ""
+msgstr "Код"
 
 #: woocommerce/cart/cart.php:140 woocommerce/cart/cart.php:167
 msgid "Apply Coupon"
-msgstr ""
+msgstr "Применить"
 
 #: woocommerce/cart/cart.php:146
 msgid "Update Cart"
@@ -2747,11 +2747,11 @@ msgstr "Обновить корзину"
 
 #: woocommerce/cart/cart.php:164
 msgid "Discount code"
-msgstr ""
+msgstr "Дисконтная карта"
 
 #: woocommerce/cart/cart.php:165
 msgid "Enter your code if you have one"
-msgstr ""
+msgstr "Введите код"
 
 #: woocommerce/global/quantity-input.php:26
 msgctxt "Product quantity input tooltip"
@@ -2777,17 +2777,17 @@ msgstr ""
 #, php-format
 msgid "%s review for %s"
 msgid_plural "%s reviews for %s"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s отзыв для %s"
+msgstr[1] "%s отзывов для %s"
 msgstr[2] ""
 
 #: woocommerce/single-product-reviews.php:34
 msgid "Reviews"
-msgstr ""
+msgstr "Отзивы"
 
 #: woocommerce/single-product-reviews.php:55
 msgid "There are no reviews yet."
-msgstr ""
+msgstr "Отзывов пока нет"
 
 #: woocommerce/single-product-reviews.php:68
 msgid "Add a review"
@@ -2810,7 +2810,7 @@ msgstr ""
 
 #: woocommerce/single-product-reviews.php:88
 msgid "Your Rating"
-msgstr ""
+msgstr "Ваша оценка"
 
 #: woocommerce/single-product-reviews.php:89
 msgid "Rate&hellip;"
@@ -2838,7 +2838,7 @@ msgstr ""
 
 #: woocommerce/single-product-reviews.php:98
 msgid "Your Review"
-msgstr ""
+msgstr "Ваш отзыв"
 
 #: woocommerce/single-product-reviews.php:107
 msgid ""

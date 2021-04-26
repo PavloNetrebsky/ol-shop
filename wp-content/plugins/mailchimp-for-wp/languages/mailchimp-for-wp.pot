@@ -1,4 +1,4 @@
-# Copyright (C) 2020 mailchimp-for-wp
+# Copyright (C) 2021 mailchimp-for-wp
 # This file is distributed under the same license as the mailchimp-for-wp package.
 msgid ""
 msgstr ""
@@ -53,7 +53,7 @@ msgstr ""
 msgid "Property of the current page or post."
 msgstr ""
 
-#: includes/class-mailchimp.php:191, includes/forms/class-admin.php:82
+#: includes/class-mailchimp.php:251, includes/forms/class-admin.php:82
 msgid "Email address"
 msgstr ""
 
@@ -65,67 +65,67 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: includes/admin/class-admin.php:208
+#: includes/admin/class-admin.php:212
 msgid "Success! The cached configuration for your Mailchimp lists has been renewed."
 msgstr ""
 
-#: includes/admin/class-admin.php:299
+#: includes/admin/class-admin.php:301
 msgid "The given value does not look like a valid Mailchimp API key."
 msgstr ""
 
-#: includes/admin/class-admin.php:300
+#: includes/admin/class-admin.php:302
 msgid "This is a premium feature. Please upgrade to Mailchimp for WordPress Premium to be able to use it."
 msgstr ""
 
-#: includes/admin/class-admin.php:301, includes/views/parts/lists-overview.php:10, includes/forms/views/parts/add-fields-help.php:47
+#: includes/admin/class-admin.php:303, includes/views/parts/lists-overview.php:10, includes/forms/views/parts/add-fields-help.php:47
 msgid "Renew Mailchimp lists"
 msgstr ""
 
-#: includes/admin/class-admin.php:302
+#: includes/admin/class-admin.php:304
 msgid "Fetching Mailchimp lists"
 msgstr ""
 
-#: includes/admin/class-admin.php:303
+#: includes/admin/class-admin.php:305
 msgid "Done! Mailchimp lists renewed."
 msgstr ""
 
-#: includes/admin/class-admin.php:304
+#: includes/admin/class-admin.php:306
 msgid "Failed to renew your lists. An error occured."
 msgstr ""
 
-#: includes/admin/class-admin.php:332
+#: includes/admin/class-admin.php:334
 msgid "Mailchimp API Settings"
 msgstr ""
 
-#: includes/admin/class-admin.php:339, includes/views/other-settings.php:60, includes/views/other-settings.php:70
+#: includes/admin/class-admin.php:341, includes/views/other-settings.php:60, includes/views/other-settings.php:70
 msgid "Other Settings"
 msgstr ""
 
-#: includes/admin/class-admin.php:340
+#: includes/admin/class-admin.php:342
 msgid "Other"
 msgstr ""
 
-#: includes/admin/class-admin.php:418
+#: includes/admin/class-admin.php:420
 msgid "Error connecting to Mailchimp:"
 msgstr ""
 
-#: includes/admin/class-admin.php:421
+#: includes/admin/class-admin.php:423
 msgid "Looks like your server is blocked by Mailchimp's firewall. Please contact Mailchimp support and include the following reference number: %s"
 msgstr ""
 
-#: includes/admin/class-admin.php:424
+#: includes/admin/class-admin.php:426
 msgid "Here's some info on solving common connectivity issues."
 msgstr ""
 
-#: includes/admin/class-admin.php:429
+#: includes/admin/class-admin.php:431
 msgid "Mailchimp returned the following error:"
 msgstr ""
 
-#: includes/admin/class-admin.php:467
+#: includes/admin/class-admin.php:470
 msgid "Log successfully emptied."
 msgstr ""
 
-#: includes/admin/class-admin.php:497
+#: includes/admin/class-admin.php:500
 msgid "To get started with Mailchimp for WordPress, please <a href=\"%s\">enter your Mailchimp API key on the settings page of the plugin</a>."
 msgstr ""
 
@@ -381,19 +381,19 @@ msgstr ""
 msgid "Form saved."
 msgstr ""
 
-#: includes/forms/class-admin.php:387
+#: includes/forms/class-admin.php:393
 msgid "Form not found."
 msgstr ""
 
-#: includes/forms/class-admin.php:389
+#: includes/forms/class-admin.php:395
 msgid "Go back"
 msgstr ""
 
-#: includes/forms/class-admin.php:452, includes/forms/class-widget.php:31
+#: includes/forms/class-admin.php:458, includes/forms/class-widget.php:31
 msgid "Mailchimp Sign-Up Form"
 msgstr ""
 
-#: includes/forms/class-admin.php:456
+#: includes/forms/class-admin.php:462
 msgid "Select the form to show"
 msgstr ""
 
@@ -405,7 +405,7 @@ msgstr ""
 msgid "Leave this field empty if you're human:"
 msgstr ""
 
-#: includes/forms/class-form-manager.php:150
+#: includes/forms/class-form-manager.php:151
 msgid "Resource does not exist."
 msgstr ""
 
@@ -421,7 +421,7 @@ msgstr ""
 msgid "Replaced with the number of subscribers on the selected list(s)"
 msgstr ""
 
-#: includes/forms/class-form.php:50
+#: includes/forms/class-form.php:26
 msgid "There is no form with ID %d, perhaps it was deleted?"
 msgstr ""
 
@@ -838,11 +838,11 @@ msgstr ""
 msgid "Subscribers"
 msgstr ""
 
-#: includes/views/parts/lists-overview.php:50
+#: includes/views/parts/lists-overview.php:49
 msgid "Edit this list in Mailchimp"
 msgstr ""
 
-#: includes/views/parts/lists-overview.php:51
+#: includes/views/parts/lists-overview.php:50
 msgid "Loading... Please wait."
 msgstr ""
 
@@ -1075,7 +1075,7 @@ msgid "Example: My tag, another tag"
 msgstr ""
 
 #: includes/forms/views/tabs/form-settings.php:105
-msgid "The listed tags will be applied to all new subscribers added by this form."
+msgid "The listed tags will be applied to all subscribers added or updated by this form."
 msgstr ""
 
 #: includes/forms/views/tabs/form-settings.php:106

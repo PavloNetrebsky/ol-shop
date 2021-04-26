@@ -2,16 +2,24 @@
 # This file is distributed under the same license as the Plugins - All-in-One WP Migration - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-04-30 08:29:49+0000\n"
+"PO-Revision-Date: 2020-05-19 07:47:04+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/3.0.0-alpha\n"
 "Language: ru\n"
 "Project-Id-Version: Plugins - All-in-One WP Migration - Stable (latest release)\n"
 
-#: lib/view/import/oxygen.php:31
+#: lib/view/import/done.php:40
+msgid "» Permalinks are set to default. <a class=\"ai1wm-no-underline\" href=\"https://help.servmask.com/knowledgebase/permalinks-are-set-to-default/\" target=\"_blank\">Why?</a> (opens a new window)<br />» <a class=\"ai1wm-no-underline\" href=\"https://wordpress.org/support/view/plugin-reviews/all-in-one-wp-migration?rate=5#postform\" target=\"_blank\">Optionally, review the plugin</a>. (opens a new window)"
+msgstr "» Постоянные ссылка установлены по умолчанию.<a class=\"ai1wm-no-underline\" href=\"https://help.servmask.com/knowledgebase/permalinks-are-set-to-default/\" target=\"_blank\">Почему?</a> (откроется новое окно)<br />» <a class=\"ai1wm-no-underline\" href=\"https://wordpress.org/support/view/plugin-reviews/all-in-one-wp-migration?rate=5#postform\" target=\"_blank\">По возможности оцените наш плагин</a>. (откроется новое окно)"
+
+#: lib/view/import/oxygen.php:41
+msgid "» Permalinks are set to default. <a class=\"ai1wm-no-underline\" href=\"https://help.servmask.com/knowledgebase/permalinks-are-set-to-default/\" target=\"_blank\">Why?</a> (opens a new window)<br />» <a class=\"ai1wm-no-underline\" href=\"https://oxygenbuilder.com/documentation/other/importing-exporting/#resigning\" target=\"_blank\">Re-sign Oxygen Builder shortcodes</a>. (opens a new window)<br />» <a class=\"ai1wm-no-underline\" href=\"https://wordpress.org/support/view/plugin-reviews/all-in-one-wp-migration?rate=5#postform\" target=\"_blank\">Optionally, review the plugin</a>. (opens a new window)"
+msgstr "» Постоянные ссылки установлены по умолчанию. <a class=\"ai1wm-no-underline\" href=\"https://help.servmask.com/knowledgebase/permalinks-are-set-to-default/\" target=\"_blank\">Почему?</a> (откроется новое окно)<br />» <a class=\"ai1wm-no-underline\" href=\"https://oxygenbuilder.com/documentation/other/importing-exporting/#resigning\" target=\"_blank\">Обновите шорткоды Oxygen Builder</a>. (откроется новое окно)<br />» <a class=\"ai1wm-no-underline\" href=\"https://wordpress.org/support/view/plugin-reviews/all-in-one-wp-migration?rate=5#postform\" target=\"_blank\">По возможности оцените наш плагин</a>. (откроется новое окно)"
+
+#: lib/view/import/oxygen.php:32
 msgid "» <a class=\"ai1wm-no-underline\" href=\"%s\" target=\"_blank\">Save permalinks structure</a>. (opens a new window)<br />» <a class=\"ai1wm-no-underline\" href=\"https://oxygenbuilder.com/documentation/other/importing-exporting/#resigning\" target=\"_blank\">Re-sign Oxygen Builder shortcodes</a>. (opens a new window)<br />» <a class=\"ai1wm-no-underline\" href=\"https://wordpress.org/support/view/plugin-reviews/all-in-one-wp-migration?rate=5#postform\" target=\"_blank\">Optionally, review the plugin</a>. (opens a new window)"
 msgstr "» <a class=\"ai1wm-no-underline\" href=\"%s\" target=\"_blank\">Сохраните структуру постоянных ссылок</a>. (откроется новое окно)<br />» <a class=\"ai1wm-no-underline\" href=\"https://oxygenbuilder.com/documentation/other/importing-exporting/#resigning\" target=\"_blank\">Переназначьте шорт-коды Oxygen Builder </a>. (откроется новое окно)<br />» <a class=\"ai1wm-no-underline\" href=\"https://wordpress.org/support/view/plugin-reviews/all-in-one-wp-migration?rate=5#postform\" target=\"_blank\">Опционально, оцените наше расширение</a>. (откроется новое окно)"
 
@@ -67,7 +75,7 @@ msgstr "%s не последняя версия. Обновите пожалуй
 msgid "Your backup is from a PHP 5 but the site that you are importing to is PHP 7. This could cause the import to fail. Technical details: https://help.servmask.com/knowledgebase/migrate-wordpress-from-php-5-to-php-7/"
 msgstr "Ваша резервная копия создана на сервере PHP 5, но текущий сайт работает на PHP7. Это может вызвать проблемы при импорте. Технические детали: https://help.servmask.com/knowledgebase/migrate-wordpress-from-php-5-to-php-7/"
 
-#: lib/view/backups/backups-list.php:46 lib/view/backups/index.php:51
+#: lib/view/backups/index.php:51 lib/view/backups/backups-list.php:46
 msgid "Refreshing backup list..."
 msgstr "Обновляем список резервных копий..."
 
@@ -102,6 +110,10 @@ msgstr "Скачать резервную копию"
 #: lib/view/import/button-file.php:31
 msgid "To choose a file please go inside the link and click on the browse button."
 msgstr "Чтобы выбрать файл пожалуйста пройдите по ссылке и щелкните по кнопке."
+
+#: lib/view/import/done.php:32
+msgid "» <a class=\"ai1wm-no-underline\" href=\"%s\" target=\"_blank\">Save permalinks structure</a>. (opens a new window)<br />» <a class=\"ai1wm-no-underline\" href=\"https://wordpress.org/support/view/plugin-reviews/all-in-one-wp-migration?rate=5#postform\" target=\"_blank\">Optionally, review the plugin</a>. (opens a new window)"
+msgstr "» <a class=\"ai1wm-no-underline\" href=\"%s\" target=\"_blank\">Пересохраните структуру постоянных ссылок</a>.</strong> (открыть в новом окне)<br />» <a class=\"ai1wm-no-underline\" href=\"https://wordpress.org/support/view/plugin-reviews/all-in-one-wp-migration?rate=5#postform\" target=\"_blank\">По возможности, оставьте пожалуйста Ваш отзыв</a>.</strong> (открыть в новом окне)"
 
 #: lib/controller/class-ai1wm-main-controller.php:867
 #: lib/controller/class-ai1wm-main-controller.php:1049
@@ -169,20 +181,20 @@ msgstr "Файл, который вы пытаетесь импортирова�
 msgid "The file type that you have tried to upload is not compatible with this plugin. Please ensure that your file is a <strong>.wpress</strong> file that was created with the All-in-One WP migration plugin. <a href=\"https://help.servmask.com/knowledgebase/invalid-backup-file/\" target=\"_blank\">Technical details</a>"
 msgstr "Тип файла, который вы пытались загрузить, не совместим с этим плагином. Пожалуйста, убедитесь, что ваш файл<strong>.wpress</strong> файл, созданный с помощью модуля миграции All-in-One WP. <a href=\"https://help.servmask.com/knowledgebase/invalid-backup-file/\" target=\"_blank\">Технические детали</a>"
 
-#: lib/view/main/backups-path-notice.php:35
-#: lib/view/main/storage-path-notice.php:35
-msgid "All-in-One WP Migration is not able to create <strong>%s</strong> folder. You will need to create this folder and grant it read/write/execute permissions (0777) for the All-in-One WP Migration plugin to function properly."
-msgstr "All in One WP Migration не может создать <strong>%s</strong>папку. Вам нужно будет создать эту папку и предоставить ей разрешения на чтение / запись / выполнение (0777), чтобы плагин All in One WP Migration работал правильно."
-
+#: lib/view/main/storage-index-php-notice.php:35
 #: lib/view/main/backups-index-html-notice.php:35
-#: lib/view/main/backups-htaccess-notice.php:35
 #: lib/view/main/storage-index-html-notice.php:35
 #: lib/view/main/backups-index-php-notice.php:35
-#: lib/view/main/storage-index-php-notice.php:35
 #: lib/view/main/wordpress-htaccess-notice.php:35
+#: lib/view/main/backups-htaccess-notice.php:35
 #: lib/view/main/backups-webconfig-notice.php:35
 msgid "All-in-One WP Migration is not able to create <strong>%s</strong> file. Try to change permissions of the parent folder or send us an email at <a href=\"mailto:support@servmask.com\">support@servmask.com</a> for assistance."
 msgstr "All in One WP Migration не может создать<strong>%s</strong>файл. Попробуйте изменить разрешения родительской папки или отправьте нам письмо по адресу<a href=\"mailto:support@servmask.com\">support@servmask.com</a> для оказания помощи."
+
+#: lib/view/main/storage-path-notice.php:35
+#: lib/view/main/backups-path-notice.php:35
+msgid "All-in-One WP Migration is not able to create <strong>%s</strong> folder. You will need to create this folder and grant it read/write/execute permissions (0777) for the All-in-One WP Migration plugin to function properly."
+msgstr "All in One WP Migration не может создать <strong>%s</strong>папку. Вам нужно будет создать эту папку и предоставить ей разрешения на чтение / запись / выполнение (0777), чтобы плагин All in One WP Migration работал правильно."
 
 #: lib/view/main/multisite-notice.php:34
 msgid "WordPress Multisite is supported via our All-in-One WP Migration Multisite Extension. You can get a copy of it here"
@@ -418,7 +430,7 @@ msgstr "Архивирование конфигурационного файла
 msgid "Preparing configuration file..."
 msgstr "Подготовка конфигурационного файла..."
 
-#: lib/view/common/leave-feedback.php:59 lib/view/common/report-problem.php:46
+#: lib/view/common/report-problem.php:46 lib/view/common/leave-feedback.php:59
 msgid "I agree that by filling in the contact form with my data, I authorize All-in-One WP Migration to use my <strong>email</strong> to reply to my requests for information. <a href=\"https://www.iubenda.com/privacy-policy/946881\" target=\"_blank\">Privacy policy</a>"
 msgstr "Я согласен с тем, что заполняя контактную форму моими данными, я разрешаю All-in-One WP Migration использовать мой почтовый ящик :<strong>email</strong> для ответа на информационные запросы. <a href=\"https://www.iubenda.com/privacy-policy/946881\" target=\"_blank\">Политика конфиденциальности</a>"
 
@@ -449,7 +461,7 @@ msgid "Archiving database...<br />%d%% complete"
 msgstr "Архивирование базы данных завершено на ...<br />%d%%"
 
 #: lib/model/import/class-ai1wm-import-database.php:78
-#: lib/model/import/class-ai1wm-import-database.php:992
+#: lib/model/import/class-ai1wm-import-database.php:984
 msgid "Restoring database...<br />%d%% complete"
 msgstr "Восстановление базы данных...<br />%d%% готово"
 
@@ -458,7 +470,7 @@ msgstr "Восстановление базы данных...<br />%d%% гото
 msgid "Checking extensions compatibility..."
 msgstr "Проверка совместимости расширений..."
 
-#: lib/model/import/class-ai1wm-import-database.php:972
+#: lib/model/import/class-ai1wm-import-database.php:964
 msgid "Done restoring database."
 msgstr "Восстановление базы данных выполнено..."
 
@@ -547,7 +559,7 @@ msgstr "Подготовка блогов..."
 msgid "Please accept report term conditions."
 msgstr "Пожалуйста, примите отчёт пользовотельских соглашений."
 
-#: lib/model/class-ai1wm-feedback.php:78 lib/model/class-ai1wm-report.php:69
+#: lib/model/class-ai1wm-report.php:69 lib/model/class-ai1wm-feedback.php:78
 msgid "Something went wrong: %s"
 msgstr "Что-то пошло не так: %s"
 
@@ -555,11 +567,11 @@ msgstr "Что-то пошло не так: %s"
 msgid "Please accept feedback term conditions."
 msgstr "Пожалуйста, примите фидбэк пользовательских соглашений."
 
-#: lib/model/class-ai1wm-feedback.php:56 lib/model/class-ai1wm-report.php:49
+#: lib/model/class-ai1wm-report.php:49 lib/model/class-ai1wm-feedback.php:56
 msgid "Please enter comments in the text area."
 msgstr "Пожалуйста, введите комментарии в текстовое поле."
 
-#: lib/model/class-ai1wm-feedback.php:46 lib/model/class-ai1wm-report.php:44
+#: lib/model/class-ai1wm-report.php:44 lib/model/class-ai1wm-feedback.php:46
 msgid "Your email is not valid."
 msgstr "Ваш email-адрес не является допустимым."
 
@@ -595,8 +607,8 @@ msgstr "ID покупки"
 msgid "To update your plugin/extension to the latest version, please fill your Purchase ID below."
 msgstr "Чтобы обновить Ваш плагин/расширение до последней версии, пожалуйста введите Ваш ID покупки ниже."
 
-#: lib/controller/class-ai1wm-main-controller.php:1115
 #: lib/view/updater/check.php:31
+#: lib/controller/class-ai1wm-main-controller.php:1115
 msgid "Check for updates"
 msgstr "Проверить обновления"
 
@@ -616,11 +628,11 @@ msgstr "Удалить"
 msgid "Date"
 msgstr "Дата"
 
-#: lib/view/common/leave-feedback.php:64 lib/view/common/report-problem.php:51
+#: lib/view/common/report-problem.php:51 lib/view/common/leave-feedback.php:64
 msgid "Cancel"
 msgstr "Отмена"
 
-#: lib/view/common/leave-feedback.php:67 lib/view/common/report-problem.php:54
+#: lib/view/common/report-problem.php:54 lib/view/common/leave-feedback.php:67
 msgid "Send"
 msgstr "Отправить"
 
@@ -658,7 +670,7 @@ msgstr "Восстановить"
 msgid "Create backup"
 msgstr "Создать резервную копию"
 
-#: lib/view/backups/index.php:83 lib/view/import/index.php:71
+#: lib/view/import/index.php:71 lib/view/backups/index.php:83
 #: lib/view/export/index.php:75
 msgid "Leave Feedback"
 msgstr "Оставить отзыв"
@@ -772,7 +784,7 @@ msgstr "Сообщите о проблеме"
 msgid "Leave plugin developers any feedback here.."
 msgstr "Оставьте фидбэк разработчикам плагина здесь.."
 
-#: lib/view/common/leave-feedback.php:51 lib/view/common/report-problem.php:38
+#: lib/view/common/report-problem.php:38 lib/view/common/leave-feedback.php:51
 msgid "Enter your email address.."
 msgstr "Введите ваш email адрес.."
 
@@ -827,9 +839,9 @@ msgstr "Невозможно импортировать"
 msgid "Unable to export"
 msgstr "Невозможно экспортировать"
 
+#: lib/view/backups/index.php:37
 #: lib/controller/class-ai1wm-main-controller.php:610
 #: lib/controller/class-ai1wm-main-controller.php:611
-#: lib/view/backups/index.php:37
 msgid "Backups"
 msgstr "Резервные копии"
 
@@ -865,7 +877,7 @@ msgstr "Получить версию для мультисайтов"
 msgid "Get unlimited"
 msgstr "Получить безлимитное расширение"
 
-#: lib/model/import/class-ai1wm-import-done.php:245
-#: lib/model/import/class-ai1wm-import-done.php:247
+#: lib/model/import/class-ai1wm-import-done.php:251
+#: lib/model/import/class-ai1wm-import-done.php:253
 msgid "Your site has been imported successfully!"
 msgstr "Ваш сайт был успешно импортирован!"

@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { Component, createRef, Fragment } from 'react';
+import { Component, createRef } from 'react';
 
 /**
  * Internal dependencies
@@ -10,6 +10,8 @@ import './style.scss';
 
 /**
  * HOC that provides a function to scroll to the top of the component.
+ *
+ * @param {Function} OriginalComponent Component being wrapped.
  */
 const withScrollToTop = ( OriginalComponent ) => {
 	class WrappedComponent extends Component {
@@ -52,7 +54,7 @@ const withScrollToTop = ( OriginalComponent ) => {
 
 		render() {
 			return (
-				<Fragment>
+				<>
 					<div
 						className="with-scroll-to-top__scroll-point"
 						ref={ this.scrollPointRef }
@@ -62,7 +64,7 @@ const withScrollToTop = ( OriginalComponent ) => {
 						{ ...this.props }
 						scrollToTop={ this.scrollToTop }
 					/>
-				</Fragment>
+				</>
 			);
 		}
 	}

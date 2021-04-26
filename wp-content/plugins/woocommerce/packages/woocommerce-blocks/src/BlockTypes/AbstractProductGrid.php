@@ -1,13 +1,5 @@
 <?php
-/**
- * Class for product grid functionality
- *
- * @package WooCommerce/Blocks
- */
-
 namespace Automattic\WooCommerce\Blocks\BlockTypes;
-
-defined( 'ABSPATH' ) || exit;
 
 use Automattic\WooCommerce\Blocks\Utils\BlocksWpQuery;
 
@@ -42,11 +34,11 @@ abstract class AbstractProductGrid extends AbstractDynamicBlock {
 	 *
 	 * @return array List of block attributes with type and defaults.
 	 */
-	protected function get_attributes() {
+	protected function get_block_type_attributes() {
 		return array(
 			'className'         => $this->get_schema_string(),
 			'columns'           => $this->get_schema_number( wc_get_theme_support( 'product_blocks::default_columns', 3 ) ),
-			'rows'              => $this->get_schema_number( wc_get_theme_support( 'product_blocks::default_rows', 1 ) ),
+			'rows'              => $this->get_schema_number( wc_get_theme_support( 'product_blocks::default_rows', 3 ) ),
 			'categories'        => $this->get_schema_list_ids(),
 			'catOperator'       => array(
 				'type'    => 'string',
@@ -66,7 +58,7 @@ abstract class AbstractProductGrid extends AbstractDynamicBlock {
 	 * @param string $content    Block content. Default empty string.
 	 * @return string Rendered block type output.
 	 */
-	public function render( $attributes = array(), $content = '' ) {
+	protected function render( $attributes = array(), $content = '' ) {
 		$this->attributes = $this->parse_attributes( $attributes );
 		$this->content    = $content;
 		$this->query_args = $this->parse_query_args();
@@ -122,7 +114,7 @@ abstract class AbstractProductGrid extends AbstractDynamicBlock {
 		// These should match what's set in JS `registerBlockType`.
 		$defaults = array(
 			'columns'           => wc_get_theme_support( 'product_blocks::default_columns', 3 ),
-			'rows'              => wc_get_theme_support( 'product_blocks::default_rows', 1 ),
+			'rows'              => wc_get_theme_support( 'product_blocks::default_rows', 3 ),
 			'alignButtons'      => false,
 			'categories'        => array(),
 			'catOperator'       => 'any',
@@ -316,7 +308,7 @@ abstract class AbstractProductGrid extends AbstractDynamicBlock {
 	 * @param int $id Product ID.
 	 * @return string Rendered product output.
 	 */
-	public function render_product( $id ) {
+	protected function render_product( $id ) {
 		$product = wc_get_product( $id );
 
 		if ( ! $product ) {
@@ -427,10 +419,10 @@ abstract class AbstractProductGrid extends AbstractDynamicBlock {
 			return;
 		}
 
-		return '<span class="wc-block-grid__product-onsale">
-			<span aria-hidden="true">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>
+		return '<div class="wc-block-grid__product-onsale">
+			<span aria-hidden="true">' . esc_html__( 'Sale', 'woocommerce' ) . '</span>
 			<span class="screen-reader-text">' . esc_html__( 'Product on sale', 'woocommerce' ) . '</span>
-		</span>';
+		</div>';
 	}
 
 	/**

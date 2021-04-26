@@ -2,26 +2,23 @@
  * External dependencies
  */
 import { __ } from '@wordpress/i18n';
-import {
-	BlockControls,
-	InspectorControls,
-	ServerSideRender,
-} from '@wordpress/editor';
+import { BlockControls, InspectorControls } from '@wordpress/block-editor';
+import ServerSideRender from '@wordpress/server-side-render';
 import {
 	Button,
 	Disabled,
 	PanelBody,
 	Placeholder,
-	Toolbar,
+	ToolbarGroup,
 	withSpokenMessages,
 } from '@wordpress/components';
-import { Component, Fragment } from '@wordpress/element';
-import Gridicon from 'gridicons';
+import { Component } from '@wordpress/element';
+import { Icon, tags } from '@woocommerce/icons';
 import PropTypes from 'prop-types';
-import GridContentControl from '@woocommerce/block-components/grid-content-control';
-import GridLayoutControl from '@woocommerce/block-components/grid-layout-control';
-import ProductAttributeTermControl from '@woocommerce/block-components/product-attribute-term-control';
-import ProductOrderbyControl from '@woocommerce/block-components/product-orderby-control';
+import GridContentControl from '@woocommerce/editor-components/grid-content-control';
+import GridLayoutControl from '@woocommerce/editor-components/grid-layout-control';
+import ProductAttributeTermControl from '@woocommerce/editor-components/product-attribute-term-control';
+import ProductOrderbyControl from '@woocommerce/editor-components/product-orderby-control';
 import { gridBlockPreview } from '@woocommerce/resource-previews';
 
 /**
@@ -118,7 +115,7 @@ class ProductsByAttributeBlock extends Component {
 
 		return (
 			<Placeholder
-				icon={ <Gridicon icon="custom-post-type" /> }
+				icon={ <Icon srcElement={ tags } /> }
 				label={ __(
 					'Products by Attribute',
 					'woocommerce'
@@ -148,7 +145,7 @@ class ProductsByAttributeBlock extends Component {
 							setAttributes( { attrOperator: value } )
 						}
 					/>
-					<Button isDefault onClick={ onDone }>
+					<Button isPrimary onClick={ onDone }>
 						{ __( 'Done', 'woocommerce' ) }
 					</Button>
 				</div>
@@ -165,9 +162,9 @@ class ProductsByAttributeBlock extends Component {
 		}
 
 		return (
-			<Fragment>
+			<>
 				<BlockControls>
-					<Toolbar
+					<ToolbarGroup
 						controls={ [
 							{
 								icon: 'edit',
@@ -190,7 +187,7 @@ class ProductsByAttributeBlock extends Component {
 						/>
 					</Disabled>
 				) }
-			</Fragment>
+			</>
 		);
 	}
 }

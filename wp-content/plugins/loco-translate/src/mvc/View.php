@@ -1,4 +1,5 @@
-<?php
+<?php /** @noinspection PhpMultipleClassesDeclarationsInOneFile */
+
 /**
  * View renderer
  */
@@ -133,7 +134,7 @@ class Loco_mvc_View implements IteratorAggregate {
 
 
     /**
-     * implement IteratorAggregate::getIterator
+     * {@inheritDoc}
      */
     public function getIterator(){
         return $this->scope;
@@ -141,23 +142,38 @@ class Loco_mvc_View implements IteratorAggregate {
 
 
     /**
+     * @internal
+     * @param string
      * @return mixed
      */
     public function __get( $prop ){
-        return isset($this->scope[$prop]) ? $this->scope[$prop] : null;
+        return $this->has($prop) ? $this->get($prop) : null;
     }
 
 
     /**
+     * @param string
      * @return bool
      */
     public function has( $prop ){
-        return isset( $this->scope[$prop] );
+        return $this->scope->offsetExists($prop);
+    }
+
+
+    /**
+     * Get property after checking with self::has
+     * @param string
+     * @return mixed
+     */
+    public function get( $prop ){
+        return $this->scope[$prop];
     }
 
 
     /**
      * Set a view argument
+     * @param string
+     * @param mixed
      * @return Loco_mvc_View
      */
     public function set( $prop, $value ){
@@ -171,6 +187,7 @@ class Loco_mvc_View implements IteratorAggregate {
      * Main entry to rendering complete template
      * @param string template name excluding extension
      * @param array extra arguments to set in view scope
+     * @param Loco_mvc_View parent view rendering this view
      * @return string
      */
     public function render( $tpl, array $args = null, Loco_mvc_View $parent = null ){
@@ -245,6 +262,8 @@ class Loco_mvc_View implements IteratorAggregate {
 
     /**
      * Do actual runtime template include
+     * @param string
+     * @return void
      */
     private function execTemplate( $template ){
         $params = $this->scope;
@@ -255,17 +274,20 @@ class Loco_mvc_View implements IteratorAggregate {
 
     /**
      * Link generator
-     * return Loco_mvc_ViewParams
+     * @param string page route, e.g. "config"
+     * @param array optional page arguments
+     * @return Loco_mvc_ViewParams
      */
-    public function route( $action, array $args = array() ){
-        return new Loco_mvc_ViewParams( array(
-            'href' => Loco_mvc_AdminRouter::generate( $action, $args ),
+    public function route( $route, array $args = array() ){
+        return new Loco_mvc_ViewParams( array (
+            'href' => Loco_mvc_AdminRouter::generate( $route, $args ),
         ) );
     }
 
 
     /**
      * Shorthand for `echo esc_html( sprintf( ...`
+     * @param string
      * @return string
      */
     private static function e( $text ){

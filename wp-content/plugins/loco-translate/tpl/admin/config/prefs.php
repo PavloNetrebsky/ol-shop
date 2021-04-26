@@ -5,9 +5,11 @@
 
 $this->extend('../layout');
 /* @var Loco_data_Preferences $opts */
+$help = apply_filters('loco_external','https://localise.biz/wordpress/plugin/manual/settings');
 ?> 
 
     <form action="" method="post" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="<?php $nonce->e('name')?>" value="<?php $nonce->e('value')?>" />
         <table class="form-table">
             <tbody>
                 <tr>
@@ -23,10 +25,23 @@ $this->extend('../layout');
                         </fieldset>
                     </td>
                 </tr>
+                <tr>
+                    <th scope="row"><?php esc_html_e('Restrict locales','loco-translate')?></th>
+                    <td>
+                        <fieldset>
+                            <legend class="screen-reader-text">
+                                <span><?php esc_html_e('Restrict locales','loco-translate')?></span>
+                            </legend>
+                            <p>
+                                <input type="text" size="64" name="opts[locales]" id="loco--locales" value="<?php echo esc_attr(implode(', ',$opts->locales) )?>" placeholder="en_US, ..." />
+                            </p>
+                        </fieldset>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <p class="submit">
             <input type="submit" class="button-primary" value="<?php esc_html_e('Save settings','loco-translate')?>" />
-            <input type="hidden" name="<?php $nonce->e('name')?>" value="<?php $nonce->e('value')?>" />
+            <a class="button button-link" href="<?php self::e($help)?>#user" target="_blank"><?php esc_html_e('Documentation','loco-translate')?></a>
         </p>
     </form>

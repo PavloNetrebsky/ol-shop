@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SkyVerge\WooCommerce\PluginFramework\v5_5_4 as Framework;
+use SkyVerge\WooCommerce\PluginFramework\v5_10_0 as Framework;
 
 if ( ! class_exists( 'WC_Facebookcommerce_Graph_API' ) ) :
 
@@ -24,7 +24,8 @@ if ( ! class_exists( 'WC_Facebookcommerce_Graph_API' ) ) :
 	 * FB Graph API helper functions
 	 */
 	class WC_Facebookcommerce_Graph_API {
-		const GRAPH_API_URL = 'https://graph.facebook.com/v2.9/';
+		const GRAPH_API_URL = 'https://graph.facebook.com/';
+		const API_VERSION   = 'v9.0';
 		const CURL_TIMEOUT  = 500;
 
 		/**
@@ -160,8 +161,8 @@ if ( ! class_exists( 'WC_Facebookcommerce_Graph_API' ) ) :
 				'timeout' => self::CURL_TIMEOUT,
 			];
 
-			$fbasync = new WC_Facebookcommerce_Async_Request();
 
+			$fbasync = new WC_Facebookcommerce_Async_Request();
 			$fbasync->query_url  = $url;
 			$fbasync->query_args = array();
 			$fbasync->post_args  = $request_args;
@@ -394,6 +395,28 @@ if ( ! class_exists( 'WC_Facebookcommerce_Graph_API' ) ) :
 			return self::_delete( $product_group_url );
 		}
 
+		// POST https://graph.facebook.com/vX.X/{product-catalog-id}/product_sets
+		public function create_product_set_item( $product_catalog_id, $data ) {
+			$url = $this->build_url( $product_catalog_id, '/product_sets' );
+			return self::_post( $url, $data );
+		}
+
+		// POST https://graph.facebook.com/vX.X/{product-set-id}
+		public function update_product_set_item( $product_set_id, $data ) {
+			$url = $this->build_url( $product_set_id, '' );
+			return self::_post( $url, $data );
+		}
+
+		public function delete_product_set_item( $product_set_id ) {
+
+			$params = ( true === apply_filters( 'wc_facebook_commerce_allow_live_product_set_deletion', true, $product_set_id ) ) ? '?allow_live_product_set_deletion=true' : '';
+
+			$url = $this->build_url( $product_set_id, $params );
+
+			return self::_delete( $url );
+		}
+
+
 		public function log( $ems_id, $message, $error ) {
 			$log_url = $this->build_url( $ems_id, '/log_events' );
 
@@ -527,15 +550,56 @@ if ( ! class_exists( 'WC_Facebookcommerce_Graph_API' ) ) :
 			return self::_get( $url );
 		}
 
+
+		/**
+		 * Gets the connected asset IDs.
+		 *
+		 * These will be things like pixel & page ID.
+		 *
+		 * @since 2.0.0
+		 *
+		 * @param string $external_business_id the connected external business ID
+		 * @return array
+		 * @throws Framework\SV_WC_API_Exception
+		 */
+		public function get_asset_ids( $external_business_id ) {
+
+			$url = $this->build_url( 'fbe_business/fbe_installs?fbe_external_business_id=', $external_business_id );
+
+			$response = $this->perform_request( $url );
+
+			$data = wp_remote_retrieve_body( $response );
+			$data = json_decode( $data, true );
+
+			if ( ! is_array( $data ) || empty( $data['data'][0] ) ) {
+				throw new Framework\SV_WC_API_Exception( 'Data is missing' );
+			}
+
+			$ids = $data['data'][0];
+
+			// normalize the page ID to match the others
+			if ( ! empty( $ids['profiles'] ) && is_array( $ids['profiles'] ) ) {
+				$ids['page_id'] = current( $ids['profiles'] );
+			}
+
+			return $ids;
+		}
+
+
 		public function set_default_variant( $product_group_id, $data ) {
 			$url = $this->build_url( $product_group_id );
 			return self::_post( $url, $data );
 		}
 
-		private function build_url( $field_id, $param = '' ) {
-			return self::GRAPH_API_URL . (string) $field_id . $param;
+		private function build_url( $field_id, $param = '', $api_version = '' ) {
+			$api_url = self::GRAPH_API_URL;
+			if ( ! empty( $api_version ) ) {
+				$api_url = $api_url . $api_version . '/';
+			} else {
+				$api_url = $api_url . self::API_VERSION . '/';
+			}
+			return $api_url . (string) $field_id . $param;
 		}
-
 	}
 
 endif;

@@ -5,7 +5,7 @@ class SimpleTags_Client_Autoterms {
 	 * Constructor
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public function __construct() {
 		add_action( 'save_post', array( __CLASS__, 'save_post' ), 12, 2 );
@@ -21,6 +21,12 @@ class SimpleTags_Client_Autoterms {
 	 * @return boolean
 	 */
 	public static function save_post( $post_id = null, $object = null ) {
+
+		//return if general auto terms settings is disabled
+		if ( 0 === (int) SimpleTags_Plugin::get_option_value( 'active_autotags' ) ) {
+			return false;
+		}
+
 		// Get options
 		$options = get_option( STAGS_OPTIONS_NAME_AUTO );
 
@@ -62,7 +68,7 @@ class SimpleTags_Client_Autoterms {
 	 * @param boolean $counter
 	 *
 	 * @return boolean
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function auto_terms_post( $object, $taxonomy = 'post_tag', $options = array(), $counter = false ) {
 		global $wpdb;

@@ -1,10 +1,11 @@
 <?php
 
 use Automattic\Jetpack\Assets;
+use Automattic\Jetpack\Blocks;
 use Automattic\Jetpack\Sync\Settings;
 
 class Jetpack_RelatedPosts {
-	const VERSION   = '20191011';
+	const VERSION   = '20210219';
 	const SHORTCODE = 'jetpack-related-posts';
 
 	private static $instance     = null;
@@ -72,7 +73,7 @@ class Jetpack_RelatedPosts {
 		// Add Related Posts to the REST API Post response.
 		add_action( 'rest_api_init', array( $this, 'rest_register_related_posts' ) );
 
-		jetpack_register_block(
+		Blocks::jetpack_register_block(
 			'jetpack/related-posts',
 			array(
 				'render_callback' => array( $this, 'render_block' ),
@@ -1617,6 +1618,7 @@ EOT;
 		$enabled = is_single()
 			&& ! is_attachment()
 			&& ! is_admin()
+			&& ! is_embed()
 			&& ( ! $this->_allow_feature_toggle() || $this->get_option( 'enabled' ) );
 
 		/**
@@ -1653,7 +1655,7 @@ EOT;
 	 * @return null
 	 */
 	protected function _enqueue_assets( $script, $style ) {
-		$dependencies = is_customize_preview() ? array( 'customize-base' ) : array( 'jquery' );
+		$dependencies = is_customize_preview() ? array( 'customize-base' ) : array();
 		if ( $script ) {
 			wp_enqueue_script(
 				'jetpack_related-posts',

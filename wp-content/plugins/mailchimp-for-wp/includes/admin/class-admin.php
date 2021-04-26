@@ -113,12 +113,16 @@ class MC4WP_Admin {
 		*/
 		do_action( 'mc4wp_admin_' . $action );
 
-		// redirect back to where we came from
-		$redirect_url = isset( $_REQUEST['_redirect_to'] ) ? $_REQUEST['_redirect_to'] : remove_query_arg( '_mc4wp_action' );
-		if ( $redirect_url ) {
-			wp_redirect( $redirect_url );
-			exit;
+		// redirect back to where we came from (to prevent double submit)
+		if ( isset( $_POST['_redirect_to'] ) ) {
+			$redirect_url = $_POST['_redirect_to'];
+		} elseif ( isset( $_GET['_redirect_to'] ) ) {
+			$redirect_url = $_GET['_redirect_to'];
+		} else {
+			$redirect_url = remove_query_arg( '_mc4wp_action' );
 		}
+		wp_redirect( $redirect_url );
+		exit;
 	}
 
 	/**
@@ -191,7 +195,7 @@ class MC4WP_Admin {
 		}
 
 		define( 'MC4WP_DOING_UPGRADE', true );
-		$upgrade_routines = new MC4WP_Upgrade_Routines( $previous_version, MC4WP_VERSION, dirname( __FILE__ ) . '/migrations' );
+		$upgrade_routines = new MC4WP_Upgrade_Routines( $previous_version, MC4WP_VERSION, __DIR__ . '/migrations' );
 		$upgrade_routines->run();
 		update_option( 'mc4wp_version', MC4WP_VERSION );
 	}
@@ -243,8 +247,7 @@ class MC4WP_Admin {
 
 		// if API key changed, empty Mailchimp cache
 		if ( $settings['api_key'] !== $current['api_key'] ) {
-			$mailchimp = new MC4WP_MailChimp();
-			$mailchimp->refresh_lists();
+			delete_transient( 'mc4wp_mailchimp_lists' );
 		}
 
 		/**
@@ -276,23 +279,22 @@ class MC4WP_Admin {
 		$mailchimp = new MC4WP_MailChimp();
 
 		// css
-		wp_register_style( 'mc4wp-admin', MC4WP_PLUGIN_URL . 'assets/css/admin-styles' . $suffix . '.css', array(), MC4WP_VERSION );
+		wp_register_style( 'mc4wp-admin', mc4wp_plugin_url( 'assets/css/admin-styles' . $suffix . '.css' ), array(), MC4WP_VERSION );
 		wp_enqueue_style( 'mc4wp-admin' );
 
 		// js
-		wp_register_script( 'es5-shim', MC4WP_PLUGIN_URL . 'assets/js/third-party/es5-shim.min.js', array(), MC4WP_VERSION );
-		$wp_scripts->add_data( 'es5-shim', 'conditional', 'lt IE 9' );
-
-		wp_register_script( 'mc4wp-admin', MC4WP_PLUGIN_URL . 'assets/js/admin' . $suffix . '.js', array( 'es5-shim' ), MC4WP_VERSION, true );
+		wp_register_script( 'mc4wp-admin', mc4wp_plugin_url( 'assets/js/admin' . $suffix . '.js' ), array(), MC4WP_VERSION, true );
 		wp_enqueue_script( 'mc4wp-admin' );
+		$connected = ! empty( $opts['api_key'] );
+		$mailchimp_lists = $connected ? $mailchimp->get_lists() : array();
 		wp_localize_script(
 			'mc4wp-admin',
 			'mc4wp_vars',
 			array(
 				'ajaxurl'   => admin_url( 'admin-ajax.php' ),
 				'mailchimp' => array(
-					'api_connected' => ! empty( $opts['api_key'] ),
-					'lists'         => $mailchimp->get_lists(),
+					'api_connected' => $connected,
+					'lists'         => $mailchimp_lists,
 				),
 				'countries' => MC4WP_Tools::get_countries(),
 				'i18n'      => array(
@@ -426,7 +428,8 @@ class MC4WP_Admin {
 				$this->messages->flash( $message, 'error' );
 				$connected = false;
 			} catch ( MC4WP_API_Exception $e ) {
-				$this->messages->flash( sprintf( '<strong>%s</strong><br /> %s', esc_html__( 'Mailchimp returned the following error:', 'mailchimp-for-wp' ), $e ), 'error' );
+				$message = sprintf( '<strong>%s</strong><br /> %s', esc_html__( 'Mailchimp returned the following error:', 'mailchimp-for-wp' ), nl2br( (string) $e ) );
+				$this->messages->flash( $message, 'error' );
 				$connected = false;
 			}
 		}

@@ -2,7 +2,7 @@
  * External dependencies
  */
 import { __, _n, sprintf } from '@wordpress/i18n';
-import { InspectorControls } from '@wordpress/editor';
+import { InspectorControls } from '@wordpress/block-editor';
 import {
 	Button,
 	PanelBody,
@@ -11,10 +11,9 @@ import {
 	withSpokenMessages,
 } from '@wordpress/components';
 import { SearchListItem } from '@woocommerce/components';
-import { Fragment } from '@wordpress/element';
 import PropTypes from 'prop-types';
-import ProductCategoryControl from '@woocommerce/block-components/product-category-control';
-import { IconReviewsByCategory } from '@woocommerce/block-components/icons';
+import ProductCategoryControl from '@woocommerce/editor-components/product-category-control';
+import { Icon, review } from '@woocommerce/icons';
 
 /**
  * Internal dependencies
@@ -29,6 +28,11 @@ import {
 
 /**
  * Component to handle edit mode of "Reviews by Category".
+ *
+ * @param {Object} props Incoming props for the component.
+ * @param {Object} props.attributes Incoming block attributes.
+ * @param {function(any):any} props.debouncedSpeak
+ * @param {function(any):any} props.setAttributes Setter for block attributes.
  */
 const ReviewsByCategoryEditor = ( {
 	attributes,
@@ -57,9 +61,10 @@ const ReviewsByCategoryEditor = ( {
 				{ ...args }
 				showCount
 				aria-label={ sprintf(
+					/* translators: %1$s is the search term name, %2$d is the number of products returned for search query. */
 					_n(
-						'%s, has %d product',
-						'%s, has %d products',
+						'%1$s, has %2$d product',
+						'%1$s, has %2$d products',
 						item.count,
 						'woocommerce'
 					),
@@ -132,12 +137,16 @@ const ReviewsByCategoryEditor = ( {
 		return (
 			<Placeholder
 				icon={
-					<IconReviewsByCategory className="block-editor-block-icon" />
+					<Icon
+						srcElement={ review }
+						className="block-editor-block-icon"
+					/>
 				}
 				label={ __(
 					'Reviews by Category',
 					'woocommerce'
 				) }
+				className="wc-block-reviews-by-category"
 			>
 				{ __(
 					'Show product reviews from specific categories.',
@@ -152,7 +161,7 @@ const ReviewsByCategoryEditor = ( {
 						} }
 						showReviewCount={ true }
 					/>
-					<Button isDefault onClick={ onDone }>
+					<Button isPrimary onClick={ onDone }>
 						{ __( 'Done', 'woocommerce' ) }
 					</Button>
 				</div>
@@ -165,14 +174,16 @@ const ReviewsByCategoryEditor = ( {
 	}
 
 	return (
-		<Fragment>
+		<>
 			{ getBlockControls( editMode, setAttributes ) }
 			{ getInspectorControls() }
 			<EditorContainerBlock
 				attributes={ attributes }
-				className="wc-block-reviews-by-category"
 				icon={
-					<IconReviewsByCategory className="block-editor-block-icon" />
+					<Icon
+						srcElement={ review }
+						className="block-editor-block-icon"
+					/>
 				}
 				name={ __(
 					'Reviews by Category',
@@ -180,7 +191,7 @@ const ReviewsByCategoryEditor = ( {
 				) }
 				noReviewsPlaceholder={ NoReviewsPlaceholder }
 			/>
-		</Fragment>
+		</>
 	);
 };
 

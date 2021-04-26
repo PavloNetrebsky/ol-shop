@@ -39,7 +39,7 @@ class MC4WP_Forms_Admin {
 
 
 	public function enqueue_gutenberg_assets() {
-		wp_enqueue_script( 'mc4wp-form-block', MC4WP_PLUGIN_URL . 'assets/js/forms-block.js', array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components' ) );
+		wp_enqueue_script( 'mc4wp-form-block', mc4wp_plugin_url( 'assets/js/forms-block.js' ), array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components' ) );
 
 		$forms = mc4wp_get_forms();
 		$data  = array();
@@ -61,7 +61,7 @@ class MC4WP_Forms_Admin {
 			return;
 		}
 
-		wp_register_script( 'mc4wp-forms-admin', MC4WP_PLUGIN_URL . 'assets/js/forms-admin' . $suffix . '.js', array( 'mc4wp-admin' ), MC4WP_VERSION, true );
+		wp_register_script( 'mc4wp-forms-admin', mc4wp_plugin_url( 'assets/js/forms-admin' . $suffix . '.js' ), array( 'mc4wp-admin' ), MC4WP_VERSION, true );
 		wp_enqueue_script( 'mc4wp-forms-admin' );
 		wp_localize_script(
 			'mc4wp-forms-admin',
@@ -288,9 +288,9 @@ class MC4WP_Forms_Admin {
 	 * @param int $form_id
 	 */
 	private function set_default_form_id( $form_id ) {
-		$default_form_id = (int) get_option( 'mc4wp_default_form_id', 0 );
+		$default_form_id = get_option( 'mc4wp_default_form_id', 0 );
 
-		if ( $default_form_id === 0 ) {
+		if ( empty( $default_form_id ) ) {
 			update_option( 'mc4wp_default_form_id', $form_id );
 		}
 	}
@@ -331,11 +331,17 @@ class MC4WP_Forms_Admin {
 			$redirect_url = mc4wp_get_edit_form_url( $default_form->ID );
 		} catch ( Exception $e ) {
 			// no default form, query first available form and go there
-			$forms = mc4wp_get_forms( array( 'posts_per_page' => 1 ) );
+			$forms = mc4wp_get_forms(
+				array(
+				'posts_per_page' => 1,
+				'orderby' => 'ID',
+				'order' => 'ASC',
+				)
+			);
 
-			if ( $forms ) {
-				// if we have a post, go to the "edit form" screen
-				$form         = array_pop( $forms );
+			if ( count( $forms ) > 0 ) {
+				// take first form and use it to go to the "edit form" screen
+				$form         = array_shift( $forms );
 				$redirect_url = mc4wp_get_edit_form_url( $form->ID );
 			} else {
 				// we don't have a form yet, go to "add new" screen
@@ -400,7 +406,7 @@ class MC4WP_Forms_Admin {
 			site_url( '/', 'admin' )
 		);
 
-		require dirname( __FILE__ ) . '/views/edit-form.php';
+		require __DIR__ . '/views/edit-form.php';
 	}
 
 	/**
@@ -412,7 +418,7 @@ class MC4WP_Forms_Admin {
 		$mailchimp       = new MC4WP_MailChimp();
 		$lists           = $mailchimp->get_lists();
 		$number_of_lists = count( $lists );
-		require dirname( __FILE__ ) . '/views/add-form.php';
+		require __DIR__ . '/views/add-form.php';
 	}
 
 	/**

@@ -1,13 +1,5 @@
 <?php
-/**
- * Product search block.
- *
- * @package WooCommerce/Blocks
- */
-
 namespace Automattic\WooCommerce\Blocks\BlockTypes;
-
-defined( 'ABSPATH' ) || exit;
 
 /**
  * ProductSearch class.
@@ -20,4 +12,14 @@ class ProductSearch extends AbstractBlock {
 	 * @var string
 	 */
 	protected $block_name = 'product-search';
+
+	/**
+	 * Get the frontend script handle for this block type.
+	 *
+	 * @param string $key Data to get, or default to everything.
+	 * @return null
+	 */
+	protected function get_block_type_script( $key = null ) {
+		return null;
+	}
 }

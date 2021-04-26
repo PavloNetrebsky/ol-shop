@@ -2,14 +2,22 @@
 # This file is distributed under the same license as the Plugins - WP Mail SMTP by WPForms - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-04-22 10:04:47+0000\n"
+"PO-Revision-Date: 2020-05-13 12:57:02+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/3.0.0-alpha\n"
 "Language: ru\n"
 "Project-Id-Version: Plugins - WP Mail SMTP by WPForms - Stable (latest release)\n"
+
+#: src/Providers/SMTPcom/Mailer.php:435
+msgid "Channel:"
+msgstr "Канал:"
+
+#: src/Providers/SMTPcom/Mailer.php:433
+msgid "Api Key:"
+msgstr "Api ключ:"
 
 #. translators: %1$s - opening link tag; %2$s - closing link tag; %3$s -
 #. opening link tag; %4$s - closing link tag.
@@ -131,7 +139,7 @@ msgstr "Обновить до версии Pro"
 msgid "Educational notice for this mailer was successfully dismissed."
 msgstr "Информационное уведомление по этому почтовому провайдеру было успешно скрыто."
 
-#: src/Admin/Pages/MiscTab.php:157
+#: src/Admin/Pages/MiscTab.php:162
 msgid "<strong>This is not recommended</strong> and should only be done for staging or development sites."
 msgstr "<strong>Не рекомендуется</strong> и должно быть включено только для тестового или локального сайта."
 
@@ -372,9 +380,9 @@ msgstr "Создать ключ API"
 msgid "Follow this link to get an API Key from SendGrid: %s."
 msgstr "Проследуйте по ссылке для получения API ключа SendGrid: %s"
 
-#: src/Providers/SMTPcom/Options.php:83 src/Providers/Sendinblue/Options.php:76
-#: src/Providers/Sendgrid/Options.php:57
+#: src/Providers/Sendinblue/Options.php:76 src/Providers/SMTPcom/Options.php:83
 #: src/Providers/PepipostAPI/Options.php:88
+#: src/Providers/Sendgrid/Options.php:57
 msgid "API Key"
 msgstr "API ключ"
 
@@ -938,7 +946,7 @@ msgstr "Отправить на"
 msgid "Email Test"
 msgstr "Проверка почты"
 
-#: src/Admin/Pages/MiscTab.php:215 src/Admin/Pages/SettingsTab.php:540
+#: src/Admin/Pages/MiscTab.php:220 src/Admin/Pages/SettingsTab.php:540
 msgid "Settings were successfully saved."
 msgstr "Настройки сохранены."
 
@@ -946,19 +954,19 @@ msgstr "Настройки сохранены."
 msgid "Save Settings"
 msgstr "Сохранить настройки"
 
-#: src/Admin/Pages/MiscTab.php:180
+#: src/Admin/Pages/MiscTab.php:185
 msgid "Check this if you would like to remove ALL WP Mail SMTP data upon plugin deletion. All settings will be unrecoverable."
 msgstr "Отметьте, если вы хотите удалить все данные настроек WP Mail SMTP при удалении плагина. Их будет невозможно восстановить."
 
-#: src/Admin/Pages/MiscTab.php:172
+#: src/Admin/Pages/MiscTab.php:177
 msgid "Uninstall WP Mail SMTP"
 msgstr "Удалить WP Mail SMTP"
 
-#: src/Admin/Pages/MiscTab.php:115
+#: src/Admin/Pages/MiscTab.php:120
 msgid "Check this if you would like to hide plugin announcements and update details."
 msgstr "Отметьте для скрытия анонсов плагина и подробностей обновления."
 
-#: src/Admin/Pages/MiscTab.php:106
+#: src/Admin/Pages/MiscTab.php:111
 msgid "Hide Announcements"
 msgstr "Скрыть анонсы"
 

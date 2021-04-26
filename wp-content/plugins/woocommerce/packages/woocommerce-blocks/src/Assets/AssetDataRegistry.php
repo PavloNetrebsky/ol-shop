@@ -1,12 +1,4 @@
 <?php
-/**
- * Holds data registered for output on the current view session when
- * `wc-settings` is enqueued (directly or via dependency)
- *
- * @package WooCommerce/Blocks
- * @since 2.5.0
- */
-
 namespace Automattic\WooCommerce\Blocks\Assets;
 
 use Exception;
@@ -15,6 +7,9 @@ use InvalidArgumentException;
 /**
  * Class instance for registering data used on the current view session by
  * assets.
+ *
+ * Holds data registered for output on the current view session when
+ * `wc-settings` is enqueued( directly or via dependency )
  *
  * @since 2.5.0
  */
@@ -77,6 +72,7 @@ class AssetDataRegistry {
 		$currency = get_woocommerce_currency();
 		return [
 			'wpVersion'     => get_bloginfo( 'version' ),
+			'wcVersion'     => defined( 'WC_VERSION' ) ? WC_VERSION : '',
 			'adminUrl'      => admin_url(),
 			'countries'     => WC()->countries->get_countries(),
 			'currency'      => [
@@ -166,6 +162,16 @@ class AssetDataRegistry {
 	}
 
 	/**
+	 * Allows checking whether a key exists.
+	 *
+	 * @param string $key  The key to check if exists.
+	 * @return bool  Whether the key exists in the current data registry.
+	 */
+	public function exists( $key ) {
+		return array_key_exists( $key, $this->data );
+	}
+
+	/**
 	 * Interface for adding data to the registry.
 	 *
 	 * @param string $key  The key used to reference the data being registered.
@@ -252,7 +258,7 @@ class AssetDataRegistry {
 			}
 			return;
 		}
-		if ( \method_exists( $data, '__invoke' ) ) {
+		if ( \is_callable( $data ) ) {
 			$this->lazy_data[ $key ] = $data;
 			return;
 		}

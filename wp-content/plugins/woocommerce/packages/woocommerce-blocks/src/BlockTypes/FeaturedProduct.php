@@ -1,13 +1,5 @@
 <?php
-/**
- * Featured products block.
- *
- * @package WooCommerce\Blocks
- */
-
 namespace Automattic\WooCommerce\Blocks\BlockTypes;
-
-defined( 'ABSPATH' ) || exit;
 
 /**
  * FeaturedProduct class.
@@ -40,20 +32,19 @@ class FeaturedProduct extends AbstractDynamicBlock {
 	/**
 	 * Render the Featured Product block.
 	 *
-	 * @param array  $attributes Block attributes. Default empty array.
-	 * @param string $content    Block content. Default empty string.
+	 * @param array  $attributes Block attributes.
+	 * @param string $content    Block content.
 	 * @return string Rendered block type output.
 	 */
-	public function render( $attributes = array(), $content = '' ) {
-		$id      = isset( $attributes['productId'] ) ? (int) $attributes['productId'] : 0;
+	protected function render( $attributes, $content ) {
+		$id      = absint( isset( $attributes['productId'] ) ? $attributes['productId'] : 0 );
 		$product = wc_get_product( $id );
 		if ( ! $product ) {
 			return '';
 		}
 		$attributes = wp_parse_args( $attributes, $this->defaults );
-		if ( ! $attributes['height'] ) {
-			$attributes['height'] = wc_get_theme_support( 'featured_block::default_height', 500 );
-		}
+
+		$attributes['height'] = $attributes['height'] ? $attributes['height'] : wc_get_theme_support( 'featured_block::default_height', 500 );
 
 		$title = sprintf(
 			'<h2 class="wc-block-featured-product__title">%s</h2>',
@@ -77,8 +68,8 @@ class FeaturedProduct extends AbstractDynamicBlock {
 			$product->get_price_html()
 		);
 
-		$output = sprintf( '<div class="%1$s" style="%2$s">', esc_attr( $this->get_classes( $attributes ) ), esc_attr( $this->get_styles( $attributes, $product ) ) );
-
+		$output  = sprintf( '<div class="%1$s" style="%2$s">', esc_attr( $this->get_classes( $attributes ) ), esc_attr( $this->get_styles( $attributes, $product ) ) );
+		$output .= '<div class="wc-block-featured-product__wrapper">';
 		$output .= $title;
 		if ( $attributes['showDesc'] ) {
 			$output .= $desc_str;
@@ -87,6 +78,7 @@ class FeaturedProduct extends AbstractDynamicBlock {
 			$output .= $price_str;
 		}
 		$output .= '<div class="wc-block-featured-product__link">' . $content . '</div>';
+		$output .= '</div>';
 		$output .= '</div>';
 
 		return $output;

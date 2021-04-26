@@ -225,9 +225,7 @@ class MC4WP_API_V3 {
 			$args['interests'] = (object) $args['interests'];
 		}
 
-		// "put" updates the member if it's already on the list... take notice
-		$data = $this->client->post( $resource, $args );
-		return $data;
+		return $this->client->post( $resource, $args );
 	}
 
 	/**
@@ -260,8 +258,7 @@ class MC4WP_API_V3 {
 		}
 
 		// "put" updates the member if it's already on the list... take notice
-		$data = $this->client->put( $resource, $args );
-		return $data;
+		return $this->client->put( $resource, $args );
 	}
 
 	/**
@@ -287,8 +284,7 @@ class MC4WP_API_V3 {
 			$args['interests'] = (object) $args['interests'];
 		}
 
-		$data = $this->client->patch( $resource, $args );
-		return $data;
+		return $this->client->patch( $resource, $args );
 	}
 
 	/**
@@ -1091,7 +1087,6 @@ class MC4WP_API_V3 {
 		return ! ! $this->client->delete( $resource );
 	}
 
-
 	/**
 	 * Get a list of an account's available templates
 	 *
@@ -1117,6 +1112,19 @@ class MC4WP_API_V3 {
 	public function get_template( $template_id, array $args = array() ) {
 		$resource = sprintf( '/templates/%s', $template_id );
 		return $this->client->get( $resource, $args );
+	}
+
+	/**
+	 * Create a new template.
+	 *
+	 * @link https://mailchimp.com/developer/reference/templates/#post_/templates
+	 * @param array $args
+	 * @return object
+	 * @throws MC4WP_API_Exception
+	 */
+	public function add_template( array $args ) {
+		$resource = '/templates';
+		return $this->client->post( $resource, $args );
 	}
 
 	/**

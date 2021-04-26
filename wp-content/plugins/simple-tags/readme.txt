@@ -1,60 +1,84 @@
-=== Simple Tags ===
-
-Contributors: momo360modena, rahe, beapi, nicolaskulka
-Donate link: http://beapi.fr/donate/
-Tags: tag, posts, tags, admin, administration, tagging, navigation, terms, taxonomy
+=== TaxoPress - Create and Manage Taxonomies, Tags, Categories ===
+Contributors: publishpress, kevinB, stevejburge, andergmartins, olatechpro
+Tags: tag, tags, taxonomy, term, cpt, tagging, navigation, tag manager, tags manager, term manager, terms manager
 Requires at least: 3.3
-Tested up to: 5.2
-Stable tag: 2.5.7
+Tested up to: 5.7
+Stable tag: 3.0.4.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Extended Tagging for WordPress : Terms suggestion, Mass Edit Terms, Auto link Terms, Ajax Autocompletion, Click Terms, Advanced manage terms, etc.
+TaxoPress is the advanced taxonomy manager. This plugin can automatically create and link your taxonomy terms.
 
 == Description ==
 
-Extended Tagging for WordPress : Terms suggestion, Mass Edit Terms, Auto link Terms, Ajax Autocompletion, Click Terms, Advanced manage terms, etc.
+TaxoPress is the advanced taxonomy manager. TaxoPress can create and manage Tags, Categories and all your WordPress taxonomy terms.
 
-Github project homepage: https://github.com/BeAPI/simple-tags
+= Five Key Features in TaxoPress =
 
-**This is THE perfect tool to manage perfectly your WP terms for any taxonomy**
+1. **Tag Clouds**: Create dynamic tag clouds with many configuration options.
+2. **Manage terms**: Quickly add, rename, remove, delete and even merge terms.
+3. **Automatically create terms from posts**: TaxoPress can analyze your posts and automatically relevant create Tags and Categories.
+4. **Automatically suggest terms from posts**: TaxoPress can use the Dandelion API and OpenCalais API to analyze your WordPress content and suggest Tags that you can add to your post.
+5. **Link words to Tags**: If you have a term called “WordPress”, the Auto Links feature will find any instances of “WordPress” in your content and add link to the archive page for that tag.
 
-It was written with this philosophy : best performances, more secured and brings a lot of new functions
+= Feature #1. How to Add Tag Clouds =
 
-This plugin is developped on latest WordPress version, with the constant WP_DEBUG to TRUE.
+TaxoPress allows you to show a cloud of the Tags used on your site. The most popular tags are shown in a large font. The Tag Cloud can be show in one of three ways:
 
-* Administration
-	* Tags suggestion from Yahoo! Content Analysis, OpenCalais, Alchemy, Zemanta, Tag The Net, Tag4Site, dataTXT and local terms with AJAX request 
-		* Compatible with TinyMCE, FCKeditor, WYMeditor and QuickTags
-	* tags management (rename, delete, merge, search and add tags, edit tags ID)
-	* **Edit mass tags (more than 50 posts once)**
-	* Auto link tags in post content
-	* Auto tags !
-	* Type-ahead input tags / Autocompletion Ajax
-	* Click tags
-	* Possibility to tag pages (not only posts) and include them inside the tags results
-	* **Easy configuration ! (in WP admin)**
+* With a shortcode.
+* With the "Tag Cloud" widget.
+* With PHP code in your template files.
 
-* Public
-	* Technorati, Flickr and Delicious tags
-	* Dynamic Tag Clouds with colors with Widgets (random order, etc)
+[Click here to read about Tag Clouds](https://taxopress.com/docs/introduction-to-tag-clouds/).
 
-And more...
+= Feature #2. How to Manage Terms =
+
+The “Manage Terms” screen in TaxoPress provides you with several useful tools to manage the terms on your site. These tools can be used with any taxonomy. Here
+
+* **Add terms**: Quickly add terms to your content.
+* **Rename terms**: Change the name of your terms in bulk.
+* **Merge terms**: Combine existing terms together. Very useful for fixing typos in your terms.
+* **Remove terms**: Remove terms from all posts, without deleting those terms.
+* **Delete terms**: Delete terms in bulk.
+* **Delete unused terms**: Delete any terms that are rarely used.
+
+[Click here to read about managing terms](https://taxopress.com/docs/introduction-to-manage-terms/).
+
+= Feature #3. How to Automatically Create Terms =
+
+This feature allows WordPress to examine your post content and title for specified terms and automatically add those terms as Tags. Here’s an example of how it works:
+
+* You add “WordPress” to the keywords list in TaxoPress.
+* If your post content or title contains the word “WordPress”, then TaxoPress will automatically add “WordPress” as a term for this post.
+
+[Click here to read about creating terms](https://taxopress.com/docs/introduction-to-auto-terms/).
+
+= Feature #4. How to Automatically Suggest Terms =
+
+The Suggested Tags feature in TaxoPress will analyze your WordPress content and suggest Tags that you can add to your post. The default option is “Local Tags”. These are Tags that have already been created on your site. It is possible to use APIs to automatically suggest Tags for your content. The Dandelion API and OpenCalais API integrations can analyze your Posts and Pages and automatically make suggestions for new Tags.
+
+[Click here to read about suggesting terms](https://taxopress.com/docs/introduction-to-suggested-tags/).
+
+= Feature #5. How to Link Words to Tags =
+
+The Auto Links feature in TaxoPress will automatically add links to your content. If you have a term called “WordPress”, the Auto Links feature will find any instances of “WordPress” in your content and add link to the archive page for that tag. So any instances of “WordPress” will link to /tag/wordpress.
+
+[Click here to read about linking words](https://taxopress.com/docs/introduction-to-auto-links/).
 
 == Installation ==
 
-**Required PHP5 or upper.**
+**Requires PHP5 or upper.**
 
-The Simple Tags can be installed in 3 easy steps:
+TaxoPress can be installed in 3 easy steps:
 
-1. Unzip "Simple tags" archive and put all files into a folder like "/wp-content/plugins/simple-tags/"
+1. Unzip the TaxoPress archive and put all files into a folder like "/wp-content/plugins/simple-tags/"
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Inside the Wordpress admin, go to Options > Simple Tags, adjust the parameters according to your needs, and save them.
+3. Inside the WordPress admin, go to the 'TaxoPress' mennu.
 
 == Frequently Asked Questions ==
 
-= Simple Tags is compatible with which WordPress versions ? =
+= TaxoPress is compatible with which WordPress versions ? =
 
 * 2.5 and upper are compatible with WordPress 4.x and 5.x !
 * 2.4 and upper are compatible only with WordPress 4.x !
@@ -70,11 +94,84 @@ The Simple Tags can be installed in 3 easy steps:
 2. Do you have a not yet tagged blog ? Edit mass tags options is perfect for you : tag 20, 30 or 50 articles with autocompletion in one step !
 3. Autotagging your content !
 4. Add tags easily with click tags !
-3. To help you to add easily tags, Simple Tags has an autocompletion script. When you begin to tape a letter or more, a list a tags appears : you have only to choose ! You can choose the down direction to see all the tags.
+3. To help you to add easily tags, TaxoPress has an autocompletion script. When you begin to tape a letter or more, a list a tags appears : you have only to choose ! You can choose the down direction to see all the tags.
 6. You also can suggest tags from lot's of service (Yahoo! Content Analysis, OpenCalais, Alchemy, Zemanta, Tag The Net, Tag4Site, dataTXT and local terms)
 
 == Changelog ==
 
+v3.0.4.1 - 2021-04-21
+* Fixed last release bugs
+
+v3.0.4 - 2021-04-21
+* Added taxonomy manage page
+* Added media tags taxonomy for media page
+* Added option to add new taxonomy
+* Added option to edit inbuilt and custom taxonomy
+* Added option to assign taxonomy to custom post(s)
+* Added option to activate and deactivate taxonomy
+
+v3.0.3 - 2021-03-22
+* Improved the "Manage Terms" page
+* Added feature to untag all posts with specific tag to "Manage Terms" page
+* Removed "Autocompletion with old input"
+* Small adjustment to the AutoTerms screen
+* Small improvements to metaboxes
+* Added search to clicktags
+
+v3.0.2 - 2021-03-10
+* Restore Dandelion API
+* Fixed Tags gets split when having an '&' in name
+* Removed Tag4Site API
+* Update Opencalais API URL
+* Clean up the Auto Terms screen and change suggestion tag list to repeated field
+
+v3.0.1 - 2021-03-03
+* Fixed issue with the "tag link format" been stripped out in widgets
+* Fixed input display for "Mass Edit Terms" screen going beyond wrapper
+* Added valid color picker to color select field in TaxoPress > Settings > Tag cloud
+* Updated OpenCalais broken API documentation link
+* Removed Alchemy API
+* Removed Zemanta API
+* Removed Dandelion API
+* Removed Proxem API
+* Removed Yahoo API
+* Hide suggested services in post if there is no active API key
+* Delete "Technical informations" in manage terms
+* Added auto links for all tags even if post doesn't contain tags
+* Updated Auto terms filter layout
+* Fixed "Click Tags" for the new input(Gutenberg) not working
+* Fixed auto tag still been added after been disabled in general settings
+* Updated plugin logo and banner for WordPress.org
+
+v3.0.0 - 2021-02-24
+* Enable 'Advanced Manage Terms', 'Related posts by terms' and 'Tag cloud Shortcode' by default
+* Removed review request box and link
+* Fixed metabox showing up empty if not used
+* Removed unused 'Meta keyword' and 'Related Tags' tabs
+* Organized all plugin options under one admin menu
+* Update footer copyright text
+* Changed plugin name to "TaxoPress"
+
+v2.63 - 2021-01-14
+* fixed an unescaped database query
+* fixed a bug with custom post type name in URL when bulk editing posts
+
+v2.62 - 2020-10-27
+* removed all tracking code
+
+v2.61 - 2020-09-30
+* fixed issue with Maximum number of links for the same tag
+* added dismissible request to rate
+* added promo campaign for WP 301 Redirects
+
+v2.6 - 2020-09-10
+* fixes for WP v5.5
+* WebFactory took over maintenance of the plugin
+* 80,000 installs; 2,203,335 downloads
+
+* Version 2.5.8
+	* Fix issue that prevent Suggested Tags from working
+  * Fix OpenCalais issue (thanks @timbearcub for the help)
 * Version 2.5.6
 	* Github actions...
 * Version 2.5.6
@@ -208,7 +305,7 @@ The Simple Tags can be installed in 3 easy steps:
 	* Restore custom post tags feature : st_the_tags()
 	* Fix a bug with widget taxo option saving
 * Version 2.0-beta1 :
-	* This version is a back to fondamentals. Somes features are removed ! 
+	* This version is a back to fondamentals. Somes features are removed !
 	* This version need testing !
 	* Remove old marker <!--st_tag_cloud-->
 	* Remove related posts
@@ -474,7 +571,7 @@ The Simple Tags can be installed in 3 easy steps:
 	* Fixes 2-3 minors bugs
 * Version 1.0
 	* Initial version
-	
+
 == Upgrade Notice ==
 
 Nothing to say...

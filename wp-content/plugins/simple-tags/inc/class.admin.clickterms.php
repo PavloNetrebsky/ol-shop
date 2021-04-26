@@ -5,7 +5,7 @@ class SimpleTags_Admin_ClickTags {
 	 * Constructor
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public function __construct() {
 		// Ajax action, JS Helper and admin action
@@ -22,7 +22,7 @@ class SimpleTags_Admin_ClickTags {
 	 * Init somes JS and CSS need for this feature
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function admin_enqueue_scripts() {
 		global $pagenow;
@@ -41,9 +41,11 @@ class SimpleTags_Admin_ClickTags {
 			'st-helper-click-tags',
 			'stHelperClickTagsL10n',
 			array(
-				'show_txt' => __( 'Display click tags', 'simpletags' ),
-				'hide_txt' => __( 'Hide click tags', 'simpletags' ),
-				'state'    => SimpleTags_Plugin::get_option_value( 'visibility_click_tags' ),
+				'show_txt'    => __( 'Click to display tags', 'simpletags' ),
+				'hide_txt'    => __( 'Click Tags to add them to this post', 'simpletags' ),
+				'state'       => 'show',
+				'search_icon' => STAGS_URL . '/assets/images/indicator.gif',
+				'search_box'  => '<input type="text" class="click-tag-search-box" placeholder="'.__('Start typing to search', 'simpletags').'" size="26" autocomplete="off">',
 			)
 		);
 
@@ -61,12 +63,12 @@ class SimpleTags_Admin_ClickTags {
 	 * Register metabox
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function admin_menu() {
 		add_meta_box(
 			'st-clicks-tags',
-			__( 'Click tags', 'simpletags' ),
+			__( 'Show all local tags', 'simpletags' ),
 			array(
 				__CLASS__,
 				'metabox',
@@ -79,7 +81,7 @@ class SimpleTags_Admin_ClickTags {
 		if ( is_page_have_tags() ) {
 			add_meta_box(
 				'st-clicks-tags',
-				__( 'Click tags', 'simpletags' ),
+				__( 'Show all local tags', 'simpletags' ),
 				array(
 					__CLASS__,
 					'metabox',
@@ -95,7 +97,7 @@ class SimpleTags_Admin_ClickTags {
 	 * Put default HTML for people without JS
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function metabox() {
 		echo SimpleTags_Admin::getDefaultContentBox();
@@ -105,7 +107,7 @@ class SimpleTags_Admin_ClickTags {
 	 * Ajax Dispatcher
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function ajax_check() {
 		if ( isset( $_GET['stags_action'] ) && 'click_tags' === $_GET['stags_action'] ) {
@@ -117,7 +119,7 @@ class SimpleTags_Admin_ClickTags {
 	 * Display a span list for click tags
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function ajax_click_tags() {
 		status_header( 200 ); // Send good header HTTP
@@ -156,9 +158,15 @@ class SimpleTags_Admin_ClickTags {
 				$order    = 'ASC';
 				break;
 		}
-
-		// Get all terms, or filter with search
-		$terms = SimpleTags_Admin::getTermsForAjax( 'post_tag', $search, $order_by, $order );
+        
+        if(empty(trim($search))){
+            $limit = 'LIMIT 0, '.SimpleTags_Plugin::get_option_value( 'click_tags_limit');
+        }else{
+            $limit = '';
+        }
+		
+        // Get all terms, or filter with search
+		$terms = SimpleTags_Admin::getTermsForAjax( 'post_tag', $search, $order_by, $order,  $limit );
 		if ( empty( $terms ) ) {
 			echo '<p>' . esc_html__( 'No results from your WordPress database.', 'simpletags' ) . '</p>';
 			exit();

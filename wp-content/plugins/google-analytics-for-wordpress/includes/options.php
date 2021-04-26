@@ -61,6 +61,11 @@ function monsterinsights_get_option( $key = '', $default = false ) {
  * @return string The UA to use.
  */
 function monsterinsights_get_ua() {
+	// Allow short circuiting (for staging sites)
+	if ( defined( 'MONSTERINSIGHTS_DISABLE_TRACKING' ) && MONSTERINSIGHTS_DISABLE_TRACKING ) {
+		return '';
+	}
+
 	// Try getting it from the auth UA
 	$ua = MonsterInsights()->auth->get_ua();
 
@@ -390,14 +395,14 @@ function monsterinsights_export_settings() {
 }
 
 /**
- * Always return 'analytics' when grabbing the tracking mode.
+ * Always return 'gtag' when grabbing the tracking mode.
  *
  * @param string $value The value to override.
  *
  * @return string
  */
 function monsterinsights_force_tracking_mode( $value ) {
-	return 'analytics';
+	return 'gtag';
 }
 add_filter( 'monsterinsights_get_option_tracking_mode', 'monsterinsights_force_tracking_mode' );
 

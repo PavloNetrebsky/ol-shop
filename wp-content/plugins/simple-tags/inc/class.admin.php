@@ -14,7 +14,7 @@ class SimpleTags_Admin {
 	 * Initialize Admin
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public function __construct() {
 		// DB Upgrade ?
@@ -29,6 +29,7 @@ class SimpleTags_Admin {
 		// Load JavaScript and CSS
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'admin_enqueue_scripts' ) );
 
+
 		// Load custom part of plugin depending option
 		if ( 1 === (int) SimpleTags_Plugin::get_option_value( 'use_suggested_tags' ) ) {
 			require STAGS_DIR . '/inc/class.admin.suggest.php';
@@ -40,10 +41,8 @@ class SimpleTags_Admin {
 			new SimpleTags_Admin_ClickTags();
 		}
 
-		if ( 1 === (int) SimpleTags_Plugin::get_option_value( 'use_autocompletion' ) ) {
-			require STAGS_DIR . '/inc/class.admin.autocomplete.php';
-			new SimpleTags_Admin_Autocomplete();
-		}
+        require STAGS_DIR . '/inc/class.admin.autocomplete.php';
+        new SimpleTags_Admin_Autocomplete();
 
 		if ( 1 === (int) SimpleTags_Plugin::get_option_value( 'active_mass_edit' ) ) {
 			require STAGS_DIR . '/inc/class.admin.mass.php';
@@ -51,8 +50,9 @@ class SimpleTags_Admin {
 		}
 
 		if ( 1 === (int) SimpleTags_Plugin::get_option_value( 'active_manage' ) ) {
+			require STAGS_DIR . '/inc/class-tag-table.php';
 			require STAGS_DIR . '/inc/class.admin.manage.php';
-			new SimpleTags_Admin_Manage();
+			SimpleTags_Admin_Manage::get_instance();
 		}
 
 		if ( 1 === (int) SimpleTags_Plugin::get_option_value( 'active_autotags' ) ) {
@@ -65,11 +65,14 @@ class SimpleTags_Admin {
 			new SimpleTags_Admin_Post_Settings();
 		}
 
+        require STAGS_DIR . '/inc/class.admin.taxonomies.ui.php';
+        require STAGS_DIR . '/inc/class-taxonomies-table.php';
+        require STAGS_DIR . '/inc/taxonomies.php';
+        SimpleTags_Admin_Taxonomies::get_instance();
+
 		// Ajax action, JS Helper and admin action
 		add_action( 'wp_ajax_simpletags', array( __CLASS__, 'ajax_check' ) );
 
-		// tracking
-		add_action( 'admin_notices', array( __CLASS__, 'admin_setup_notices' ) );
 	}
 
 	/**
@@ -88,6 +91,8 @@ class SimpleTags_Admin {
 	 */
 	public static function maybe_create_tag( $tag_name = '' ) {
 		$term_id     = 0;
+		//restore & in tag post 
+		$tag_name = str_replace("simpletagand", "&", $tag_name);
 		$result_term = term_exists( $tag_name, 'post_tag', 0 );
 		if ( empty( $result_term ) ) {
 			$result_term = wp_insert_term(
@@ -103,45 +108,6 @@ class SimpleTags_Admin {
 		}
 
 		wp_send_json_success( [ 'term_id' => $term_id ] );
-	}
-
-	/**
-	 * Show tracking dialog
-	 */
-	public static function admin_setup_notices() {
-		// Make sure they have the permissions to do something
-		if ( ! current_user_can( 'admin_simple_tags' ) ) {
-			return;
-		}
-
-		// Already show ?
-		if ( get_option( 'simpletags_tracking_notice' ) ) {
-			return;
-		}
-
-		// Feature already enabled ?
-		if ( SimpleTags_Plugin::get_option_value( 'use_tracking' ) ) {
-			return;
-		}
-
-		// Dev environment ?
-		if ( self::is_dev_url( network_site_url( '/' ) ) ) {
-			update_option( 'simpletags_tracking_notice', '1' );
-
-			return;
-		}
-
-		$optin_url  = add_query_arg( 'st_action', 'opt_into_tracking' );
-		$optout_url = add_query_arg( 'st_action', 'opt_out_of_tracking' );
-
-		echo '<div class="updated"><p>';
-		echo '<a href="' . esc_url( $optout_url ) . '" class="button-secondary" style="float:right;">' . __( 'Do not allow', 'simpletags' ) . '</a>';
-		echo '<a href="' . esc_url( $optin_url ) . '" class="button-primary" style="float:right; margin-right:10px;">' . __( 'Allow', 'simpletags' ) . '</a>';
-
-		echo __( '<strong>Simple Tags:</strong> By allowing us to track your usage, we can make a better plugin by knowing the features of the plugin you have activated.', 'simpletags' );
-		echo '<br />';
-		echo __( '<strong>Developer\'s Notes:</strong> It would help me a lot! Because I have absolutely no idea of the features you use in this plugin :)', 'simpletags' );
-		echo '</p></div>';
 	}
 
 	/**
@@ -203,7 +169,7 @@ class SimpleTags_Admin {
 	 * Make a public static function for call it from children class...
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function register_taxonomy() {
 		add_action( 'init', array( __CLASS__, 'init' ), 99999999 );
@@ -213,7 +179,7 @@ class SimpleTags_Admin {
 	 * Put in var class the current taxonomy choose by the user
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function init() {
 		self::$taxo_name      = __( 'Post tags', 'simpletags' );
@@ -269,7 +235,7 @@ class SimpleTags_Admin {
 	 * @param string $page_value
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function boxSelectorTaxonomy( $page_value = '' ) {
 		echo '<div class="box-selector-taxonomy">' . PHP_EOL;
@@ -310,20 +276,83 @@ class SimpleTags_Admin {
 	}
 
 	/**
-	 * Init somes JS and CSS need for simple tags.
+	 * Build HTML form for allow user to change taxonomy for the current page.
+	 *
+	 * @param string $page_value
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author Olatechpro
+	 */
+	public static function boxSelectorAutoTerms( $page_value = '' ) {
+		echo '<div class="box-selector-taxonomy">' . PHP_EOL;
+
+		echo '<div class="change-taxo">' . PHP_EOL;
+		echo '<form action="" method="get">' . PHP_EOL;
+		if ( ! empty( $page_value ) ) {
+			echo '<input type="hidden" name="page" value="' . $page_value . '" />' . PHP_EOL;
+		}
+		$taxonomies = [];
+		echo '<select name="cpt" id="cpt-select" class="st-cpt-select">' . PHP_EOL;
+		foreach ( get_post_types( array( 'show_ui' => true ), 'objects' ) as $post_type ) {
+			$taxonomies_children = get_object_taxonomies( $post_type->name );
+			if ( empty( $taxonomies_children ) ) {
+				continue;
+			}
+			$taxonomies[$post_type->name] = $taxonomies_children;
+			echo '<option ' . selected( $post_type->name, self::$post_type, false ) . ' value="' . esc_attr( $post_type->name ) . '">' . esc_html( $post_type->labels->name ) . '</option>' . PHP_EOL;
+		}
+		echo '</select>' . PHP_EOL;
+
+		echo '<select name="taxo" id="taxonomy-select" class="st-taxonomy-select">' . PHP_EOL;
+		foreach ( $taxonomies as $parent_post => $taxonomy ) {
+			if ( count($taxonomy) > 0){
+				foreach($taxonomy as $tax_name){
+			$taxonomy = get_taxonomy( $tax_name );
+			if ( false === (bool) $taxonomy->show_ui ) {
+				continue;
+			}
+
+			if(  self::$post_type == $parent_post){
+				 $class = "";
+			}else{
+				$class="st-hide-content";
+			}
+
+			echo '<option ' . selected( $tax_name, self::$taxonomy, false ) . ' value="' . esc_attr( $tax_name ) . '" data-post="'.$parent_post.'" class="'.$class.'">' . esc_html( $taxonomy->labels->name ) . '</option>' . PHP_EOL;
+			}
+		}
+		}
+		echo '</select>' . PHP_EOL;
+
+		echo '<input type="submit" class="button" id="submit-change-taxo" value="' . __( 'Change selection', 'simpletags' ) . '" />' . PHP_EOL;
+		echo '</form>' . PHP_EOL;
+		echo '</div>' . PHP_EOL;
+		echo '</div>' . PHP_EOL;
+
+	}
+
+	/**
+	 * Init somes JS and CSS need for TaxoPress.
+	 *
+	 * @return void
+	 * @author WebFactory Ltd
 	 */
 	public static function admin_enqueue_scripts() {
 		global $pagenow;
 
-		// Helper simple tags
+		//color picker style
+  		wp_enqueue_style( 'wp-color-picker' );
+
+		// Helper TaxoPress
 		wp_register_script( 'st-helper-add-tags', STAGS_URL . '/assets/js/helper-add-tags.js', array( 'jquery' ), STAGS_VERSION );
-		wp_register_script( 'st-helper-options', STAGS_URL . '/assets/js/helper-options.js', array( 'jquery' ), STAGS_VERSION );
+		wp_register_script( 'st-helper-options', STAGS_URL . '/assets/js/helper-options.js', array( 'jquery', 'wp-color-picker' ), STAGS_VERSION );
 
 		// Register CSS
 		wp_register_style( 'st-admin', STAGS_URL . '/assets/css/admin.css', array(), STAGS_VERSION, 'all' );
+
+		//Register and enqueue admin js
+		wp_register_script( 'st-admin-js', STAGS_URL . '/assets/js/admin.js', array( 'jquery' ), STAGS_VERSION );
+		wp_enqueue_script( 'st-admin-js' );
 
 		// Register location
 		$wp_post_pages = array( 'post.php', 'post-new.php' );
@@ -337,7 +366,8 @@ class SimpleTags_Admin {
 					'st_mass_terms',
 					'st_auto',
 					'st_options',
-					'st_manage'
+					'st_manage',
+					'st_taxonomies'
 				) ) )
 		) {
 			wp_enqueue_style( 'st-admin' );
@@ -354,12 +384,27 @@ class SimpleTags_Admin {
 	 * Add settings page on WordPress admin menu
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function admin_menu() {
-		add_options_page(
-			__( 'Simple Tags: Options', 'simpletags' ),
-			__( 'Simple Tags', 'simpletags' ),
+		self::$admin_url = admin_url( 'admin.php?page=' . self::MENU_SLUG );
+
+		add_menu_page(
+			__( 'TaxoPress: Options', 'simpletags' ),
+			__( 'TaxoPress', 'simpletags' ),
+			'admin_simple_tags',
+			self::MENU_SLUG,
+			array(
+				__CLASS__,
+				'page_options',
+			),
+			'dashicons-tag',
+			69.999
+		);
+		add_submenu_page(
+			self::MENU_SLUG,
+			__( 'TaxoPress: Options', 'simpletags' ),
+			__( 'Settings', 'simpletags' ),
 			'admin_simple_tags',
 			self::MENU_SLUG,
 			array(
@@ -367,14 +412,13 @@ class SimpleTags_Admin {
 				'page_options',
 			)
 		);
-		self::$admin_url = admin_url( '/options-general.php?page=' . self::MENU_SLUG );
 	}
 
 	/**
 	 * Build HTML for page options, manage also save/reset settings
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function page_options() {
 		// Get options
@@ -400,7 +444,7 @@ class SimpleTags_Admin {
 
 			SimpleTags_Plugin::set_default_option();
 
-			add_settings_error( __CLASS__, __CLASS__, __( 'Simple Tags options resetted to default options!', 'simpletags' ), 'updated' );
+			add_settings_error( __CLASS__, __CLASS__, __( 'TaxoPress options resetted to default options!', 'simpletags' ), 'updated' );
 		}
 
 		settings_errors( __CLASS__ );
@@ -414,7 +458,7 @@ class SimpleTags_Admin {
 	 * @param integer $post_id
 	 *
 	 * @return string
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function getTermsToEdit( $taxonomy = 'post_tag', $post_id = 0 ) {
 		$post_id = (int) $post_id;
@@ -436,10 +480,10 @@ class SimpleTags_Admin {
 	}
 
 	/**
-	 * Default content for meta box of Simple Tags
+	 * Default content for meta box of TaxoPress
 	 *
 	 * @return string
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function getDefaultContentBox() {
 		if ( (int) wp_count_terms( 'post_tag', array( 'hide_empty' => false ) ) == 0 ) { // TODO: Custom taxonomy
@@ -453,11 +497,11 @@ class SimpleTags_Admin {
 	 * A short public static function for display the same copyright on all admin pages
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function printAdminFooter() {
 		?>
-		<p class="footer_st"><?php printf( __( '&copy; Copyright 2007-2019 <a href="http://www.herewithme.fr/" title="Here With Me">Amaury Balmer</a> | <a href="http://wordpress.org/extend/plugins/simple-tags">Simple Tags</a> | Version %s', 'simpletags' ), STAGS_VERSION ); ?></p>
+		<p class="footer_st"><?php printf( __( 'Thanks for using TaxoPress | <a href="https://taxopress.com/">TaxoPress.com</a> | Version %s', 'simpletags' ), STAGS_VERSION ); ?></p>
 		<?php
 	}
 
@@ -467,7 +511,7 @@ class SimpleTags_Admin {
 	 * @param array $option_data
 	 *
 	 * @return string
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function print_options( $option_data ) {
 		// Get options
@@ -520,7 +564,7 @@ class SimpleTags_Admin {
 						break;
 
 					case 'text-color':
-						$input_type = '<input type="text" id="' . $option[0] . '" name="' . $option[0] . '" value="' . esc_attr( $option_actual[ $option[0] ] ) . '" class="text-color ' . $option[3] . '" /><div class="box_color ' . $option[0] . '"></div>' . PHP_EOL;
+						$input_type = '<input type="text" id="' . $option[0] . '" name="' . $option[0] . '" value="' . esc_attr( $option_actual[ $option[0] ] ) . '" class="text-color ' . $option[3] . '" />' . PHP_EOL;
 						break;
 
 					case 'text':
@@ -564,16 +608,12 @@ class SimpleTags_Admin {
 				return __( 'Auto link', 'simpletags' );
 			case 'features':
 				return __( 'Features', 'simpletags' );
-			case 'metakeywords':
-				return __( 'Meta Keyword', 'simpletags' );
 			case 'embeddedtags':
 				return __( 'Embedded Tags', 'simpletags' );
 			case 'tagspost':
 				return __( 'Tags for Current Post', 'simpletags' );
 			case 'relatedposts':
 				return __( 'Related Posts', 'simpletags' );
-			case 'relatedtags':
-				return __( 'Related Tags', 'simpletags' );
 			case 'tagcloud':
 				return __( 'Tag cloud', 'simpletags' );
 		}
@@ -586,7 +626,7 @@ class SimpleTags_Admin {
 	 * TODO, useful or delete ?
 	 *
 	 * @return void
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
 	public static function upgrade() {
 		// Get current version number
@@ -625,9 +665,9 @@ class SimpleTags_Admin {
 	 * @param string $order
 	 *
 	 * @return array
-	 * @author Amaury Balmer
+	 * @author WebFactory Ltd
 	 */
-	public static function getTermsForAjax( $taxonomy = 'post_tag', $search = '', $order_by = 'name', $order = 'ASC' ) {
+	public static function getTermsForAjax( $taxonomy = 'post_tag', $search = '', $order_by = 'name', $order = 'ASC', $limit = '' ) {
 		global $wpdb;
 
 		if ( ! empty( $search ) ) {
@@ -637,7 +677,7 @@ class SimpleTags_Admin {
 				INNER JOIN {$wpdb->term_taxonomy} AS tt ON t.term_id = tt.term_id
 				WHERE tt.taxonomy = %s
 				AND t.name LIKE %s
-				ORDER BY $order_by $order
+				ORDER BY $order_by $order $limit
 			", $taxonomy, '%' . $search . '%' ) );
 		} else {
 			return $wpdb->get_results( $wpdb->prepare( "
@@ -645,10 +685,8 @@ class SimpleTags_Admin {
 				FROM {$wpdb->terms} AS t
 				INNER JOIN {$wpdb->term_taxonomy} AS tt ON t.term_id = tt.term_id
 				WHERE tt.taxonomy = %s
-				ORDER BY $order_by $order
+				ORDER BY $order_by $order $limit
 			", $taxonomy ) );
 		}
-
-		return $results;
 	}
 }

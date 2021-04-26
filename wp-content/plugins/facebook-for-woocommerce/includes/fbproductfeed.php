@@ -12,8 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+use SkyVerge\WooCommerce\Facebook\Products;
 use SkyVerge\WooCommerce\Facebook\Products\Feed;
-use SkyVerge\WooCommerce\PluginFramework\v5_5_4 as Framework;
+use SkyVerge\WooCommerce\PluginFramework\v5_10_0 as Framework;
 
 if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 
@@ -88,6 +89,8 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 		 * @since 1.11.0
 		 */
 		public function generate_feed() {
+			$profiling_logger = facebook_for_woocommerce()->get_profiling_logger();
+			$profiling_logger->start( 'generate_feed' );
 
 			\WC_Facebookcommerce_Utils::log( 'Generating a fresh product feed file' );
 
@@ -107,6 +110,8 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 
 				\WC_Facebookcommerce_Utils::log( $exception->getMessage() );
 			}
+
+			$profiling_logger->stop( 'generate_feed' );
 		}
 
 
@@ -289,6 +294,26 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 
 
 		/**
+		 * Gets the product catalog temporary feed file path.
+		 *
+		 * @since 1.11.3
+		 *
+		 * @return string
+		 */
+		public function get_temp_file_path() {
+
+			/**
+			 * Filters the product catalog temporary feed file path.
+			 *
+			 * @since 1.11.3
+			 *
+			 * @param string $file_path the temporary file path
+			 */
+			return apply_filters( 'wc_facebook_product_catalog_temp_feed_file_path', "{$this->get_file_directory()}/{$this->get_temp_file_name()}" );
+		}
+
+
+		/**
 		 * Gets the product catalog feed file directory.
 		 *
 		 * @since 1.11.0
@@ -322,6 +347,28 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 			 * @param string $file_name the file name
 			 */
 			return apply_filters( 'wc_facebook_product_catalog_feed_file_name', $file_name );
+		}
+
+
+		/**
+		 * Gets the product catalog temporary feed file name.
+		 *
+		 * @since 1.11.3
+		 *
+		 * @return string
+		 */
+		public function get_temp_file_name() {
+
+			$file_name = sprintf( self::FILE_NAME, 'temp_' . wp_hash( Feed::get_feed_secret() ) );
+
+			/**
+			 * Filters the product catalog temporary feed file name.
+			 *
+			 * @since 1.11.3
+			 *
+			 * @param string $file_name the temporary file name
+			 */
+			return apply_filters( 'wc_facebook_product_catalog_temp_feed_file_name', $file_name );
 		}
 
 
@@ -403,20 +450,7 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 		 * @return int[]
 		 */
 		private function get_product_ids() {
-
-			$post_ids           = $this->get_product_wpid();
-			$all_parent_product = array_map(
-				function( $post_id ) {
-					if ( 'product_variation' === get_post_type( $post_id ) ) {
-						return wp_get_post_parent_id( $post_id );
-					}
-				},
-				$post_ids
-			);
-
-			$all_parent_product = array_filter( array_unique( $all_parent_product ) );
-
-			return array_diff( $post_ids, $all_parent_product );
+			return \WC_Facebookcommerce_Utils::get_all_product_ids_for_sync();
 		}
 
 
@@ -490,15 +524,22 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 
 				if ( ! $is_dry_run ) {
 
+					$temp_file_path = $this->get_temp_file_path();
+					$temp_feed_file = @fopen( $temp_file_path, 'w' );
+
+					// check if we can open the temporary feed file
+					if ( false === $temp_feed_file || ! is_writable( $temp_file_path ) ) {
+						throw new Framework\SV_WC_Plugin_Exception( __( 'Could not open the product catalog temporary feed file for writing', 'facebook-for-woocommerce' ), 500 );
+					}
+
 					$file_path = $this->get_file_path();
 
-					$feed_file = @fopen( $this->get_file_path(), 'w' );
-
-					if ( false === $feed_file || ! is_writable( $file_path ) ) {
+					// check if we will be able to write to the final feed file
+					if ( file_exists( $file_path ) && ! is_writable( $file_path ) ) {
 						throw new Framework\SV_WC_Plugin_Exception( __( 'Could not open the product catalog feed file for writing', 'facebook-for-woocommerce' ), 500 );
 					}
 
-					fwrite( $feed_file, $this->get_product_feed_header_row() );
+					fwrite( $temp_feed_file, $this->get_product_feed_header_row() );
 				}
 
 				$product_group_attribute_variants = array();
@@ -507,16 +548,13 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 
 					$woo_product = new WC_Facebook_Product( $wp_id );
 
-					if ( $woo_product->is_hidden() ) {
-						continue;
-					}
-
-					if ( get_option( 'woocommerce_hide_out_of_stock_items' ) === 'yes' && ! $woo_product->is_in_stock() ) {
+					// skip if we don't have a valid product object
+					if ( ! $woo_product->woo_product instanceof \WC_Product ) {
 						continue;
 					}
 
 					// skip if not enabled for sync
-					if ( $woo_product->woo_product instanceof \WC_Product && ! SkyVerge\WooCommerce\Facebook\Products::product_should_be_synced( $woo_product->woo_product ) ) {
+					if ( ! Products::product_should_be_synced( $woo_product->woo_product ) ) {
 						continue;
 					}
 
@@ -525,12 +563,26 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 						$product_group_attribute_variants
 					);
 
-					if ( ! empty( $feed_file ) ) {
-						fwrite( $feed_file, $product_data_as_feed_row );
+					if ( ! empty( $temp_feed_file ) ) {
+						fwrite( $temp_feed_file, $product_data_as_feed_row );
 					}
 				}
 
 				wp_reset_postdata();
+
+
+				if ( ! empty( $temp_feed_file ) ) {
+					fclose( $temp_feed_file );
+				}
+
+				if ( ! empty( $temp_file_path ) && ! empty( $file_path ) && ! empty( $temp_feed_file ) ) {
+
+					$renamed = rename( $temp_file_path, $file_path );
+
+					if ( empty( $renamed ) ) {
+						throw new Framework\SV_WC_Plugin_Exception( __( 'Could not rename the product catalog feed file', 'facebook-for-woocommerce' ), 500 );
+					}
+				}
 
 				$written = true;
 
@@ -539,10 +591,18 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 				WC_Facebookcommerce_Utils::log( json_encode( $e->getMessage() ) );
 
 				$written = false;
-			}
 
-			if ( ! empty( $feed_file ) ) {
-				fclose( $feed_file );
+				// close the temporary file
+				if ( ! empty( $temp_feed_file ) && is_resource( $temp_feed_file ) ) {
+
+					fclose( $temp_feed_file );
+				}
+
+				// delete the temporary file
+				if ( ! empty( $temp_file_path ) && file_exists( $temp_file_path ) ) {
+
+					unlink( $temp_file_path );
+				}
 			}
 
 			return $written;
@@ -552,7 +612,7 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 			return 'id,title,description,image_link,link,product_type,' .
 			'brand,price,availability,item_group_id,checkout_url,' .
 			'additional_image_link,sale_price_effective_date,sale_price,condition,' .
-			'visibility,default_product,variant' . PHP_EOL;
+			'visibility,gender,color,size,pattern,google_product_category,default_product,variant' . PHP_EOL;
 		}
 
 
@@ -565,7 +625,7 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 		 */
 		private function prepare_product_for_feed( $woo_product, &$attribute_variants ) {
 
-			$product_data  = $woo_product->prepare_product( null, true );
+			$product_data  = $woo_product->prepare_product( null, \WC_Facebook_Product::PRODUCT_PREP_TYPE_FEED );
 			$item_group_id = $product_data['retailer_id'];
 
 			// prepare variant column for variable products
@@ -657,33 +717,41 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 				$product_data['default_product'] = '';
 			}
 
+			// when dealing with the feed file, only set out-of-stock products as hidden
+			if ( Products::product_should_be_deleted( $woo_product->woo_product ) ) {
+				$product_data['visibility'] = \WC_Facebookcommerce_Integration::FB_SHOP_PRODUCT_HIDDEN;
+			}
+
 			return $product_data['retailer_id'] . ',' .
-			static::format_string_for_feed( $product_data['name'] ) . ',' .
-			static::format_string_for_feed( $product_data['description'] ) . ',' .
-			$product_data['image_url'] . ',' .
-			$product_data['url'] . ',' .
-			static::format_string_for_feed( $product_data['category'] ) . ',' .
-			static::format_string_for_feed( $product_data['brand'] ) . ',' .
+			static::format_string_for_feed( static::get_value_from_product_data( $product_data, 'name' ) ) . ',' .
+			static::format_string_for_feed( static::get_value_from_product_data( $product_data, 'description' ) ) . ',' .
+			static::get_value_from_product_data( $product_data, 'image_url' ) . ',' .
+			static::get_value_from_product_data( $product_data, 'url' ) . ',' .
+			static::format_string_for_feed( static::get_value_from_product_data( $product_data, 'category' ) ) . ',' .
+			static::format_string_for_feed( static::get_value_from_product_data( $product_data, 'brand' ) ) . ',' .
 			static::format_price_for_feed(
-				$product_data['price'],
-				$product_data['currency']
+				static::get_value_from_product_data( $product_data, 'price', 0 ),
+				static::get_value_from_product_data( $product_data, 'currency' )
 			) . ',' .
-			$product_data['availability'] . ',' .
+			static::get_value_from_product_data( $product_data, 'availability' ) . ',' .
 			$item_group_id . ',' .
-			$product_data['checkout_url'] . ',' .
-			static::format_additional_image_url(
-				$product_data['additional_image_urls']
-			) . ',' .
-			$product_data['sale_price_start_date'] . '/' .
-			$product_data['sale_price_end_date'] . ',' .
+			static::get_value_from_product_data( $product_data, 'checkout_url' ) . ',' .
+			static::format_additional_image_url( static::get_value_from_product_data( $product_data, 'additional_image_urls' ) ) . ',' .
+			static::get_value_from_product_data( $product_data, 'sale_price_start_date' ) . '/' .
+			static::get_value_from_product_data( $product_data, 'sale_price_end_date' ) . ',' .
 			static::format_price_for_feed(
-				$product_data['sale_price'],
-				$product_data['currency']
+				static::get_value_from_product_data( $product_data, 'sale_price', 0 ),
+				static::get_value_from_product_data( $product_data, 'currency' )
 			) . ',' .
 			'new' . ',' .
-			$product_data['visibility'] . ',' .
-			$product_data['default_product'] . ',' .
-			$product_data['variant'] . PHP_EOL;
+			static::get_value_from_product_data( $product_data, 'visibility' ) . ',' .
+			static::get_value_from_product_data( $product_data, 'gender' ) . ',' .
+			static::get_value_from_product_data( $product_data, 'color' ) . ',' .
+			static::get_value_from_product_data( $product_data, 'size' ) . ',' .
+			static::get_value_from_product_data( $product_data, 'pattern' ) . ',' .
+			static::get_value_from_product_data( $product_data, 'google_product_category' ) . ',' .
+			static::get_value_from_product_data( $product_data, 'default_product' ) . ',' .
+			static::get_value_from_product_data( $product_data, 'variant' ) . PHP_EOL;
 		}
 
 
@@ -765,6 +833,24 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 
 
 		/**
+		 * Gets the value from the product data.
+		 *
+		 * This method is used to avoid PHP undefined index notices.
+		 *
+		 * @since 2.1.0
+		 *
+		 * @param array $product_data the product data retrieved from a Woo product passed by reference
+		 * @param string $index the data index
+		 * @param mixed $return_if_not_set the value to be returned if product data has no index (default to '')
+		 * @return mixed|string the data value or an empty string
+		 */
+		private static function get_value_from_product_data( &$product_data, $index, $return_if_not_set = '' ) {
+
+			return isset( $product_data[ $index ] ) ? $product_data[ $index ] : $return_if_not_set;
+		}
+
+
+		/**
 		 * Gets the status of the configured feed upload.
 		 *
 		 * The status indicator is one of 'in progress', 'complete', or 'error'.
@@ -809,7 +895,13 @@ if ( ! class_exists( 'WC_Facebook_Product_Feed' ) ) :
 			WC_Facebookcommerce_Utils::log( $msg );
 		}
 
+		/**
+		 * @deprecated in favor of WC_Facebookcommerce_Utils::get_all_product_ids_for_sync() due to duplicate functionality
+		 */
 		public function get_product_wpid() {
+
+			wc_deprecated_function( __METHOD__, '2.4.0', '\\WC_Facebookcommerce_Utils::get_all_product_ids_for_sync()' );
+
 			$post_ids = WC_Facebookcommerce_Utils::get_wp_posts(
 				null,
 				null,
