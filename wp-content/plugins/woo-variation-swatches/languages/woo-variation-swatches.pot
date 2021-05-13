@@ -456,50 +456,50 @@ msgstr ""
 msgid "Add Media"
 msgstr ""
 
-#: ../woo-variation-swatches.php:582, ../woo-variation-swatches.php:582
+#: ../woo-variation-swatches.php:563, ../woo-variation-swatches.php:563
 msgid "Read Documentation"
 msgstr ""
 
-#: ../woo-variation-swatches.php:584
+#: ../woo-variation-swatches.php:565
 msgid "Facing issue?"
 msgstr ""
 
-#: ../woo-variation-swatches.php:584
+#: ../woo-variation-swatches.php:565
 msgid "Please open a ticket."
 msgstr ""
 
-#: ../woo-variation-swatches.php:599
+#: ../woo-variation-swatches.php:580
 msgid "Go Pro"
 msgstr ""
 
-#: ../woo-variation-swatches.php:647
+#: ../woo-variation-swatches.php:628
 msgid "Please check PHP version requirement."
 msgstr ""
 
-#: ../woo-variation-swatches.php:649
+#: ../woo-variation-swatches.php:630
 msgid "It's required to use latest version of PHP to use <strong>Variation Swatches for WooCommerce</strong>."
 msgstr ""
 
-#: ../woo-variation-swatches.php:661
+#: ../woo-variation-swatches.php:642
 msgid "WooCommerce"
 msgstr ""
 
-#: ../woo-variation-swatches.php:673
+#: ../woo-variation-swatches.php:654
 msgid "<strong>Variation Swatches for WooCommerce</strong> is an add-on of "
 msgstr ""
 
-#: ../woo-variation-swatches.php:686
+#: ../woo-variation-swatches.php:667
 msgid "Currently, you are using older version of WooCommerce. It's recommended to use latest version of WooCommerce to work with %s."
 msgstr ""
 
-#: ../woo-variation-swatches.php:686
+#: ../woo-variation-swatches.php:667
 msgid "Variation Swatches for WooCommerce"
 msgstr ""
 
-#: ../woo-variation-swatches.php:789
+#: ../woo-variation-swatches.php:770
 msgid "Variation Swatches for WooCommerce Plugin try to load \"%s\" but template \"%s\" was not found."
 msgstr ""
 
-#: ../woo-variation-swatches.php:1022
+#: ../woo-variation-swatches.php:1003
 msgid "Install Now"
 msgstr ""

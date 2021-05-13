@@ -593,6 +593,14 @@ And your are ready to go.
 
 == Changelog ==
 
+= 1.1.17 - 08-05-2021 =
+
+* Update: Twick PHP functions
+
+= 1.1.16 - 03-05-2021 =
+
+* Fix: Backend CSS
+
 = 1.1.15 - 24-04-2021 =
 
 * Fix: WPML currency switcher issue.

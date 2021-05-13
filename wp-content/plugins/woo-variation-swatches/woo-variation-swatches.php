@@ -4,7 +4,7 @@
  * Plugin URI: https://wordpress.org/plugins/woo-variation-swatches/
  * Description: Beautiful colors, images and buttons variation swatches for woocommerce product attributes. Requires WooCommerce 3.2+
  * Author: Emran Ahmed
- * Version: 1.1.15.1
+ * Version: 1.1.17
  * Domain Path: /languages
  * Requires PHP: 5.6
  * Requires at least: 4.8
@@ -21,7 +21,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches' ) ):
 
 	final class Woo_Variation_Swatches {
 
-		protected $_version = '1.1.15.1';
+		protected $_version = '1.1.17';
 
 		protected static $_instance = null;
 		private $_settings_api;
@@ -556,28 +556,9 @@ if ( ! class_exists( 'Woo_Variation_Swatches' ) ):
 		public function plugin_row_meta( $links, $file ) {
 			if ( $file == $this->basename() ) {
 
-				$report_url = esc_url(
-					add_query_arg(
-						array(
-							'utm_source'   => 'wp-admin-plugins',
-							'utm_medium'   => 'row-meta-link',
-							'utm_campaign' => 'woo-variation-swatches',
-							'utm_term'     => sanitize_title( $this->get_parent_theme_name() )
-						), 'https://getwooplugins.com/tickets/'
-					)
-				);
+				$report_url = esc_url( 'https://getwooplugins.com/tickets/' );
 
-				$documentation_url = esc_url(
-					add_query_arg(
-						array(
-							'utm_source'   => 'wp-admin-plugins',
-							'utm_medium'   => 'row-meta-link',
-							'utm_campaign' => 'woo-variation-swatches',
-							'utm_term'     => sanitize_title( $this->get_parent_theme_name() )
-						), 'https://getwooplugins.com/documentation/woocommerce-variation-swatches/'
-					)
-				);
-
+				$documentation_url = esc_url( 'https://getwooplugins.com/documentation/woocommerce-variation-swatches/' );
 
 				$row_meta['documentation'] = '<a target="_blank" href="' . esc_url( $documentation_url ) . '" title="' . esc_attr( esc_html__( 'Read Documentation', 'woo-variation-swatches' ) ) . '">' . esc_html__( 'Read Documentation', 'woo-variation-swatches' ) . '</a>';
 				// $row_meta[ 'rating' ]        = sprintf( '<a target="_blank" href="%1$s">%3$s</a> <span class="gwp-rate-stars"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><a xlink:href="%1$s" title="%2$s" target="_blank"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></a></svg><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><a xlink:href="%1$s" title="%2$s" target="_blank"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></a></svg><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><a xlink:href="%1$s" title="%2$s" target="_blank"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></a></svg><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><a xlink:href="%1$s" title="%2$s" target="_blank"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></a></svg><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><a xlink:href="%1$s" title="%2$s" target="_blank"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></a></svg></span>', esc_url( $review_url ), esc_html__( 'Review', 'woo-variation-swatches' ), esc_html__( 'Please Rate Us', 'woo-variation-swatches' ) );
